@@ -1,0 +1,74 @@
+{
+  "package_id": "",
+  "alert_id": "",
+  "title": "",
+  "severity": "",
+  "detected_at": "",
+  "source_system": {
+    "name": "",
+    "query": ""
+  },
+  "scope": {
+    "network_zone": "",
+    "org_unit": "",
+    "time_window": {
+      "start": "",
+      "end": ""
+    }
+  },
+  "entities": {
+    "hosts": [],
+    "users": [],
+    "ips": [],
+    "domains": [],
+    "hashes": []
+  },
+  "events": [
+    {
+      "id": "",
+      "timestamp": "",
+      "category": "host",
+      "subtype": "",
+      "action": "",
+      "host": { "name": "", "ip": "" },
+      "user": { "name": "" },
+      "process": {
+        "name": "",
+        "pid": null,
+        "ppid": null,
+        "cmdline": ""
+      },
+      "iocs": { "matched": false, "matches": [] },
+      "raw_excerpt": "",
+      "ext": {
+        "process_create": {},
+        "service_change": {},
+        "registry_set": {},
+        "scheduled_task_change": {}
+      }
+    }
+  ],
+  "enrichment": {
+    "misp_matches": [],
+    "hostname_reputation": [],
+    "file_hash_lookup": []
+  },
+  "derived": {
+    "attack_candidates": []
+  },
+  "recommendations": [],
+  "report": {
+    "summary": "",
+    "observations": [],
+    "confidence": "",
+    "raw_links": {
+      "kibana_search": "",
+      "ticket_reference": ""
+    }
+  },
+  "meta": {
+    "author": "",
+    "created_at": "",
+    "schema_version": "host-exec-v1"
+  }
+}

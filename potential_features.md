@@ -1,0 +1,1 @@
+Have the LLM consult MITRE and then recommend queries for the analyst to make
