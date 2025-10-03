@@ -38,7 +38,10 @@
         "ppid": null,
         "cmdline": ""
       },
-      "iocs": { "matched": false, "matches": [] },
+      "iocs": {
+        "matched": false,
+        "matches": []
+      },
       "raw_excerpt": "",
       "ext": {
         "process_create": {},
@@ -49,7 +52,24 @@
     }
   ],
   "enrichment": {
-    "misp_matches": [],
+    "misp_matches": [
+      {
+        "match_id": "",
+        "ioc": "",
+        "type": "",
+        "misp_event_id": "",
+        "misp_event_title": "",
+        "first_seen": "",
+        "last_seen": "",
+        "tags": [],
+        "related_techniques": [],
+        "related_actors": [],
+        "confidence": "",
+        "evidence_event_ids": [],
+        "source": "",
+        "reference": ""
+      }
+    ],
     "hostname_reputation": [],
     "file_hash_lookup": []
   },
