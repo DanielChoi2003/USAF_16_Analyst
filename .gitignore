@@ -1,0 +1,143 @@
+# ============================================================================
+# Analyst Copilot — Git Ignore Rules
+# ============================================================================
+# Prevent sensitive data, build artifacts, and OS files from being committed
+# ============================================================================
+
+# ── Environment Variables (CRITICAL — NEVER COMMIT) ─────────────────────────
+.env
+.env.local
+.env.*.local
+.env.production
+.env.staging
+**/.env
+
+# ── API Keys & Secrets ──────────────────────────────────────────────────────
+**/secrets/
+**/*-key.json
+**/*-credentials.json
+*.pem
+*.key
+*.crt
+
+# ── Python ──────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+*.egg-info/
+dist/
+build/
+*.egg
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+
+# ── Node.js & Frontend ──────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.npm/
+.yarn/
+.next/
+out/
+.vercel/
+.turbo/
+*.tsbuildinfo
+next-env.d.ts
+
+# ── Databases ───────────────────────────────────────────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+analyst_copilot.db
+
+# ── Vector Stores ───────────────────────────────────────────────────────────
+chroma_db/
+chromadb/
+*.faiss
+*.index
+
+# ── Logs ────────────────────────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+lerna-debug.log*
+
+# ── IDEs & Editors ──────────────────────────────────────────────────────────
+.vscode/
+!.vscode/settings.json.example
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ── Build Artifacts ─────────────────────────────────────────────────────────
+dist/
+build/
+target/
+*.tar.gz
+*.zip
+
+# ── Docker ──────────────────────────────────────────────────────────────────
+*.dockerignore.local
+
+# ── Testing ─────────────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+coverage/
+htmlcov/
+test-results/
+playwright-report/
+
+# ── Temporary Files ─────────────────────────────────────────────────────────
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+.cache/
+
+# ── OS Files ────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ── Project Specific ────────────────────────────────────────────────────────
+# Keep MITRE pickle files (they're cached data, not sensitive)
+!data/mitre/*.pkl
+
+# Keep sample JSONs (they're demo data)
+!data/samples/*.json
+
+# Ignore generated JSON exports
+data/mitre/json_exports/
+
+# Ignore old mitre-api directory (moved to data/mitre)
+mitre-api/
+
+# Ignore old inputs directory (moved to data/samples)
+inputs/

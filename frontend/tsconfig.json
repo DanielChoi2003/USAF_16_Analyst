@@ -1,0 +1,75 @@
+{
+  "compilerOptions": {
+    // ── Type Checking ───────────────────────────────────────────────────────
+    "strict": true, // Enable all strict type-checking options
+    "noUncheckedIndexedAccess": true, // Prevent undefined array/object access
+    "noImplicitReturns": true, // Ensure all code paths return a value
+    "noFallthroughCasesInSwitch": true, // Require break in switch statements
+    "noUnusedLocals": true, // Error on unused local variables
+    "noUnusedParameters": true, // Error on unused function parameters
+    // ── Module Resolution ───────────────────────────────────────────────────
+    "target": "ES2022", // Modern JavaScript target
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true, // Import JSON files as modules
+    "allowJs": true, // Allow importing .js files
+    "checkJs": false, // Don't type-check JS files
+    // ── Emit ────────────────────────────────────────────────────────────────
+    "noEmit": true, // Next.js handles compilation
+    "incremental": true, // Enable incremental compilation
+    "sourceMap": true, // Generate source maps for debugging
+    // ── Interop ─────────────────────────────────────────────────────────────
+    "esModuleInterop": true, // Better CommonJS/ESM interop
+    "allowSyntheticDefaultImports": true, // Allow default imports from modules
+    "forceConsistentCasingInFileNames": true, // Enforce case-sensitive imports
+    "isolatedModules": true, // Ensure each file can be safely transpiled
+    // ── JSX ─────────────────────────────────────────────────────────────────
+    "jsx": "preserve", // Let Next.js handle JSX transformation
+    // ── Path Aliases ────────────────────────────────────────────────────────
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ], // Alias: @/components/Button
+      "@/components/*": [
+        "./src/components/*"
+      ],
+      "@/lib/*": [
+        "./src/lib/*"
+      ],
+      "@/hooks/*": [
+        "./src/hooks/*"
+      ],
+      "@/stores/*": [
+        "./src/stores/*"
+      ],
+      "@/styles/*": [
+        "./src/styles/*"
+      ]
+    },
+    // ── Next.js Specific ────────────────────────────────────────────────────
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "skipLibCheck": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next",
+    "out",
+    "dist"
+  ]
+}
