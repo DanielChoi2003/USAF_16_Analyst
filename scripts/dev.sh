@@ -3,6 +3,7 @@
 # Analyst Copilot — Development Server Launcher
 # ============================================================================
 # Starts both frontend and backend in parallel with logging
+# Note AI was used to help generate the sh files
 # Run: bash scripts/dev.sh
 # ============================================================================
 

@@ -1,5 +1,6 @@
 // Minimal Header - Error Free
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "../ui/Button";
 
 export function Header() {
@@ -16,7 +17,12 @@ export function Header() {
         <h1 className="text-white text-lg font-bold">Analyst Copilot</h1>
       </div>
       <div className="flex items-center gap-3">
-        <Button variant="secondary">Upload</Button>
+        <Link href="/upload">
+          <Button variant="secondary">Upload</Button>
+        </Link>
+        <Link href="/">
+          <Button variant="secondary">Dashboard</Button>
+        </Link>
         <Button variant="secondary">Export</Button>
       </div>
     </header>

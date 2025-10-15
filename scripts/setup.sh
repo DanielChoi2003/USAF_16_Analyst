@@ -3,6 +3,7 @@
 # Analyst Copilot — Initial Setup Script
 # ============================================================================
 # This script sets up the development environment for both frontend and backend
+# Note AI was used to help generate the sh files
 # Run: bash scripts/setup.sh
 # ============================================================================
 
