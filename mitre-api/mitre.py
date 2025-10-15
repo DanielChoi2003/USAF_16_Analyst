@@ -58,7 +58,7 @@ def unpickle():
 def main(): 
 
     techniques, tactics, relationships = unpickle()
-    print(json.dumps(relationships [0], indent=4))
+    print(json.dumps(techniques [0], indent=4))
     # Print sample technique
     # for t in techniques:
         # pretty_json_string = json.dumps(t, indent=4)
