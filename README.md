@@ -1,96 +1,98 @@
-# analyst-copilot
-Fall 2025 Capstone (Kumar) partnership with 16th USAF
+# Analyst Copilot
 
-# Project Setup and Usage
+**USAF 16th Air Force Cyber Analyst Copilot**  
+Fall 2025 Capstone Project (Prof. Kumar)
 
-This guide provides the necessary steps to set up the project environment, configure the required services, and run the RAG instantiation script.
+![Status](https://img.shields.io/badge/status-in%20development-yellow)
+![License](https://img.shields.io/badge/license-proprietary-red)
 
-## Prerequisites
+# Analyst Copilot
 
-Before you begin, ensure you have the following installed on your system:
+Analyst Copilot is a small prototype for drafting analyst reports from alert packages. The frontend is a Next.js + TypeScript demo app and the backend is a FastAPI skeleton with scaffolding for later RAG/LLM work.
 
-  * **Python** (version 3.10 or higher)
-  * **Docker**
-  * **Ollama**
+Status
 
------
+- Prototype / development. The repo contains a working frontend demo and supporting backend scaffolding. See `DETAILS.md` for the full setup and rationale.
 
-## Setup Instructions
+Prerequisites
 
-Follow these steps to get your environment ready.
+- Node 18+ and npm
+- Python 3.11 for backend development (optional)
 
-### 1\. Set Up the Python Environment
-
-First, create and activate a Python virtual environment. This isolates the project's dependencies.
+Quick start (frontend)
 
 ```bash
-# Create a virtual environment named 'venv'
-python3 -m venv venv
+cd frontend
+npm install
+npm run dev
+```
 
-# Activate the virtual environment
-# On macOS and Linux:
+Optional: start the backend
+
+```bash
+cd backend
+python3.11 -m venv venv
 source venv/bin/activate
-
-# On Windows:
-# venv\Scripts\activate
+pip install -r requirements.txt
+cp .env.example .env
+# edit .env for API keys and DB URLs
+python src/main.py
 ```
 
-Next, install the project dependencies in editable mode.
+Load the sample data (optional)
 
 ```bash
-# Install dependencies from setup.py
-pip install -e .
+cd backend
+python src/scripts/seed_packages.py
 ```
 
------
+Repository layout (high level)
 
-### 2\. Configure Ollama
+- `frontend/` — Next.js app and UI components
+- `backend/` — FastAPI app and service scaffolding
+- `data/` — sample packages and MITRE data
+- `DETAILS.md` — consolidated setup, architecture, and developer notes
+- `CONTRIBUTING.md` — short contributor guide and commit conventions
 
-You'll need to pull the required LLM and embedding models using Ollama.
+Running tests and checks
+
+Frontend
 
 ```bash
-# Pull the Qwen2 language model
-ollama pull qwen2
-
-# Pull the Nomic embedding model
-ollama pull nomic-embed-text
+cd frontend
+npm run test      # unit tests (Vitest)
+npm run lint
+npm run type-check
 ```
 
------
-
-### 3\. Set Up and Run Neo4j
-
-This project uses a Neo4j database running in a Docker container.
-
-First, export the environment variable for the Neo4j connection URI.
+Backend
 
 ```bash
-# Set the Neo4j URI
-export NEO4J_URI="neo4j://localhost:7687"
+cd backend
+pytest tests/
+ruff check src/ tests/
 ```
 
-**Note:** You may want to add this line to your shell configuration file (e.g., `.bashrc`, `.zshrc`) to make it permanent.
+Notes and next steps
 
-Next, run the Neo4j Docker container. This command maps the necessary ports, mounts a volume for data persistence, and disables authentication.
+- The UI currently uses mock data. If you want it to fetch `ex1-enriched.json`, add a small frontend API route and wire the page.
+- Keep changes small and run `npm run build` before pushing major changes.
 
-```bash
-# Run the Neo4j container
-docker run \
-    --publish=7474:7474 --publish=7687:7687 \
-    --volume=$HOME/neo4j/data:/data \
-    --env NEO4J_AUTH=none \
-    neo4j
+Contact
+
+- Ethan Curb — ethan.curb@example.com
+
+source venv/bin/activate
+pip install -r requirements.txt
+python src/main.py
+
 ```
 
-You can access the Neo4j Browser UI at `http://localhost:7474`.
+If you want a compact developer checklist and next steps, see `FRESH_START.md`.
 
------
+More details about architecture, setup, and development workflow are in `DETAILS.md`.
 
-## Running the RAG Instantiation
+Contact
 
-Once all the services are running and the environment is set up, you can run the script to train the RAG model on the MITRE data.
-
-```bash
-# Execute the script
-python instantiate_rag.py
+- Ethan Curb — ethan.curb@example.com
 ```
