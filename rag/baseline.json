@@ -1,0 +1,155 @@
+{
+  "package_id": "pkg-2025-09-21-af-raw-001",
+  "alert_id": "af-2025-0912-raw-001",
+  "title": "Suspicious Host Activity - SIEM export (raw)",
+  "severity": "unknown",
+  "detected_at": "2025-09-21T13:45:00Z",
+  "source_system": {
+    "name": "Elastic Security (ELK)",
+    "query": "host.name: HOST-A OR host.name: HOST-B"
+  },
+  "scope": {
+    "network_zone": "NIPR",
+    "org_unit": "16AF",
+    "time_window": {
+      "start": "2025-09-21T13:40:00Z",
+      "end": "2025-09-21T13:50:00Z"
+    }
+  },
+  "entities": {
+    "hosts": [
+      "HOST-A",
+      "HOST-B"
+    ],
+    "users": [
+      "DOM\\jdoe"
+    ],
+    "ips": [
+      "10.0.0.5",
+      "10.0.0.6"
+    ],
+    "domains": [],
+    "hashes": []
+  },
+  "events": [
+    {
+      "id": "elastic_doc_0AXv87dfjS2a9",
+      "timestamp": "2025-09-21T13:42:18Z",
+      "category": "host",
+      "subtype": "process_create",
+      "action": "execute",
+      "host": {
+        "name": "HOST-A",
+        "ip": "10.0.0.5"
+      },
+      "user": {
+        "name": "DOM\\jdoe"
+      },
+      "process": {
+        "name": "psexec.exe",
+        "pid": 5012,
+        "ppid": 448,
+        "cmdline": "C:\\Windows\\psexec.exe \\\\HOST-B cmd.exe"
+      },
+      "iocs": {
+        "matched": false,
+        "matches": []
+      },
+      "raw_excerpt": "Sysmon EID 1 - EventRecordID: 12345 | Image: C:\\Windows\\psexec.exe | CommandLine: psexec \\\\HOST-B cmd.exe | ParentImage: C:\\Windows\\System32\\cmd.exe | User: DOM\\jdoe",
+      "ext": {
+        "process_create": {
+          "event_id": "1",
+          "provider": "Sysmon",
+          "utc_time": "2025-09-21T13:42:18.000Z",
+          "image": "C:\\Windows\\psexec.exe",
+          "command_line": "psexec \\\\HOST-B cmd.exe",
+          "parent_image": "C:\\Windows\\System32\\cmd.exe",
+          "parent_command_line": "cmd /c ...",
+          "user": "DOM\\jdoe",
+          "session_id": null,
+          "hashes": {
+            "md5": null,
+            "sha1": null,
+            "sha256": null
+          },
+          "log_source": "sysmon",
+          "raw_message": "<Event><System><EventID>1</EventID>...</System><EventData><Data Name=\"Image\">C:\\Windows\\psexec.exe</Data><Data Name=\"CommandLine\">psexec \\\\HOST-B cmd.exe</Data>...</EventData></Event>"
+        },
+        "service_change": {},
+        "registry_set": {},
+        "scheduled_task_change": {}
+      }
+    },
+    {
+      "id": "elastic_doc_0AXv87dfjS2b0b",
+      "timestamp": "2025-09-21T13:43:01Z",
+      "category": "host",
+      "subtype": "service_change",
+      "action": "create",
+      "host": {
+        "name": "HOST-B",
+        "ip": "49.77.108.195"
+      },
+      "user": {
+        "name": "SYSTEM"
+      },
+      "process": {
+        "name": "services.exe",
+        "pid": 684,
+        "ppid": null,
+        "cmdline": "C:\\Windows\\System32\\services.exe"
+      },
+      "iocs": {
+        "matched": false,
+        "matches": []
+      },
+      "raw_excerpt": "Windows EventID 7045 - EventRecordID: 67890 | A service was installed in the system: Service Name: PSEXESVC | ImagePath: C:\\Windows\\PSEXESVC.exe | StartType: Auto | ServiceAccount: LocalSystem",
+      "ext": {
+        "process_create": {},
+        "service_change": {
+          "event_id": "7045",
+          "provider": "Windows Security",
+          "utc_time": "2025-09-21T13:43:01.000Z",
+          "service_name": "PSEXESVC",
+          "service_display_name": "PSEXESVC",
+          "service_bin_path": "C:\\Windows\\PSEXESVC.exe",
+          "start_type": "Auto",
+          "service_account": "LocalSystem",
+          "log_source": "windows_event",
+          "raw_message": "<Event><System><EventID>7045</EventID>...</System><EventData><Data Name=\"ServiceName\">PSEXESVC</Data><Data Name=\"ImagePath\">C:\\Windows\\PSEXESVC.exe</Data>...</EventData></Event>"
+        },
+        "registry_set": {},
+        "scheduled_task_change": {}
+      }
+    }
+  ],
+  "enrichment": {
+    "misp_matches": [],
+    "hostname_reputation": [],
+    "file_hash_lookup": []
+  },
+  "derived": {
+    "attack_candidates": []
+  },
+  "recommendations": [],
+  "report": {
+    "summary": "",
+    "observations": [],
+    "confidence": "",
+    "raw_links": {
+      "kibana_search": "",
+      "ticket_reference": ""
+    }
+  },
+  "meta": {
+    "author": "analyst_user",
+    "created_at": "2025-09-21T13:50:00Z",
+    "schema_version": "host-exec-v1",
+    "exported_from": "elastic_security",
+    "export_info": {
+      "exported_by": "analyst_user",
+      "export_timestamp": "2025-09-21T13:50:00Z",
+      "format": "siem-json"
+    }
+  }
+}

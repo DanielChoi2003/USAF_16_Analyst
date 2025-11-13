@@ -1,0 +1,219 @@
+[
+  {
+    "Attribute": [
+      {
+        "id": "242536",
+        "event_id": "1520",
+        "object_id": "0",
+        "object_relation": null,
+        "category": "Artifacts dropped",
+        "type": "filename",
+        "to_ids": true,
+        "uuid": "5cf110fa-0344-4fbd-bca7-eea7950d210f",
+        "timestamp": "1559302467",
+        "distribution": "5",
+        "sharing_group_id": "0",
+        "comment": "Not the psexec from sysinternals but a  remote execution functionality offered by a tool similar to PsExec offered by Impacket",
+        "deleted": false,
+        "disable_correlation": false,
+        "first_seen": null,
+        "last_seen": null,
+        "value": "psexec.exe",
+        "Event": {
+          "id": "1520",
+          "info": "Emissary Panda Attacks Middle East Government Sharepoint Servers by Palo Alto Unit42",
+          "org_id": "1",
+          "orgc_id": "2",
+          "uuid": "5cf0f134-f504-42dd-b11e-9071950d210f",
+          "user_id": "1",
+          "threat_level_id": "1",
+          "distribution": "3",
+          "analysis": "2",
+          "date": "2019-05-28",
+          "timestamp": "1559307564",
+          "publish_timestamp": "1761070480",
+          "Org": {
+            "id": "1",
+            "name": "ADMIN",
+            "uuid": "bc912bc9-5fcc-488b-bf0a-5a56102fa3d1"
+          },
+          "Orgc": {
+            "id": "2",
+            "name": "CthulhuSPRL.be",
+            "uuid": "55f6ea5f-fd34-43b8-ac1d-40cb950d210f"
+          },
+          "ThreatLevel": {
+            "id": "2",
+            "name": "Medium"
+          }
+        }
+      },
+      {
+        "id": "286618",
+        "event_id": "1639",
+        "object_id": "19535",
+        "object_relation": "filename",
+        "category": "Payload delivery",
+        "type": "filename",
+        "to_ids": false,
+        "uuid": "431dea9d-c22b-4b68-a1f4-585d47383f94",
+        "timestamp": "1613143350",
+        "distribution": "5",
+        "sharing_group_id": "0",
+        "comment": "",
+        "deleted": false,
+        "disable_correlation": true,
+        "first_seen": null,
+        "last_seen": null,
+        "value": "PsExec.exe",
+        "Event": {
+          "id": "1639",
+          "info": "OSINT - AN ANALYSIS OF THE EGREGOR RANSOMWARE",
+          "org_id": "1",
+          "orgc_id": "3",
+          "uuid": "3dd18ce2-fa55-4f0d-b88e-7d4144cb0dcb",
+          "user_id": "1",
+          "threat_level_id": "2",
+          "distribution": "3",
+          "analysis": "2",
+          "date": "2021-02-11",
+          "timestamp": "1613399927",
+          "publish_timestamp": "1761071034",
+          "Org": {
+            "id": "1",
+            "name": "ADMIN",
+            "uuid": "bc912bc9-5fcc-488b-bf0a-5a56102fa3d1"
+          },
+          "Orgc": {
+            "id": "3",
+            "name": "CIRCL",
+            "uuid": "55f6ea5e-2c60-40e5-964f-47a8950d210f"
+          },
+          "ThreatLevel": {
+            "id": "3",
+            "name": "Low"
+          }
+        },
+        "Object": {
+          "id": "19535",
+          "distribution": "5",
+          "sharing_group_id": "0",
+          "timestamp": "1613143350"
+        }
+      }
+    ]
+  },
+  {
+    "Attribute": []
+  },
+  {
+    "Attribute": [
+      {
+        "id": "254912",
+        "event_id": "1559",
+        "object_id": "15379",
+        "object_relation": "name",
+        "category": "Other",
+        "type": "text",
+        "to_ids": false,
+        "uuid": "2425e670-22db-4487-be25-aed80204d9b5",
+        "timestamp": "1572957398",
+        "distribution": "5",
+        "sharing_group_id": "0",
+        "comment": "",
+        "deleted": false,
+        "disable_correlation": true,
+        "first_seen": null,
+        "last_seen": null,
+        "value": "services.exe",
+        "Event": {
+          "id": "1559",
+          "info": "IECrypt sample analysed with VMRay Analyzer Report for Sample #245141 (IECrypt)",
+          "org_id": "1",
+          "orgc_id": "3",
+          "uuid": "5dc16ccc-c038-4b5b-91e6-4879950d210f",
+          "user_id": "1",
+          "threat_level_id": "3",
+          "distribution": "3",
+          "analysis": "2",
+          "date": "2019-11-05",
+          "timestamp": "1572959929",
+          "publish_timestamp": "1761070680",
+          "Org": {
+            "id": "1",
+            "name": "ADMIN",
+            "uuid": "bc912bc9-5fcc-488b-bf0a-5a56102fa3d1"
+          },
+          "Orgc": {
+            "id": "3",
+            "name": "CIRCL",
+            "uuid": "55f6ea5e-2c60-40e5-964f-47a8950d210f"
+          },
+          "ThreatLevel": {
+            "id": "4",
+            "name": "Undefined"
+          }
+        },
+        "Object": {
+          "id": "15379",
+          "distribution": "5",
+          "sharing_group_id": "0",
+          "timestamp": "1572957398"
+        }
+      },
+      {
+        "id": "255038",
+        "event_id": "1559",
+        "object_id": "15421",
+        "object_relation": "name",
+        "category": "Other",
+        "type": "text",
+        "to_ids": false,
+        "uuid": "647e67ae-0c12-49c1-acfb-d8073a2f06f7",
+        "timestamp": "1572957418",
+        "distribution": "5",
+        "sharing_group_id": "0",
+        "comment": "",
+        "deleted": false,
+        "disable_correlation": true,
+        "first_seen": null,
+        "last_seen": null,
+        "value": "services.exe",
+        "Event": {
+          "id": "1559",
+          "info": "IECrypt sample analysed with VMRay Analyzer Report for Sample #245141 (IECrypt)",
+          "org_id": "1",
+          "orgc_id": "3",
+          "uuid": "5dc16ccc-c038-4b5b-91e6-4879950d210f",
+          "user_id": "1",
+          "threat_level_id": "3",
+          "distribution": "3",
+          "analysis": "2",
+          "date": "2019-11-05",
+          "timestamp": "1572959929",
+          "publish_timestamp": "1761070680",
+          "Org": {
+            "id": "1",
+            "name": "ADMIN",
+            "uuid": "bc912bc9-5fcc-488b-bf0a-5a56102fa3d1"
+          },
+          "Orgc": {
+            "id": "3",
+            "name": "CIRCL",
+            "uuid": "55f6ea5e-2c60-40e5-964f-47a8950d210f"
+          },
+          "ThreatLevel": {
+            "id": "4",
+            "name": "Undefined"
+          }
+        },
+        "Object": {
+          "id": "15421",
+          "distribution": "5",
+          "sharing_group_id": "0",
+          "timestamp": "1572957418"
+        }
+      }
+    ]
+  }
+]

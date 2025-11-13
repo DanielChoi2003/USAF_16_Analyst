@@ -1,0 +1,47 @@
+2025-11-04 15:30:21,903 - lightrag - INFO - [_] Process 22950 KV load full_docs with 0 records
+2025-11-04 15:30:21,903 - lightrag - INFO - [_] Process 22950 KV load text_chunks with 0 records
+2025-11-04 15:30:21,903 - lightrag - INFO - [_] Process 22950 KV load full_entities with 0 records
+2025-11-04 15:30:21,903 - lightrag - INFO - [_] Process 22950 KV load full_relations with 0 records
+2025-11-04 15:30:21,904 - lightrag - ERROR - [base] Database chunk-entity-relation at neo4j://localhost:7687 is not available
+2025-11-04 15:31:26,988 - lightrag - INFO - [_] Process 23255 KV load full_docs with 0 records
+2025-11-04 15:31:26,988 - lightrag - INFO - [_] Process 23255 KV load text_chunks with 0 records
+2025-11-04 15:31:26,988 - lightrag - INFO - [_] Process 23255 KV load full_entities with 0 records
+2025-11-04 15:31:26,988 - lightrag - INFO - [_] Process 23255 KV load full_relations with 0 records
+2025-11-04 15:31:26,990 - lightrag - ERROR - [base] Database chunk-entity-relation at neo4j://localhost:7687 is not available
+2025-11-04 15:33:49,553 - lightrag - INFO - [_] Process 23957 KV load full_docs with 0 records
+2025-11-04 15:33:49,553 - lightrag - INFO - [_] Process 23957 KV load text_chunks with 0 records
+2025-11-04 15:33:49,553 - lightrag - INFO - [_] Process 23957 KV load full_entities with 0 records
+2025-11-04 15:33:49,553 - lightrag - INFO - [_] Process 23957 KV load full_relations with 0 records
+2025-11-04 15:33:49,555 - lightrag - ERROR - [base] Database chunk-entity-relation at bolt://localhost:7687 is not available
+2025-11-04 15:34:59,595 - lightrag - INFO - [_] Process 24284 KV load full_docs with 0 records
+2025-11-04 15:34:59,596 - lightrag - INFO - [_] Process 24284 KV load text_chunks with 0 records
+2025-11-04 15:34:59,596 - lightrag - INFO - [_] Process 24284 KV load full_entities with 0 records
+2025-11-04 15:34:59,596 - lightrag - INFO - [_] Process 24284 KV load full_relations with 0 records
+2025-11-04 15:34:59,598 - lightrag - ERROR - [base] Database chunk-entity-relation at bolt://localhost:7687 is not available
+2025-11-04 15:35:49,846 - lightrag - INFO - [_] Process 24604 KV load full_docs with 0 records
+2025-11-04 15:35:49,846 - lightrag - INFO - [_] Process 24604 KV load text_chunks with 0 records
+2025-11-04 15:35:49,846 - lightrag - INFO - [_] Process 24604 KV load full_entities with 0 records
+2025-11-04 15:35:49,846 - lightrag - INFO - [_] Process 24604 KV load full_relations with 0 records
+2025-11-04 15:35:49,979 - lightrag - INFO - [base] Database chunk-entity-relation at bolt://localhost:7687 not found. Try to create specified database.
+2025-11-04 15:35:50,187 - lightrag - WARNING - [base] This Neo4j instance does not support creating databases. Try to use Neo4j Desktop/Enterprise version or DozerDB instead. Fallback to use the default database.
+2025-11-04 15:35:50,506 - lightrag - INFO - [base] Connected to None at bolt://localhost:7687
+2025-11-04 15:35:50,557 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in None
+2025-11-04 15:35:50,652 - lightrag - INFO - [base] No existing index 'entity_id_fulltext_idx' found. Creating new index.
+2025-11-04 15:35:50,653 - lightrag - INFO - [base] Creating full-text index 'entity_id_fulltext_idx' with Chinese tokenizer support.
+2025-11-04 15:35:50,804 - lightrag - INFO - [base] Successfully created full-text index 'entity_id_fulltext_idx' with CJK analyzer.
+2025-11-04 15:35:50,804 - lightrag - INFO - [_] Process 24604 KV load llm_response_cache with 0 records
+2025-11-04 15:35:50,804 - lightrag - INFO - [_] Process 24604 doc status load doc_status with 0 records
+2025-11-04 15:35:50,805 - lightrag - INFO - Successfully finalized 10 storages
+2025-11-04 15:36:03,120 - lightrag - INFO - [_] Process 24881 KV load full_docs with 0 records
+2025-11-04 15:36:03,120 - lightrag - INFO - [_] Process 24881 KV load text_chunks with 0 records
+2025-11-04 15:36:03,120 - lightrag - INFO - [_] Process 24881 KV load full_entities with 0 records
+2025-11-04 15:36:03,120 - lightrag - INFO - [_] Process 24881 KV load full_relations with 0 records
+2025-11-04 15:36:03,141 - lightrag - INFO - [base] Database chunk-entity-relation at neo4j://localhost:7687 not found. Try to create specified database.
+2025-11-04 15:36:03,161 - lightrag - WARNING - [base] This Neo4j instance does not support creating databases. Try to use Neo4j Desktop/Enterprise version or DozerDB instead. Fallback to use the default database.
+2025-11-04 15:36:03,177 - lightrag - INFO - [base] Connected to None at neo4j://localhost:7687
+2025-11-04 15:36:03,190 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in None
+2025-11-04 15:36:03,234 - lightrag - INFO - [base] Found existing index 'entity_id_fulltext_idx' with state: ONLINE
+2025-11-04 15:36:03,234 - lightrag - INFO - [base] Full-text index 'entity_id_fulltext_idx' already exists and is online. Skipping recreation.
+2025-11-04 15:36:03,234 - lightrag - INFO - [_] Process 24881 KV load llm_response_cache with 0 records
+2025-11-04 15:36:03,235 - lightrag - INFO - [_] Process 24881 doc status load doc_status with 0 records
+2025-11-04 15:36:03,235 - lightrag - INFO - Successfully finalized 10 storages

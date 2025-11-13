@@ -88,20 +88,19 @@ async def initialize_rag():
     rag = LightRAG(
         working_dir=WORKING_DIR,
         llm_model_func=ollama_model_complete,
-        llm_model_name=os.getenv("LLM_MODEL", "qwen2:latest"),
-        summary_max_tokens=32768,
+        llm_model_name=os.getenv("LLM_MODEL", "gemma3:latest"),
         graph_storage="Neo4JStorage",
         llm_model_kwargs={
             "host": os.getenv("LLM_BINDING_HOST", "http://localhost:11434"),
-            "options": {"num_ctx": 32768},
+            "options": {"num_ctx": 65536},
             "timeout": int(os.getenv("TIMEOUT", "300")),
         },
         embedding_func=EmbeddingFunc(
-            embedding_dim=int(os.getenv("EMBEDDING_DIM", "768")),
-            max_token_size=int(os.getenv("MAX_EMBED_TOKENS", "32768")),
+            embedding_dim=int(os.getenv("EMBEDDING_DIM", "1024")),
+            max_token_size=int(os.getenv("MAX_EMBED_TOKENS", "65536")),
             func=lambda texts: ollama_embed(
                 texts,
-                embed_model=os.getenv("EMBEDDING_MODEL", "nomic-embed-text:latest"),
+                embed_model=os.getenv("EMBEDDING_MODEL", "mxbai-embed-large:latest"),
                 host=os.getenv("EMBEDDING_BINDING_HOST", "http://localhost:11434"),
             ),
         ),
@@ -122,21 +121,21 @@ async def main():
     rag = None
     try:
         # Clear old data files
-        files_to_delete = [
-            "graph_chunk_entity_relation.graphml",
-            "kv_store_doc_status.json",
-            "kv_store_full_docs.json",
-            "kv_store_text_chunks.json",
-            "vdb_chunks.json",
-            "vdb_entities.json",
-            "vdb_relationships.json",
-        ]
+        # files_to_delete = [
+        #     "graph_chunk_entity_relation.graphml",
+        #     "kv_store_doc_status.json",
+        #     "kv_store_full_docs.json",
+        #     "kv_store_text_chunks.json",
+        #     "vdb_chunks.json",
+        #     "vdb_entities.json",
+        #     "vdb_relationships.json",
+        # ]
 
-        for file in files_to_delete:
-            file_path = os.path.join(WORKING_DIR, file)
-            if os.path.exists(file_path):
-                os.remove(file_path)
-                print(f"Deleting old file:: {file_path}")
+        # for file in files_to_delete:
+        #     file_path = os.path.join(WORKING_DIR, file)
+        #     if os.path.exists(file_path):
+        #         os.remove(file_path)
+        #         print(f"Deleting old file:: {file_path}")
 
         # Initialize RAG instance
         rag = await initialize_rag()
@@ -151,28 +150,43 @@ async def main():
         # print(f"Test dict: {test_text}")
         # print(f"Detected embedding dimension: {embedding_dim}\n\n")
 
-        pickle_files = ["../mitre-api/relationships.pkl", "../mitre-api/tactics.pkl", "../mitre-api/techniques.pkl"]
-        def chunk_text(text, chunk_size=200):
-            """Split text into chunks of ~chunk_size words (or tokens)."""
-            words = text.split()
-            chunks = []
-            for i in range(0, len(words), chunk_size):
-                chunks.append(" ".join(words[i:i+chunk_size]))
-            return chunks
+        # pickle_files = ["../mitre-api/relationships.txt", "../mitre-api/tactics.txt", "../mitre-api/techniques.txt"]
+        # def chunk_text(text, chunk_size=200):
+        #     """Split text into chunks of ~chunk_size words (or tokens)."""
+        #     words = text.split()
+        #     chunks = []
+        #     for i in range(0, len(words), chunk_size):
+        #         chunks.append(" ".join(words[i:i+chunk_size]))
+        #     return chunks
 
         # Load pickle and split
-        for pkl_file in pickle_files:
-            with open(pkl_file, "rb") as f:
-                data = pickle.load(f)
-                text = str(data)
+        # for pkl_file in pickle_files:
+        #     with open(pkl_file, "rb") as f:
+        #         data = pickle.load(f)
+        #         text = str(data)
 
-                for chunk in chunk_text(text):
-                    await rag.ainsert(chunk)
+        #         for chunk in chunk_text(text):
+        #             await rag.ainsert(chunk)
         
         # for pkl_file in pickle_files:
         #     with open(pkl_file, "rb") as f:
         #         data = pickle.load(f)
         #         await rag.ainsert(str(data))
+
+        with open("../mitre-api/relationships.txt", "r", encoding="utf-8") as f:
+            print("Inserting relationships...")
+            await rag.ainsert(f.read())
+            print("Inserted relationships.")
+
+        with open("../mitre-api/techniques.txt", "r", encoding="utf-8") as f:
+            print("Inserting techniques...")
+            await rag.ainsert(f.read())
+            print("Inserted techniques.")
+        
+        with open("../mitre-api/tactics.txt", "r", encoding="utf-8") as f:
+            print("Inserting tactics...")
+            await rag.ainsert(f.read())
+            print("Inserted tactics.")
 
         # with open("./test.txt", "r", encoding="utf-8") as f:
         #     await rag.ainsert(f.read())
@@ -225,17 +239,17 @@ async def main():
         #     print(resp)
 
         # Perform hybrid search
-        print("\n=====================")
-        print("Query mode: hybrid")
-        print("=====================")
-        resp = await rag.aquery(
-                "What is this about?",
-            param=QueryParam(mode="hybrid", stream=True),
-        )
-        if inspect.isasyncgen(resp):
-            await print_stream(resp)
-        else:
-            print(resp)
+        # print("\n=====================")
+        # print("Query mode: hybrid")
+        # print("=====================")
+        # resp = await rag.aquery(
+        #         "What is this about?",
+        #     param=QueryParam(mode="hybrid", stream=True),
+        # )
+        # if inspect.isasyncgen(resp):
+        #     await print_stream(resp)
+        # else:
+        #     print(resp)
 
     except Exception as e:
         print(f"An error occurred: {e}")

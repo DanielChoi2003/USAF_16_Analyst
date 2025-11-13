@@ -1,0 +1,32 @@
+{
+  "doc-1bf10546464b011fb73c4b8d49b71315": {
+    "entity_names": [
+      "Adversary",
+      "Knowledge Base",
+      "Adversary Tactics",
+      "Information",
+      "Techniques",
+      "Attack Knowledge Base",
+      "MITRE ATT&CK",
+      "Adversary Techniques",
+      "Command and Control",
+      "Data",
+      "Data Collection",
+      "MITRE Attack Framework",
+      "Initial Access",
+      "MITRE Attack",
+      "MITRE",
+      "The Text",
+      "Reconnaissance",
+      "Adversaries",
+      "Collection",
+      "Framework",
+      "Tactics",
+      "attack tactics"
+    ],
+    "count": 22,
+    "create_time": 1762868750,
+    "update_time": 1762868750,
+    "_id": "doc-1bf10546464b011fb73c4b8d49b71315"
+  }
+}
