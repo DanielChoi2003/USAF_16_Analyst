@@ -1,25 +1,26 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
 import { useRouter } from "next/navigation";
 import { Header } from "../../components/layout/Header";
 import { Card } from "../../components/ui/Card";
-import { Badge } from "../../components/ui/Badge";
-import Link from "next/link";
 
 export default function UploadPage() {
   const [file, setFile] = useState<File | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [analysisResult, setAnalysisResult] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const router = useRouter();
+  const [results, setResults] = useState<Array<{id:string;filename:string;created_at:number;size:number}>>([]);
+  const [resultsLoading, setResultsLoading] = useState<boolean>(false);
+  const [resultsError, setResultsError] = useState<string | null>(null);
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     if (acceptedFiles.length > 0) {
       const uploadedFile = acceptedFiles[0];
       setFile(uploadedFile);
       setError(null);
-      // Here you would typically handle the file upload to a server
-      // For now, we'll just log it and prepare for redirection.
       console.log("File ready for upload:", uploadedFile.name);
     }
   }, []);
@@ -35,6 +36,112 @@ export default function UploadPage() {
       setFile(null);
     },
   });
+
+  const handleAnalyze = async () => {
+    if (!file) {
+      setError("Please select a file to analyze.");
+      return;
+    }
+
+    setError(null);
+    setAnalysisResult(null);
+    setIsLoading(true);
+
+    try {
+      const fileContent = await file.text();
+
+      const response = await fetch("http://localhost:3001/analyze", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: fileContent,
+      });
+
+      if (!response.ok) {
+        const body = await response.text();
+        throw new Error(`HTTP ${response.status}: ${body || response.statusText}`);
+      }
+
+      const contentType = response.headers.get("content-type") || "";
+      let parsed: string;
+      if (contentType.includes("application/json")) {
+        const json = await response.json();
+        // If backend returned an id for a saved result, navigate to the result page by id
+        if (json && json.id) {
+          router.push(`/analysis/result?id=${encodeURIComponent(json.id)}`);
+          return;
+        }
+        parsed = JSON.stringify(json, null, 2);
+      } else {
+        parsed = await response.text();
+      }
+
+      console.log("Analysis result:", parsed);
+      setAnalysisResult(parsed);
+      // Persist result so the results page can read it after navigation (fallback)
+      try {
+        sessionStorage.setItem("analysisResult", parsed);
+      } catch (e) {
+        console.warn("Failed to write analysis result to sessionStorage", e);
+      }
+      // Navigate to results page (no id available)
+      router.push("/analysis/result");
+    } catch (e) {
+      if (e instanceof Error) {
+        setError(`Failed to analyze file: ${e.message}`);
+      } else {
+        setError("An unknown error occurred during analysis.");
+      }
+      console.error(e);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    const fetchResults = async () => {
+      setResultsLoading(true);
+      setResultsError(null);
+      try {
+        const res = await fetch("http://localhost:3001/results");
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const json = await res.json();
+        setResults(json || []);
+      } catch (e) {
+        console.error(e);
+        setResultsError("Failed to load previous results.");
+      } finally {
+        setResultsLoading(false);
+      }
+    };
+
+    fetchResults();
+  }, []);
+
+  const openResult = (id: string) => {
+    router.push(`/analysis/result?id=${encodeURIComponent(id)}`);
+  };
+
+  const downloadResult = async (id: string, filename: string) => {
+    try {
+      const res = await fetch(`http://localhost:3001/results/${encodeURIComponent(id)}`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const json = await res.json();
+      const blob = new Blob([json.content], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    } catch (e) {
+      console.error(e);
+      alert("Failed to download result.");
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -112,124 +219,86 @@ export default function UploadPage() {
               </p>
             )}
             {file && !error && (
-              <button className="mt-6 w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
-                Analyze Package
+              <button
+                onClick={handleAnalyze}
+                disabled={isLoading}
+                className={`mt-6 w-full ${
+                  isLoading
+                    ? "bg-blue-400 cursor-not-allowed"
+                    : "bg-blue-600 hover:bg-blue-700"
+                } text-white font-bold py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2`}
+              >
+                {isLoading ? (
+                  <>
+                    <svg
+                      className="animate-spin h-5 w-5 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                      ></path>
+                    </svg>
+                    <span>Analyzing...</span>
+                  </>
+                ) : (
+                  "Analyze Package"
+                )}
               </button>
             )}
+            {/* Previous results dashboard */}
+            <div className="mt-8">
+              <h3 className="text-lg font-semibold mb-3">Previous Analyses</h3>
+              <Card>
+                <div className="p-4">
+                  {resultsLoading && <div className="text-center p-4">Loading...</div>}
+                  {resultsError && <div className="text-sm text-red-600">{resultsError}</div>}
+                  {!resultsLoading && results.length === 0 && (
+                    <div className="text-sm text-gray-600 p-4">No previous results available.</div>
+                  )}
+                  {!resultsLoading && results.length > 0 && (
+                    <div className="space-y-2">
+                      {results.map((r) => (
+                        <div key={r.id} className="flex items-center justify-between p-2 border rounded">
+                          <div>
+                            <div className="font-medium text-sm">{r.filename}</div>
+                            <div className="text-xs text-gray-500">{new Date(r.created_at).toLocaleString()}</div>
+                          </div>
+                          <div className="flex gap-2">
+                            <button onClick={() => openResult(r.id)} className="bg-blue-600 text-white py-1 px-3 rounded hover:bg-blue-700 text-xs">View</button>
+                            <button onClick={() => downloadResult(r.id, r.filename)} className="bg-green-600 text-white py-1 px-3 rounded hover:bg-green-700 text-xs">Download</button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </Card>
+            </div>
           </div>
         </Card>
 
-        {/* Sample Packages Section */}
-        {/* <div className="mt-12">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-semibold text-gray-900">
-              Sample Packages
-            </h2>
-            <span className="text-sm text-gray-500">
-              Click to view analysis
-            </span>
-          </div> */}
-
-          {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Link href="/packages/sample-1">
-              <Card>
-                <div className="p-6 hover:bg-gray-50 transition-colors cursor-pointer">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-lg font-semibold text-gray-900">
-                      PsExec Lateral Movement
-                    </h3>
-                    <Badge variant="high">High</Badge>
-                  </div>
-                  <p className="text-sm text-gray-600 mb-4">
-                    Suspicious remote service execution detected across multiple
-                    hosts. Matches T1569.002 technique.
-                  </p>
-                  <div className="flex items-center gap-4 text-xs text-gray-500">
-                    <span>12 events</span>
-                    <span>•</span>
-                    <span>3 techniques</span>
-                    <span>•</span>
-                    <span>2025-09-21</span>
-                  </div>
-                </div>
-              </Card>
-            </Link> */}
-
-            {/* Sample Package 2 */}
-            {/* <Link href="/packages/sample-2">
-              <Card>
-                <div className="p-6 hover:bg-gray-50 transition-colors cursor-pointer">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-lg font-semibold text-gray-900">
-                      DNS Tunneling Activity
-                    </h3>
-                    <Badge variant="medium">Medium</Badge>
-                  </div>
-                  <p className="text-sm text-gray-600 mb-4">
-                    Anomalous DNS query patterns consistent with data
-                    exfiltration attempts.
-                  </p>
-                  <div className="flex items-center gap-4 text-xs text-gray-500">
-                    <span>8 events</span>
-                    <span>•</span>
-                    <span>2 techniques</span>
-                    <span>•</span>
-                    <span>2025-09-20</span>
-                  </div>
-                </div>
-              </Card>
-            </Link> */}
-
-            {/* Sample Package 3 */}
-            {/* <Link href="/">
-              <Card>
-                <div className="p-6 hover:bg-gray-50 transition-colors cursor-pointer">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-lg font-semibold text-gray-900">
-                      Credential Dumping
-                    </h3>
-                    <Badge variant="high">High</Badge>
-                  </div>
-                  <p className="text-sm text-gray-600 mb-4">
-                    LSASS memory access detected. Potential credential theft in
-                    progress.
-                  </p>
-                  <div className="flex items-center gap-4 text-xs text-gray-500">
-                    <span>6 events</span>
-                    <span>•</span>
-                    <span>4 techniques</span>
-                    <span>•</span>
-                    <span>2025-09-19</span>
-                  </div>
-                </div>
-              </Card>
-            </Link> */}
-
-            {/* Sample Package 4 */}
-            {/* <Link href="/packages/sample-4">
-              <Card>
-                <div className="p-6 hover:bg-gray-50 transition-colors cursor-pointer">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-lg font-semibold text-gray-900">
-                      Baseline Template
-                    </h3>
-                    <Badge variant="low">Info</Badge>
-                  </div>
-                  <p className="text-sm text-gray-600 mb-4">
-                    Empty package template for testing and development purposes.
-                  </p>
-                  <div className="flex items-center gap-4 text-xs text-gray-500">
-                    <span>0 events</span>
-                    <span>•</span>
-                    <span>0 techniques</span>
-                    <span>•</span>
-                    <span>Template</span>
-                  </div>
-                </div>
-              </Card>
-            </Link>
-          </div>
-        </div> */}
+        {analysisResult && (
+          <Card className="mt-8">
+            <div className="p-8">
+              <h2 className="text-xl font-semibold mb-6">Analysis Result</h2>
+              <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto">
+                <code>{analysisResult}</code>
+              </pre>
+            </div>
+          </Card>
+        )}
 
         {/* Instructions Section */}
         <div className="mt-12 bg-blue-50 border border-blue-200 rounded-lg p-6">

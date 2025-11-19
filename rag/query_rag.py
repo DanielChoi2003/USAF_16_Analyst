@@ -9,11 +9,12 @@ from lightrag.utils import EmbeddingFunc, logger, set_verbose_debug
 from lightrag.kg.shared_storage import initialize_pipeline_status
 import pickle
 
+
 from dotenv import load_dotenv
 
 load_dotenv(dotenv_path=".env", override=False)
 
-WORKING_DIR = "./rag_data"
+WORKING_DIR = "/Users/nicktruong/Documents/School/Classes/Fall2025/CSCE485/analyst-copilot/rag/rag_data"
 
 
 
@@ -92,12 +93,12 @@ async def initialize_rag():
         graph_storage="Neo4JStorage",
         llm_model_kwargs={
             "host": os.getenv("LLM_BINDING_HOST", "http://localhost:11434"),
-            "options": {"num_ctx": 65536},
+            "options": {"num_ctx": 131072, "temperature": 0.1},
             "timeout": int(os.getenv("TIMEOUT", "300")),
         },
         embedding_func=EmbeddingFunc(
             embedding_dim=int(os.getenv("EMBEDDING_DIM", "1024")),
-            max_token_size=int(os.getenv("MAX_EMBED_TOKENS", "65536")),
+            max_token_size=int(os.getenv("MAX_EMBED_TOKENS", "131072")),
             func=lambda texts: ollama_embed(
                 texts,
                 embed_model=os.getenv("EMBEDDING_MODEL", "mxbai-embed-large:latest"),
@@ -246,7 +247,22 @@ async def query_rag(query: str, qmode: str):
                 query,
             param=QueryParam(mode=qmode, 
                              stream=True,
-                             user_prompt = "You are an expert in cybersecurity, assisting with threat detection through the MITRE ATT&CK framework. You are going to be recieving logs and you will derive what is going on through these logs."),
+                             user_prompt = "You are an expert in cybersecurity, assisting with threat detection through the MITRE ATT&CK framework. " \
+                             "Give me specifc APTs, TTPs, techniques, tactics, and relationships you see in the logs. Be sure to include TTPs and ATPs in the report" \
+                            #  "You are going to be recieving logs and you will derive what is going on through these logs. " \
+                            #  "Please note any MITRE TTPs or APTs you see in the logs and any relationships between them. " \
+                            #  "If you see any techniques, tactics, or relationships that are relevant to the query, please include them in your response. " \
+                            #  "If you don't see any relevant information, please say so. Respond as if this was a SOC Report. Exclude your thought process, just respond with the report." \
+                            #  "Please respond in a JSON Object using the EXACT following schema. Do not add any other variables:" \
+                            #  "{" \
+                            #  "Log_Name: ," \
+                            #  "Severity: ," \
+                            #  "APTs/TTPs" \
+                            #  "Summary: ," \
+                            #  "Recommendations: ," \
+                            #  "Sources/References: ," \
+                            #  "}",),
+            )
         )
         if inspect.isasyncgen(resp):
             await print_stream(resp)
