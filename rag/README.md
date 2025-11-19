@@ -49,11 +49,11 @@ pip install -e .
 You'll need to pull the required LLM and embedding models using Ollama.
 
 ```bash
-# Pull the Qwen2 language model
-ollama pull qwen2
+# Pull the Gemma3 language model
+ollama pull gemma3:latest
 
-# Pull the Nomic embedding model
-ollama pull nomic-embed-text
+# Pull the Mxbai embedding model
+ollama pull mxbai-embed-large:latest 
 ```
 
 -----
