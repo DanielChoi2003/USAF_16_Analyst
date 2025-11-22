@@ -4475,3 +4475,118 @@ httpx.ReadTimeout: C[9/978]: chunk-8d0be4c3c606625c53823030d8b841a0:
 2025-11-12 15:03:44,063 - lightrag - INFO - Final context: 22 entities, 24 relations, 17 chunks
 2025-11-12 15:03:44,063 - lightrag - INFO - Final chunks S+F/O: C1/1 E6/1 C1/2 E9/2 C1/3 E6/3 C1/4 E3/4 C1/5 E6/5 C1/6 E6/6 C1/7 C1/8 C1/9 C1/10 C1/11
 2025-11-12 15:06:01,639 - lightrag - INFO - Successfully finalized 10 storages
+2025-11-20 13:37:11,338 - lightrag - INFO - [_] Process 30373 KV load full_docs with 3 records
+2025-11-20 13:37:11,509 - lightrag - INFO - [_] Process 30373 KV load text_chunks with 10105 records
+2025-11-20 13:37:11,509 - lightrag - INFO - [_] Process 30373 KV load full_entities with 1 records
+2025-11-20 13:37:11,509 - lightrag - INFO - [_] Process 30373 KV load full_relations with 1 records
+2025-11-20 13:37:11,554 - lightrag - INFO - [base] Database chunk-entity-relation at neo4j://localhost:7687 not found. Try to create specified database.
+2025-11-20 13:37:11,596 - lightrag - WARNING - [base] This Neo4j instance does not support creating databases. Try to use Neo4j Desktop/Enterprise version or DozerDB instead. Fallback to use the default database.
+2025-11-20 13:37:11,600 - lightrag - INFO - [base] Connected to None at neo4j://localhost:7687
+2025-11-20 13:37:11,604 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in None
+2025-11-20 13:37:11,609 - lightrag - INFO - [base] Found existing index 'entity_id_fulltext_idx' with state: ONLINE
+2025-11-20 13:37:11,610 - lightrag - INFO - [base] Full-text index 'entity_id_fulltext_idx' already exists and is online. Skipping recreation.
+2025-11-20 13:37:11,618 - lightrag - INFO - [_] Process 30373 KV load llm_response_cache with 92 records
+2025-11-20 13:37:11,618 - lightrag - INFO - [_] Process 30373 doc status load doc_status with 3 records
+2025-11-20 13:37:11,630 - lightrag - INFO - LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
+2025-11-20 13:37:42,713 - lightrag - INFO -  == LLM cache == saving: hybrid:keywords:c2de8731ec23d57d474f8bb4781380ff
+2025-11-20 13:37:43,708 - lightrag - INFO - Query nodes: HOST-A, HOST-B, 10.0.0.5, 10.0.0.6, psexec.exe, cmd.exe, services.exe (top_k:40, cosine:0.2)
+2025-11-20 13:37:43,708 - lightrag - INFO - Embedding func: 8 new workers initialized (Timeouts: Func: 30s, Worker: 60s, Health Check: 75s)
+2025-11-20 13:37:43,858 - lightrag - INFO - Local query: 22 entites, 24 relations
+2025-11-20 13:37:43,859 - lightrag - INFO - Query edges: Elastic Security, Host activity, Sysmon, Psexec, services.exe (top_k:40, cosine:0.2)
+2025-11-20 13:37:43,943 - lightrag - INFO - Global query: 18 entites, 17 relations
+2025-11-20 13:37:43,943 - lightrag - INFO - Raw search results: 22 entities, 24 relations, 0 vector chunks
+2025-11-20 13:37:43,950 - lightrag - INFO - After truncation: 22 entities, 24 relations
+2025-11-20 13:37:43,954 - lightrag - INFO - Selecting 6 from 6 entity-related chunks by vector similarity
+2025-11-20 13:37:43,954 - lightrag - INFO - Find no additional relations-related chunks from 24 relations
+2025-11-20 13:37:43,955 - lightrag - INFO - Round-robin merged chunks: 6 -> 6 (deduplicated 0)
+2025-11-20 13:37:43,960 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2025-11-20 13:37:43,966 - lightrag - INFO - Final context: 22 entities, 24 relations, 6 chunks
+2025-11-20 13:37:43,966 - lightrag - INFO - Final chunks S+F/O: E6/1 E9/2 E6/3 E3/4 E6/5 E6/6
+2025-11-20 13:39:57,487 - lightrag - INFO - Successfully finalized 10 storages
+2025-11-20 15:30:32,395 - lightrag - INFO - [_] Process 72655 KV load full_docs with 3 records
+2025-11-20 15:30:32,579 - lightrag - INFO - [_] Process 72655 KV load text_chunks with 10105 records
+2025-11-20 15:30:32,580 - lightrag - INFO - [_] Process 72655 KV load full_entities with 1 records
+2025-11-20 15:30:32,580 - lightrag - INFO - [_] Process 72655 KV load full_relations with 1 records
+2025-11-20 15:30:32,622 - lightrag - INFO - [base] Database chunk-entity-relation at neo4j://localhost:7687 not found. Try to create specified database.
+2025-11-20 15:30:32,666 - lightrag - WARNING - [base] This Neo4j instance does not support creating databases. Try to use Neo4j Desktop/Enterprise version or DozerDB instead. Fallback to use the default database.
+2025-11-20 15:30:32,670 - lightrag - INFO - [base] Connected to None at neo4j://localhost:7687
+2025-11-20 15:30:32,674 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in None
+2025-11-20 15:30:32,682 - lightrag - INFO - [base] Found existing index 'entity_id_fulltext_idx' with state: ONLINE
+2025-11-20 15:30:32,682 - lightrag - INFO - [base] Full-text index 'entity_id_fulltext_idx' already exists and is online. Skipping recreation.
+2025-11-20 15:30:32,687 - lightrag - INFO - [_] Process 72655 KV load llm_response_cache with 94 records
+2025-11-20 15:30:32,687 - lightrag - INFO - [_] Process 72655 doc status load doc_status with 3 records
+2025-11-20 15:30:33,642 - lightrag - INFO - Query nodes: HOST-A, HOST-B, 10.0.0.5, 10.0.0.6, psexec.exe, cmd.exe, services.exe (top_k:40, cosine:0.2)
+2025-11-20 15:30:33,642 - lightrag - INFO - Embedding func: 8 new workers initialized (Timeouts: Func: 30s, Worker: 60s, Health Check: 75s)
+2025-11-20 15:30:33,755 - lightrag - INFO - Local query: 22 entites, 24 relations
+2025-11-20 15:30:33,755 - lightrag - INFO - Query edges: Elastic Security, Host activity, Sysmon, Psexec, services.exe (top_k:40, cosine:0.2)
+2025-11-20 15:30:33,835 - lightrag - INFO - Global query: 18 entites, 17 relations
+2025-11-20 15:30:33,836 - lightrag - INFO - Raw search results: 22 entities, 24 relations, 0 vector chunks
+2025-11-20 15:30:33,859 - lightrag - INFO - After truncation: 22 entities, 24 relations
+2025-11-20 15:30:33,862 - lightrag - INFO - Selecting 6 from 6 entity-related chunks by vector similarity
+2025-11-20 15:30:33,862 - lightrag - INFO - Find no additional relations-related chunks from 24 relations
+2025-11-20 15:30:33,862 - lightrag - INFO - Round-robin merged chunks: 6 -> 6 (deduplicated 0)
+2025-11-20 15:30:33,868 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2025-11-20 15:30:33,874 - lightrag - INFO - Final context: 22 entities, 24 relations, 6 chunks
+2025-11-20 15:30:33,874 - lightrag - INFO - Final chunks S+F/O: E6/1 E9/2 E6/3 E3/4 E6/5 E6/6
+2025-11-20 15:30:33,892 - lightrag - INFO - LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
+2025-11-20 15:33:02,216 - lightrag - INFO - Successfully finalized 10 storages
+2025-11-20 15:36:27,458 - lightrag - INFO - [_] Process 74919 KV load full_docs with 3 records
+2025-11-20 15:36:27,638 - lightrag - INFO - [_] Process 74919 KV load text_chunks with 10105 records
+2025-11-20 15:36:27,638 - lightrag - INFO - [_] Process 74919 KV load full_entities with 1 records
+2025-11-20 15:36:27,638 - lightrag - INFO - [_] Process 74919 KV load full_relations with 1 records
+2025-11-20 15:36:27,758 - lightrag - INFO - [base] Database chunk-entity-relation at neo4j://localhost:7687 not found. Try to create specified database.
+2025-11-20 15:36:27,858 - lightrag - WARNING - [base] This Neo4j instance does not support creating databases. Try to use Neo4j Desktop/Enterprise version or DozerDB instead. Fallback to use the default database.
+2025-11-20 15:36:27,871 - lightrag - INFO - [base] Connected to None at neo4j://localhost:7687
+2025-11-20 15:36:27,875 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in None
+2025-11-20 15:36:27,883 - lightrag - INFO - [base] Found existing index 'entity_id_fulltext_idx' with state: ONLINE
+2025-11-20 15:36:27,883 - lightrag - INFO - [base] Full-text index 'entity_id_fulltext_idx' already exists and is online. Skipping recreation.
+2025-11-20 15:36:27,889 - lightrag - INFO - [_] Process 74919 KV load llm_response_cache with 94 records
+2025-11-20 15:36:27,889 - lightrag - INFO - [_] Process 74919 doc status load doc_status with 3 records
+2025-11-20 15:36:28,894 - lightrag - INFO - Query nodes: HOST-A, HOST-B, 10.0.0.5, 10.0.0.6, psexec.exe, cmd.exe, services.exe (top_k:40, cosine:0.2)
+2025-11-20 15:36:28,895 - lightrag - INFO - Embedding func: 8 new workers initialized (Timeouts: Func: 30s, Worker: 60s, Health Check: 75s)
+2025-11-20 15:36:28,996 - lightrag - INFO - Local query: 22 entites, 24 relations
+2025-11-20 15:36:28,996 - lightrag - INFO - Query edges: Elastic Security, Host activity, Sysmon, Psexec, services.exe (top_k:40, cosine:0.2)
+2025-11-20 15:36:29,076 - lightrag - INFO - Global query: 18 entites, 17 relations
+2025-11-20 15:36:29,077 - lightrag - INFO - Raw search results: 22 entities, 24 relations, 0 vector chunks
+2025-11-20 15:36:29,097 - lightrag - INFO - After truncation: 22 entities, 24 relations
+2025-11-20 15:36:29,101 - lightrag - INFO - Selecting 6 from 6 entity-related chunks by vector similarity
+2025-11-20 15:36:29,101 - lightrag - INFO - Find no additional relations-related chunks from 24 relations
+2025-11-20 15:36:29,101 - lightrag - INFO - Round-robin merged chunks: 6 -> 6 (deduplicated 0)
+2025-11-20 15:36:29,106 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2025-11-20 15:36:29,112 - lightrag - INFO - Final context: 22 entities, 24 relations, 6 chunks
+2025-11-20 15:36:29,112 - lightrag - INFO - Final chunks S+F/O: E6/1 E9/2 E6/3 E3/4 E6/5 E6/6
+2025-11-20 15:36:29,131 - lightrag - INFO - LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
+2025-11-20 15:39:43,923 - lightrag - INFO - Successfully finalized 10 storages
+2025-11-20 18:11:57,352 - lightrag - INFO - [_] Process 10946 KV load full_docs with 3 records
+2025-11-20 18:11:57,520 - lightrag - INFO - [_] Process 10946 KV load text_chunks with 10105 records
+2025-11-20 18:11:57,521 - lightrag - INFO - [_] Process 10946 KV load full_entities with 1 records
+2025-11-20 18:11:57,521 - lightrag - INFO - [_] Process 10946 KV load full_relations with 1 records
+2025-11-20 18:12:03,546 - lightrag - ERROR - [base] Database chunk-entity-relation at neo4j://localhost:7687 is not available
+2025-11-20 18:13:15,975 - lightrag - INFO - [_] Process 11927 KV load full_docs with 3 records
+2025-11-20 18:13:16,169 - lightrag - INFO - [_] Process 11927 KV load text_chunks with 10105 records
+2025-11-20 18:13:16,170 - lightrag - INFO - [_] Process 11927 KV load full_entities with 1 records
+2025-11-20 18:13:16,170 - lightrag - INFO - [_] Process 11927 KV load full_relations with 1 records
+2025-11-20 18:13:16,298 - lightrag - INFO - [base] Database chunk-entity-relation at neo4j://localhost:7687 not found. Try to create specified database.
+2025-11-20 18:13:16,595 - lightrag - WARNING - [base] This Neo4j instance does not support creating databases. Try to use Neo4j Desktop/Enterprise version or DozerDB instead. Fallback to use the default database.
+2025-11-20 18:13:16,938 - lightrag - INFO - [base] Connected to None at neo4j://localhost:7687
+2025-11-20 18:13:16,971 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in None
+2025-11-20 18:13:17,046 - lightrag - INFO - [base] Found existing index 'entity_id_fulltext_idx' with state: ONLINE
+2025-11-20 18:13:17,046 - lightrag - INFO - [base] Full-text index 'entity_id_fulltext_idx' already exists and is online. Skipping recreation.
+2025-11-20 18:13:17,058 - lightrag - INFO - [_] Process 11927 KV load llm_response_cache with 94 records
+2025-11-20 18:13:17,058 - lightrag - INFO - [_] Process 11927 doc status load doc_status with 3 records
+2025-11-20 18:13:18,013 - lightrag - INFO - Query nodes: HOST-A, HOST-B, 10.0.0.5, 10.0.0.6, psexec.exe, cmd.exe, services.exe (top_k:40, cosine:0.2)
+2025-11-20 18:13:18,013 - lightrag - INFO - Embedding func: 8 new workers initialized (Timeouts: Func: 30s, Worker: 60s, Health Check: 75s)
+2025-11-20 18:13:18,608 - lightrag - INFO - Local query: 22 entites, 24 relations
+2025-11-20 18:13:18,608 - lightrag - INFO - Query edges: Elastic Security, Host activity, Sysmon, Psexec, services.exe (top_k:40, cosine:0.2)
+2025-11-20 18:13:18,706 - lightrag - INFO - Global query: 18 entites, 17 relations
+2025-11-20 18:13:18,707 - lightrag - INFO - Raw search results: 22 entities, 24 relations, 0 vector chunks
+2025-11-20 18:13:18,721 - lightrag - INFO - After truncation: 22 entities, 24 relations
+2025-11-20 18:13:18,724 - lightrag - INFO - Selecting 6 from 6 entity-related chunks by vector similarity
+2025-11-20 18:13:18,725 - lightrag - INFO - Find no additional relations-related chunks from 24 relations
+2025-11-20 18:13:18,725 - lightrag - INFO - Round-robin merged chunks: 6 -> 6 (deduplicated 0)
+2025-11-20 18:13:18,729 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2025-11-20 18:13:18,734 - lightrag - INFO - Final context: 22 entities, 24 relations, 6 chunks
+2025-11-20 18:13:18,734 - lightrag - INFO - Final chunks S+F/O: E6/1 E9/2 E6/3 E3/4 E6/5 E6/6
+2025-11-20 18:13:18,749 - lightrag - INFO - LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
+2025-11-20 18:18:17,037 - lightrag - ERROR - Error in stream response: model runner has unexpectedly stopped, this may be due to resource limitations or an internal error, check ollama server logs for details (status code: 500)
+2025-11-20 18:18:17,076 - lightrag - INFO - Successfully finalized 10 storages

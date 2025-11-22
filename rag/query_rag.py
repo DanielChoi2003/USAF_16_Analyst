@@ -12,9 +12,9 @@ import pickle
 
 from dotenv import load_dotenv
 
-load_dotenv(dotenv_path=".env", override=False)
+load_dotenv(dotenv_path="../.env", override=True)
 
-WORKING_DIR = "/Users/nicktruong/Documents/School/Classes/Fall2025/CSCE485/analyst-copilot/rag/rag_data"
+WORKING_DIR = os.path.join(os.path.dirname(__file__), "rag_data")
 
 
 
@@ -92,8 +92,8 @@ async def initialize_rag():
         llm_model_name=os.getenv("LLM_MODEL", "gemma3:latest"),
         graph_storage="Neo4JStorage",
         llm_model_kwargs={
-            "host": os.getenv("LLM_BINDING_HOST", "http://localhost:11434"),
-            "options": {"num_ctx": 131072, "temperature": 0.1},
+            "host": os.getenv("LLM_HOST", "http://localhost:11434"),
+            "options": {"num_ctx": 131072, "temperature": 0.7},
             "timeout": int(os.getenv("TIMEOUT", "300")),
         },
         embedding_func=EmbeddingFunc(
@@ -102,7 +102,7 @@ async def initialize_rag():
             func=lambda texts: ollama_embed(
                 texts,
                 embed_model=os.getenv("EMBEDDING_MODEL", "mxbai-embed-large:latest"),
-                host=os.getenv("EMBEDDING_BINDING_HOST", "http://localhost:11434"),
+                host=os.getenv("EMBEDDING_HOST", "http://localhost:11434"),
             ),
         ),
     )
@@ -248,11 +248,11 @@ async def query_rag(query: str, qmode: str):
             param=QueryParam(mode=qmode, 
                              stream=True,
                              user_prompt = "You are an expert in cybersecurity, assisting with threat detection through the MITRE ATT&CK framework. " \
-                             "Give me specifc APTs, TTPs, techniques, tactics, and relationships you see in the logs. Be sure to include TTPs and ATPs in the report" \
-                            #  "You are going to be recieving logs and you will derive what is going on through these logs. " \
-                            #  "Please note any MITRE TTPs or APTs you see in the logs and any relationships between them. " \
-                            #  "If you see any techniques, tactics, or relationships that are relevant to the query, please include them in your response. " \
-                            #  "If you don't see any relevant information, please say so. Respond as if this was a SOC Report. Exclude your thought process, just respond with the report." \
+                             "Give me specifc APTs, TTPs, techniques, tactics, and relationships you see in the logs. Be sure to include TTPs and ATPs in the report." \
+                             "You are going to be recieving logs and you will derive what is going on through these logs. " \
+                             "Please note any MITRE TTPs or APTs you see in the logs and any relationships between them. " \
+                             "If you see any techniques, tactics, or relationships that are relevant to the query, please include them in your response. " \
+                             "If you don't see any relevant information, please say so. Respond as if this was a SOC Report. Exclude your thought process, just respond with the report." \
                             #  "Please respond in a JSON Object using the EXACT following schema. Do not add any other variables:" \
                             #  "{" \
                             #  "Log_Name: ," \
@@ -286,6 +286,7 @@ if __name__ == "__main__":
     parser.add_argument("-f", "--file", action="store_true", help="Treat the input as a file path instead of plain text.")
     parser.add_argument("-m", "--mode", default="hybrid", choices=["naive", "local", "global", "mix"],
                         help="Query mode for LightRAG (default: mix).")
+    # parser.add_argument("-mo", "--misp_output", type=str, help="MISP output to be included in the query.")
 
     args = parser.parse_args()
 
