@@ -141,3 +141,5 @@ mitre-api/
 
 # Ignore old inputs directory (moved to data/samples)
 inputs/
+
+analysis_results/

@@ -50,12 +50,32 @@ export default function UploadPage() {
     try {
       const fileContent = await file.text();
 
-      const response = await fetch("http://localhost:3001/analyze", {
+      // First, call misp.py script
+      const mispResponse = await fetch("http://localhost:3001/misp-analyze", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: fileContent,
+      });
+
+      if (!mispResponse.ok) {
+        const body = await mispResponse.text();
+        throw new Error(`MISP analysis failed with HTTP ${mispResponse.status}: ${body || mispResponse.statusText}`);
+      }
+      
+      const mispOutput = await mispResponse.json();
+
+      // Then, call query_rag with the original input and the misp output
+      const response = await fetch("http://localhost:3001/analyze", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          misp_output: mispOutput,
+          original_input: JSON.parse(fileContent),
+        }),
       });
 
       if (!response.ok) {

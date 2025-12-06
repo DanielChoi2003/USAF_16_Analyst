@@ -25,26 +25,85 @@ app.get('/api/test', (req, res) => {
   res.json({ message: 'Hello from the backend!' });
 });
 
-app.post('/analyze', (req, res) => {
+app.post('/misp-analyze', (req, res) => {
   const jsonData = req.body;
+  console.log('Received MISP analysis request:', jsonData);
+  const tempDir = path.join(__dirname, '..', 'inputs');
+  if (!fs.existsSync(tempDir)) {
+    fs.mkdirSync(tempDir, { recursive: true });
+  }
+  const tempInputPath = path.join(tempDir, `temp_misp_input_${Date.now()}.json`);
+  const tempOutputPath = path.join(tempDir, `temp_misp_output_${Date.now()}.json`);
+
+  fs.writeFile(tempInputPath, JSON.stringify(req.body, null, 2), (err) => {
+    if (err) {
+      console.error('Failed to write temp file for MISP analysis:', err);
+      return res.status(500).send('Failed to process file for MISP analysis.');
+    }
+
+    const pythonScriptPath = path.join(__dirname, '..', 'misp-docker', 'misp.py');
+    const pythonExec = process.env.PYTHON_PATH || 'python';
+    const command = `${pythonExec} ${pythonScriptPath} ${tempInputPath} ${tempOutputPath}`;
+
+    exec(command, { env: process.env }, (error, stdout, stderr) => {
+      if (error) {
+        console.error(`MISP script exec error: ${error}`);
+        console.error(`MISP script stderr: ${stderr}`);
+        fs.unlink(tempInputPath, () => {}); // Clean up input file
+        return res.status(500).json({ error: `MISP script execution error`, details: stderr });
+      }
+      
+      fs.readFile(tempOutputPath, 'utf8', (readErr, data) => {
+        // Clean up both files
+        fs.unlink(tempInputPath, () => {});
+        fs.unlink(tempOutputPath, () => {});
+
+        if (readErr) {
+          console.error('Failed to read MISP output file:', readErr);
+          return res.status(500).json({ error: 'Failed to read MISP output' });
+        }
+
+        try {
+          const jsonOutput = JSON.parse(data);
+          // Persist the MISP output into the results directory for later inspection
+          const savedMispFilename = `misp_${Date.now()}.json`;
+          const savedMispPath = path.join(resultsDir, savedMispFilename);
+          fs.writeFile(savedMispPath, JSON.stringify(jsonOutput, null, 2), (saveErr) => {
+            if (saveErr) {
+              console.error('Failed to save MISP output to results dir:', saveErr);
+              // still return the parsed output
+              return res.json({ misp_file: null, misp_output: jsonOutput });
+            }
+
+            return res.json({ misp_file: savedMispPath, misp_output: jsonOutput });
+          });
+        } catch (parseError) {
+          console.error('Failed to parse MISP script output:', parseError);
+          res.status(500).json({ error: 'Failed to parse MISP script output', details: data });
+        }
+      });
+    });
+  });
+});
+
+app.post('/analyze', (req, res) => {
+  const { misp_output, original_input } = req.body;
   const tempDir = path.join(__dirname, '..', 'inputs');
   if (!fs.existsSync(tempDir)) {
     fs.mkdirSync(tempDir, { recursive: true });
   }
   const tempFilePath = path.join(tempDir, `temp_analysis_${Date.now()}.json`);
 
-  fs.writeFile(tempFilePath, JSON.stringify(jsonData, null, 2), (err) => {
+  fs.writeFile(tempFilePath, JSON.stringify(original_input, null, 2), (err) => {
     if (err) {
       console.error('Failed to write temp file:', err);
       return res.status(500).send('Failed to process file.');
     }
 
     const pythonScriptPath = path.join(__dirname, '..', 'rag', 'query_rag.py');
-    // Allow configuring which python executable to use (useful when running inside a venv)
     const pythonExec = process.env.PYTHON_PATH || 'python3';
-    const command = `${pythonExec} ${pythonScriptPath} -f ${tempFilePath}`;
+    const command = `${pythonExec} ${pythonScriptPath} -f ${tempFilePath} '${misp_output.misp_file}'`;
 
-    // Ensure the child process receives the same env vars (including those loaded from .env)
     exec(command, { env: process.env }, (error, stdout, stderr) => {
       fs.unlink(tempFilePath, (unlinkErr) => {
         if (unlinkErr) {
@@ -57,13 +116,12 @@ app.post('/analyze', (req, res) => {
         console.error(`stderr: ${stderr}`);
         return res.status(500).json({ error: `Execution error`, details: stderr });
       }
-      // Save stdout to a results file for later retrieval
+      
       const id = `result_${Date.now()}`;
       const resultFile = path.join(resultsDir, `${id}.json`);
       fs.writeFile(resultFile, stdout, (writeErr) => {
         if (writeErr) {
           console.error('Failed to write result file:', writeErr);
-          // still return the stdout to client, but indicate save failed
           return res.status(200).json({ id: null, filename: null, content: stdout, saved: false });
         }
 
