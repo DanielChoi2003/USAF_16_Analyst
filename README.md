@@ -30,11 +30,17 @@ npm run dev
 Optional: start the backend
 
 ```bash
-cd backend
 python3.11 -m venv venv
 source venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env
+pip install lightrag-hku
+# .env needs to be in the same working directory to test query_rag
+# create .env in /rag with the following:
+NEO4J_URI="neo4j://localhost:7687"
+NEO4J_USERNAME="neo4j"
+NEO4J_PASSWORD="password"
+# if the training has not been done before
+python3 instantiate_rag.py
+
 # edit .env for API keys and DB URLs
 python src/main.py
 ```
