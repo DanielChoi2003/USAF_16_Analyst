@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { Download } from "lucide-react";
 import { Header } from "../../../components/layout/Header";
+import { Button } from "../../../components/ui/Button";
 import { Card } from "../../../components/ui/Card";
 
 type ResultEntry = {
@@ -27,8 +29,8 @@ export default function AnalysisListPage() {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const json = await res.json();
         setResults(json || []);
-      } catch (e) {
-        console.error(e);
+      } catch (fetchError) {
+        console.error(fetchError);
         setError("Failed to load results.");
       } finally {
         setLoading(false);
@@ -44,7 +46,9 @@ export default function AnalysisListPage() {
 
   const downloadResult = async (id: string, filename: string) => {
     try {
-      const res = await fetch(`http://localhost:3001/results/${encodeURIComponent(id)}`);
+      const res = await fetch(
+        `http://localhost:3001/results/${encodeURIComponent(id)}`,
+      );
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const json = await res.json();
       const blob = new Blob([json.content], { type: "application/json" });
@@ -55,46 +59,78 @@ export default function AnalysisListPage() {
       document.body.appendChild(a);
       a.click();
       a.remove();
-+      URL.revokeObjectURL(url);
-    } catch (e) {
-      console.error(e);
+      URL.revokeObjectURL(url);
+    } catch (downloadError) {
+      console.error(downloadError);
       alert("Failed to download result.");
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen">
       <Header />
-      <main className="max-w-6xl mx-auto px-6 py-12">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Analysis Results</h1>
-          <p className="text-sm text-gray-600 mt-2">Previously generated analyses.</p>
+      <main className="mx-auto max-w-6xl px-4 py-6 sm:px-6">
+        <div className="mb-4">
+          <h1 className="font-display text-2xl font-semibold text-white">
+            Results
+          </h1>
         </div>
 
-        <Card>
-          <div className="p-6">
-            {loading && <div className="text-center p-4">Loading...</div>}
-            {error && <div className="text-center p-4 text-red-600">{error}</div>}
-
-            {!loading && !error && (
-              <div className="space-y-3">
-                {results.length === 0 && (
-                  <div className="text-center text-gray-600 p-6">No results yet.</div>
-                )}
-                {results.map((r) => (
-                  <div key={r.id} className="flex items-center justify-between p-3 border rounded">
-                    <div>
-                      <div className="font-medium">{r.filename}</div>
-                      <div className="text-xs text-gray-500">{new Date(r.created_at).toLocaleString()}</div>
-                    </div>
-                    <div className="flex gap-2">
-                      <button onClick={() => openResult(r.id)} className="bg-blue-600 text-white py-1 px-3 rounded hover:bg-blue-700">View</button>
-                      <button onClick={() => downloadResult(r.id, r.filename)} className="bg-green-600 text-white py-1 px-3 rounded hover:bg-green-700">Download</button>
-                    </div>
-                  </div>
-                ))}
+        <Card className="rounded-2xl p-0">
+          <div className="space-y-px p-2">
+            {loading && (
+              <div className="rounded-xl px-4 py-3 text-sm text-slate-300">
+                Loading...
               </div>
             )}
+
+            {error && (
+              <div className="rounded-xl px-4 py-3 text-sm text-red-100">
+                {error}
+              </div>
+            )}
+
+            {!loading && !error && results.length === 0 && (
+              <div className="rounded-xl px-4 py-3 text-sm text-slate-300">
+                No results.
+              </div>
+            )}
+
+            {!loading &&
+              !error &&
+              results.map((result) => (
+                <div
+                  key={result.id}
+                  className="flex flex-col gap-3 rounded-xl border border-white/10 bg-black/10 px-4 py-3 sm:flex-row sm:items-center sm:justify-between"
+                >
+                  <div className="min-w-0">
+                    <p className="truncate text-sm font-medium text-white">
+                      {result.filename}
+                    </p>
+                    <p className="text-xs text-slate-400">
+                      {new Date(result.created_at).toLocaleString()}
+                    </p>
+                  </div>
+
+                  <div className="flex gap-2">
+                    <Button
+                      variant="secondary"
+                      size="xs"
+                      onClick={() => openResult(result.id)}
+                    >
+                      View
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="xs"
+                      className="gap-1"
+                      onClick={() => downloadResult(result.id, result.filename)}
+                    >
+                      <Download className="h-3.5 w-3.5" />
+                    </Button>
+                  </div>
+                </div>
+              ))}
           </div>
         </Card>
       </main>

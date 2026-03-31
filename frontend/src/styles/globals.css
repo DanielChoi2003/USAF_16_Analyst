@@ -5,4 +5,53 @@
 :root {
   --header-height: 72px;
   --sidebar-width: 260px;
+  --font-sans:
+    "IBM Plex Sans", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --font-display:
+    "Avenir Next Condensed", "Eurostile", "Bahnschrift", "Arial Narrow",
+    sans-serif;
+  --bg-base: #08111f;
+  --bg-surface: rgba(9, 23, 43, 0.72);
+  --line-subtle: rgba(148, 163, 184, 0.18);
+  --text-primary: #e5eefb;
+  --text-muted: #8ea3bf;
+  --glow-accent: rgba(10, 99, 216, 0.28);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0b1320 0%, #09111d 100%);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+}
+
+* {
+  border-color: var(--line-subtle);
+}
+
+::selection {
+  background: rgba(59, 130, 246, 0.35);
+  color: #f8fbff;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.panel {
+  background: rgba(11, 19, 32, 0.9);
+  border: 1px solid var(--line-subtle);
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.2);
+}
+
+.panel-muted {
+  background: rgba(11, 19, 32, 0.9);
+}
+
+.text-balance {
+  text-wrap: balance;
 }
