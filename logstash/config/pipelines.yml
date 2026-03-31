@@ -1,0 +1,2 @@
+- pipeline.id: 16af-sample-ingest
+  path.config: "/usr/share/logstash/pipeline/16af_ingest.conf"
