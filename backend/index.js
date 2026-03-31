@@ -8,6 +8,10 @@ require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 const app = express();
 const port = 3001;
 
+function shellEscape(value) {
+  return `"${String(value).replace(/(["\\$`])/g, '\\$1')}"`;
+}
+
 // Directory to store analysis results so frontend can list/retrieve them
 const resultsDir = path.join(__dirname, '..', 'analysis_results');
 if (!fs.existsSync(resultsDir)) {
@@ -43,14 +47,19 @@ app.post('/misp-analyze', (req, res) => {
 
     const pythonScriptPath = path.join(__dirname, '..', 'misp-docker', 'misp.py');
     const pythonExec = process.env.PYTHON_PATH || 'python';
-    const command = `${pythonExec} ${pythonScriptPath} ${tempInputPath} ${tempOutputPath}`;
+    const command = `${shellEscape(pythonExec)} ${shellEscape(pythonScriptPath)} ${shellEscape(tempInputPath)} ${shellEscape(tempOutputPath)}`;
 
     exec(command, { env: process.env }, (error, stdout, stderr) => {
       if (error) {
         console.error(`MISP script exec error: ${error}`);
         console.error(`MISP script stderr: ${stderr}`);
         fs.unlink(tempInputPath, () => {}); // Clean up input file
-        return res.status(500).json({ error: `MISP script execution error`, details: stderr });
+        return res.json({
+          misp_file: null,
+          misp_output: [],
+          warning: 'MISP enrichment unavailable; continuing without MISP results.',
+          details: stderr,
+        });
       }
       
       fs.readFile(tempOutputPath, 'utf8', (readErr, data) => {
@@ -102,7 +111,13 @@ app.post('/analyze', (req, res) => {
 
     const pythonScriptPath = path.join(__dirname, '..', 'rag', 'query_rag.py');
     const pythonExec = process.env.PYTHON_PATH || 'python3';
-    const command = `${pythonExec} ${pythonScriptPath} -f ${tempFilePath} '${misp_output.misp_file}'`;
+    const queryFiles = [tempFilePath];
+    if (misp_output && misp_output.misp_file) {
+      queryFiles.push(misp_output.misp_file);
+    }
+    const command = `${shellEscape(pythonExec)} ${shellEscape(pythonScriptPath)} -f ${queryFiles
+      .map((filePath) => shellEscape(filePath))
+      .join(' ')}`;
 
     exec(command, { env: process.env }, (error, stdout, stderr) => {
       fs.unlink(tempFilePath, (unlinkErr) => {
