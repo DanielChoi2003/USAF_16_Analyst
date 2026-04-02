@@ -1,0 +1,5 @@
+api.http.host: 0.0.0.0
+pipeline.ordered: auto
+pipeline.ecs_compatibility: v8
+config.reload.automatic: false
+log.level: info
