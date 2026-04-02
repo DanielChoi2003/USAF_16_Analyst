@@ -13,5 +13,5 @@ services:
       - ./config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
       - ./config/pipelines.yml:/usr/share/logstash/config/pipelines.yml:ro
       - ./pipeline:/usr/share/logstash/pipeline:ro
-      - ../data/samples:/usr/share/logstash/ingest:ro
+      - ../../data/samples:/usr/share/logstash/ingest:ro
       - ./output:/usr/share/logstash/output
