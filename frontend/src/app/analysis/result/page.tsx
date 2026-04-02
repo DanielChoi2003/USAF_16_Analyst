@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { ChevronLeft, Download } from "lucide-react";
 import { Header } from "../../../components/layout/Header";
+import { Button } from "../../../components/ui/Button";
 import { Card } from "../../../components/ui/Card";
 
 export default function AnalysisResultPage() {
@@ -16,8 +18,9 @@ export default function AnalysisResultPage() {
     const fetchOrLoad = async () => {
       try {
         if (id) {
-          // fetch from backend by id
-          const res = await fetch(`http://localhost:3001/results/${encodeURIComponent(id)}`);
+          const res = await fetch(
+            `http://localhost:3001/results/${encodeURIComponent(id)}`,
+          );
           if (!res.ok) throw new Error(`HTTP ${res.status}`);
           const json = await res.json();
           setResult(json.content || null);
@@ -25,19 +28,15 @@ export default function AnalysisResultPage() {
         }
 
         const stored = sessionStorage.getItem("analysisResult");
-        if (stored) {
-          setResult(stored);
-        } else {
-          setResult(null);
-        }
-      } catch (e) {
-        console.warn("Unable to load analysis result", e);
+        setResult(stored || null);
+      } catch (fetchError) {
+        console.warn("Unable to load analysis result", fetchError);
         setResult(null);
       }
     };
 
     fetchOrLoad();
-  }, []);
+  }, [id]);
 
   const handleBack = () => {
     router.push("/upload");
@@ -57,45 +56,47 @@ export default function AnalysisResultPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen">
       <Header />
-      <main className="max-w-6xl mx-auto px-6 py-12">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Analysis Result</h1>
-          <p className="text-sm text-gray-600 mt-2">
-            This page shows the parsed response from the RAG analysis.
-          </p>
+      <main className="mx-auto max-w-6xl px-4 py-6 sm:px-6">
+        <div className="mb-4 flex items-center justify-between gap-3">
+          <h1 className="font-display text-2xl font-semibold text-white">
+            Result
+          </h1>
+
+          <div className="flex gap-2">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="gap-2"
+              onClick={handleBack}
+            >
+              <ChevronLeft className="h-4 w-4" />
+              Back
+            </Button>
+            <Button
+              variant="secondary"
+              size="sm"
+              className="gap-2"
+              onClick={handleDownload}
+              disabled={!result}
+            >
+              <Download className="h-4 w-4" />
+              Download
+            </Button>
+          </div>
         </div>
 
-        <Card>
-          <div className="p-6">
-            <div className="flex justify-end gap-2 mb-4">
-              <button
-                onClick={handleDownload}
-                className="bg-green-600 text-white py-1 px-3 rounded hover:bg-green-700"
-                disabled={!result}
-              >
-                Download JSON
-              </button>
-              <button
-                onClick={handleBack}
-                className="bg-gray-200 text-gray-800 py-1 px-3 rounded hover:bg-gray-300"
-              >
-                Back to Upload
-              </button>
+        <Card className="rounded-2xl p-4">
+          {result ? (
+            <pre className="overflow-x-auto rounded-xl border border-white/10 bg-[#060b14] p-4 text-sm leading-7 text-slate-200">
+              <code>{result}</code>
+            </pre>
+          ) : (
+            <div className="rounded-xl border border-white/10 bg-black/10 px-4 py-6 text-sm text-slate-300">
+              No analysis result found.
             </div>
-
-            {result ? (
-              <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto whitespace-pre-wrap">
-                <code>{result}</code>
-              </pre>
-            ) : (
-              <div className="text-center p-8 text-gray-600">
-                No analysis result found. Please run an analysis from the Upload
-                page.
-              </div>
-            )}
-          </div>
+          )}
         </Card>
       </main>
     </div>
