@@ -89,6 +89,7 @@ lerna-debug.log*
 *.swo
 *~
 .DS_Store
+.project-state/
 Thumbs.db
 
 # ── Build Artifacts ─────────────────────────────────────────────────────────
