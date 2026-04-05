@@ -65,6 +65,7 @@ next-env.d.ts
 *.db-shm
 *.db-wal
 analyst_copilot.db
+rag/data/
 
 # ── Vector Stores ───────────────────────────────────────────────────────────
 chroma_db/

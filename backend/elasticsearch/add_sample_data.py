@@ -1,16 +1,5 @@
-from dotenv import load_dotenv
-import os
 import requests
-import urllib3
-
-load_dotenv()
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-
-ELASTIC_URL = "https://localhost:9200"
-USERNAME = "elastic"
-PASSWORD = os.getenv("ELASTIC_PASSWORD")
-
-INDEX_NAME = "investigation-events"
+from config import ELASTIC_URL, INDEX_NAME, PASSWORD, USERNAME
 
 sample_docs = [
     {

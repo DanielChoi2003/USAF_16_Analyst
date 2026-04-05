@@ -12,7 +12,8 @@ import pickle
 
 from dotenv import load_dotenv
 
-load_dotenv(dotenv_path="../.env", override=True)
+ROOT_ENV_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".env"))
+load_dotenv(dotenv_path=ROOT_ENV_PATH, override=True)
 
 WORKING_DIR = os.path.join(os.path.dirname(__file__), "rag_data")
 

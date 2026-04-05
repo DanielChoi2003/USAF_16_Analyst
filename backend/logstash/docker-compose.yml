@@ -4,9 +4,11 @@ services:
     container_name: analyst-copilot-logstash
     environment:
       LS_JAVA_OPTS: -Xms512m -Xmx512m
-      LOGSTASH_INDEX: ${LOGSTASH_INDEX:-16af-events-dev}
-      LOGSTASH_ENABLE_ES_OUTPUT: ${LOGSTASH_ENABLE_ES_OUTPUT:-false}
-      ELASTICSEARCH_HOSTS: ${ELASTICSEARCH_HOSTS:-http://host.docker.internal:9200}
+      LOGSTASH_INDEX: ${LOGSTASH_INDEX:-investigation-events}
+      LOGSTASH_ENABLE_ES_OUTPUT: ${LOGSTASH_ENABLE_ES_OUTPUT:-true}
+      ELASTICSEARCH_HOSTS: ${ELASTICSEARCH_HOSTS:-https://host.docker.internal:9200}
+      ELASTICSEARCH_USERNAME: ${ELASTICSEARCH_USERNAME:-elastic}
+      ELASTIC_PASSWORD: ${ELASTIC_PASSWORD:-}
     ports:
       - "${LOGSTASH_API_PORT:-9600}:9600"
     volumes:

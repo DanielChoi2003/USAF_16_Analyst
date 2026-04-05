@@ -4665,3 +4665,1439 @@ httpx.ReadTimeout: C[9/978]: chunk-8d0be4c3c606625c53823030d8b841a0:
 2026-03-05 17:28:35,974 - lightrag - INFO - Final chunks S+F/O: E6/1 E9/2 E6/3 E3/4 E6/5 E6/6
 2026-03-05 17:28:35,990 - lightrag - INFO - LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
 2026-03-05 17:29:26,463 - lightrag - INFO - Successfully finalized 10 storages
+2026-04-04 16:37:13,277 - lightrag - INFO - [_] Process 64078 KV load full_docs with 3 records
+2026-04-04 16:37:13,475 - lightrag - INFO - [_] Process 64078 KV load text_chunks with 10105 records
+2026-04-04 16:37:13,476 - lightrag - INFO - [_] Process 64078 KV load full_entities with 1 records
+2026-04-04 16:37:13,476 - lightrag - INFO - [_] Process 64078 KV load full_relations with 1 records
+2026-04-04 16:37:13,715 - lightrag - INFO - [base] Database chunk-entity-relation at bolt://localhost:7687 not found. Try to create specified database.
+2026-04-04 16:37:14,324 - lightrag - WARNING - [base] This Neo4j instance does not support creating databases. Try to use Neo4j Desktop/Enterprise version or DozerDB instead. Fallback to use the default database.
+2026-04-04 16:37:14,965 - lightrag - INFO - [base] Connected to None at bolt://localhost:7687
+2026-04-04 16:37:15,015 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in None
+2026-04-04 16:37:15,129 - lightrag - INFO - [base] No existing index 'entity_id_fulltext_idx' found. Creating new index.
+2026-04-04 16:37:15,129 - lightrag - INFO - [base] Creating full-text index 'entity_id_fulltext_idx' with Chinese tokenizer support.
+2026-04-04 16:37:15,415 - lightrag - INFO - [base] Successfully created full-text index 'entity_id_fulltext_idx' with CJK analyzer.
+2026-04-04 16:37:15,422 - lightrag - INFO - [_] Process 64078 KV load llm_response_cache with 94 records
+2026-04-04 16:37:15,423 - lightrag - INFO - [_] Process 64078 doc status load doc_status with 3 records
+2026-04-04 16:37:18,356 - lightrag - WARNING - Ignoring document ID (already exists): doc-fdc7bd3b6e26287ac959be40862ea9c8 (unknown_source)
+2026-04-04 16:37:18,356 - lightrag - WARNING - No new unique documents were found.
+2026-04-04 16:37:18,358 - lightrag - INFO - Reset 2 documents from PROCESSING/FAILED to PENDING status
+2026-04-04 16:37:18,358 - lightrag - INFO - Processing 2 document(s)
+2026-04-04 16:37:18,358 - lightrag - INFO - Extracting stage 1/2: unknown_source
+2026-04-04 16:37:18,358 - lightrag - INFO - Processing d-id: doc-fdc7bd3b6e26287ac959be40862ea9c8
+2026-04-04 16:37:24,799 - lightrag - INFO - Extracting stage 2/2: unknown_source
+2026-04-04 16:37:24,800 - lightrag - INFO - Processing d-id: doc-40df885aa009dd233582e7b6846b5b74
+2026-04-04 16:37:25,762 - lightrag - INFO - Embedding func: 4 new workers initialized (Timeouts: Func: 30s, Worker: 60s, Health Check: 75s)
+2026-04-04 19:00:26,776 - lightrag - INFO - LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
+2026-04-04 19:01:11,886 - lightrag - INFO -  == LLM cache == saving: default:extract:592eded2853789aa3343e1d4f3cb01a3
+2026-04-04 19:01:43,670 - lightrag - INFO -  == LLM cache == saving: default:extract:db1516548d0be4c5908a92248c6b8b3d
+2026-04-04 19:02:17,721 - lightrag - INFO -  == LLM cache == saving: default:extract:a0184e1565e44574cb73e783339339d4
+2026-04-04 19:02:17,722 - lightrag - WARNING - chunk-a7e60a506fabbcb0927ab8a8484d94ec: LLM output format error; find LLM use <|#|> as record seperators instead new-line
+2026-04-04 19:02:17,722 - lightrag - WARNING - chunk-a7e60a506fabbcb0927ab8a8484d94ec: LLM output format error; found 2/4 feilds on ENTITY `relationship--0005fb3b-274a-4ac1-8fb2-51366fcd1a6b` @ `N/A`
+2026-04-04 19:02:17,722 - lightrag - WARNING - chunk-a7e60a506fabbcb0927ab8a8484d94ec: LLM output format error; found 2/5 fields on REALTION `This is a unique identifier for a specific relationship.`~`N/A`
+2026-04-04 19:02:17,723 - lightrag - WARNING - Entity extraction error: invalid entity type in: ['entity', '2023-09-01T21:33:59.394Z', 'date/time', 'This is a timestamp representing a specific point in time.']
+2026-04-04 19:02:32,379 - lightrag - INFO -  == LLM cache == saving: default:extract:267bd99390a535dc89db60d44efd81c8
+2026-04-04 19:02:32,381 - lightrag - WARNING - chunk-4834d73cfe32ff3e4279214ba91b29b2: LLM output format error; find LLM use <|#|> as record seperators instead new-line
+2026-04-04 19:03:13,104 - lightrag - INFO -  == LLM cache == saving: default:extract:ac85830270d67456a8cc9df8a158c008
+2026-04-04 19:03:13,107 - lightrag - INFO - Chunk 1 of 64305 extracted 7 Ent + 6 Rel chunk-0d235b82dce4805f3ba9c885a2aaabd4
+2026-04-04 19:03:46,613 - lightrag - INFO -  == LLM cache == saving: default:extract:5a3b11b70d7a91fb84ad03d7de9695d3
+2026-04-04 19:03:46,617 - lightrag - WARNING - chunk-2b34f34e356171f75f53001848483524: LLM output format error; found 5/4 feilds on ENTITY `CheckPoint` @ `organization`
+2026-04-04 19:03:46,617 - lightrag - WARNING - chunk-2b34f34e356171f75f53001848483524: LLM output format error; found 5/4 feilds on ENTITY `Volatile Cedar` @ `report`
+2026-04-04 19:03:46,617 - lightrag - WARNING - chunk-2b34f34e356171f75f53001848483524: LLM output format error; found 5/4 feilds on ENTITY `Technical Report` @ `document`
+2026-04-04 19:03:46,617 - lightrag - WARNING - chunk-2b34f34e356171f75f53001848483524: LLM output format error; found 6/5 fields on REALTION `CheckPoint Volatile Cedar March 2015`~`malware`
+2026-04-04 19:03:46,617 - lightrag - WARNING - chunk-2b34f34e356171f75f53001848483524: LLM output format error; found 6/5 fields on REALTION `malware`~`attack-pattern`
+2026-04-04 19:03:46,617 - lightrag - WARNING - chunk-2b34f34e356171f75f53001848483524: LLM output format error; found 6/5 fields on REALTION `6a21e3a4-5ffe-4581-af9a-6a54c7536f44`~`attack-pattern`
+2026-04-04 19:03:46,617 - lightrag - WARNING - chunk-2b34f34e356171f75f53001848483524: LLM output format error; found 6/5 fields on REALTION `707399d6-ab3e-4963-9315-d9d3818cd6a0`~`malware`
+2026-04-04 19:03:46,618 - lightrag - INFO - Chunk 2 of 64305 extracted 5 Ent + 4 Rel chunk-2b34f34e356171f75f53001848483524
+2026-04-04 19:04:25,626 - lightrag - INFO -  == LLM cache == saving: default:extract:69163e6e0474fda8c001b9187d6830ba
+2026-04-04 19:04:25,628 - lightrag - WARNING - chunk-a7e60a506fabbcb0927ab8a8484d94ec: LLM output format error; find LLM use <|#|> as record seperators instead new-line
+2026-04-04 19:04:25,628 - lightrag - WARNING - chunk-a7e60a506fabbcb0927ab8a8484d94ec: LLM output format error; found 2/4 feilds on ENTITY `relationship--0005fb3b-274a-4ac1-8fb2-51366fcd1a6b` @ `N/A`
+2026-04-04 19:04:25,628 - lightrag - WARNING - chunk-a7e60a506fabbcb0927ab8a8484d94ec: LLM output format error; found 2/5 fields on REALTION `This is a unique identifier for a specific relationship.`~`N/A`
+2026-04-04 19:04:25,628 - lightrag - WARNING - Entity extraction error: invalid entity type in: ['entity', '2023-09-01T21:33:59.394Z', 'date/time', 'This is a timestamp representing a specific point in time.']
+2026-04-04 19:04:25,629 - lightrag - INFO - Chunk 3 of 64305 extracted 4 Ent + 4 Rel chunk-a7e60a506fabbcb0927ab8a8484d94ec
+2026-04-04 19:04:41,275 - lightrag - INFO -  == LLM cache == saving: default:extract:1e00455ce12f4c757db8d657882e99da
+2026-04-04 19:04:41,276 - lightrag - WARNING - chunk-4834d73cfe32ff3e4279214ba91b29b2: LLM output format error; find LLM use <|#|> as record seperators instead new-line
+2026-04-04 19:04:41,276 - lightrag - WARNING - chunk-4834d73cfe32ff3e4279214ba91b29b2: LLM output format error; found 7/5 fields on REALTION `type`~`Consider blocking download/transfer and execution of potentially uncommon file types known to be used in adversary campaigns.`
+2026-04-04 19:04:41,277 - lightrag - INFO - Chunk 4 of 64305 extracted 0 Ent + 1 Rel chunk-4834d73cfe32ff3e4279214ba91b29b2
+2026-04-04 19:05:11,244 - lightrag - INFO -  == LLM cache == saving: default:extract:f7d8c4a29fc5337f16d9d4498db5f427
+2026-04-04 19:05:11,245 - lightrag - WARNING - chunk-6aa50543d0124b84732700aa0e120584: LLM output format error; find LLM use <|#|> as record seperators instead new-line
+2026-04-04 19:05:11,246 - lightrag - WARNING - chunk-6aa50543d0124b84732700aa0e120584: LLM output format error; found 3/5 fields on REALTION `category`~`This represents the connection between two entities.`
+2026-04-04 19:06:03,273 - lightrag - INFO -  == LLM cache == saving: default:extract:80de51e033ca688a2c79fea7bfc16d05
+2026-04-04 19:06:03,276 - lightrag - WARNING - chunk-7dfe0866338221af21196cd6d6d7f362: LLM output format error; found 6/5 fields on REALTION `2022-03-30T14:26:51.834Z`~`MITRE`
+2026-04-04 19:06:03,276 - lightrag - WARNING - chunk-7dfe0866338221af21196cd6d6d7f362: LLM output format error; found 6/5 fields on REALTION `2025-04-28T15:31:30.438Z`~`MITRE`
+2026-04-04 19:06:43,647 - lightrag - INFO -  == LLM cache == saving: default:extract:f83bd6878036f8f175da3a3a8eb25f5a
+2026-04-04 19:06:43,649 - lightrag - WARNING - chunk-686e3b42c89890f0d5dafbb3e5133f69: LLM output format error; find LLM use <|#|> as record seperators instead new-line
+2026-04-04 19:06:43,652 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 19:06:43,652 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 19:06:43,652 - lightrag - WARNING - chunk-686e3b42c89890f0d5dafbb3e5133f69: LLM output format error; found 3/5 fields on REALTION `x-mitre-data-component--a7f22107-02e5-4982-9067-6625d4a1765a`~`attack-pattern--18cffc21-3260-437e-80e4-4ab8bf2ba5e9`
+2026-04-04 19:06:43,652 - lightrag - WARNING - chunk-686e3b42c89890f0d5dafbb3e5133f69: LLM output format error; found 2/5 fields on REALTION `The x-mitre-data-component is linked to the attack-pattern via a 'detects' relationship.`~`N/A`
+2026-04-04 19:06:43,652 - lightrag - WARNING - chunk-686e3b42c89890f0d5dafbb3e5133f69: LLM output format error; found 3/5 fields on REALTION `marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168`~`attack-pattern--18cffc21-3260-437e-80e4-4ab8bf2ba5e9`
+2026-04-04 19:06:43,653 - lightrag - WARNING - chunk-686e3b42c89890f0d5dafbb3e5133f69: LLM output format error; found 2/5 fields on REALTION `The marking-definition is linked to the attack-pattern via a 'detects' relationship.`~`N/A`
+2026-04-04 19:07:12,228 - lightrag - INFO -  == LLM cache == saving: default:extract:139d94c5e20a9e67ff254b9cef80b21f
+2026-04-04 19:07:36,313 - lightrag - INFO -  == LLM cache == saving: default:extract:992c37fedad0977b4b5efcf45c212f7a
+2026-04-04 19:07:36,315 - lightrag - INFO - Chunk 5 of 64305 extracted 7 Ent + 2 Rel chunk-6aa50543d0124b84732700aa0e120584
+2026-04-04 19:08:32,827 - lightrag - INFO -  == LLM cache == saving: default:extract:ceb0a734ee75e60d66e13b6f0303df5a
+2026-04-04 19:08:32,830 - lightrag - WARNING - chunk-7dfe0866338221af21196cd6d6d7f362: LLM output format error; found 6/5 fields on REALTION `2022-03-30T14:26:51.834Z`~`MITRE`
+2026-04-04 19:08:32,830 - lightrag - WARNING - chunk-7dfe0866338221af21196cd6d6d7f362: LLM output format error; found 6/5 fields on REALTION `2025-04-28T15:31:30.438Z`~`MITRE`
+2026-04-04 19:08:32,832 - lightrag - INFO - Chunk 6 of 64305 extracted 8 Ent + 5 Rel chunk-7dfe0866338221af21196cd6d6d7f362
+2026-04-04 19:09:19,450 - lightrag - INFO -  == LLM cache == saving: default:extract:b30a6f025b8bd5dcf4a63739a34d4f9c
+2026-04-04 19:09:19,451 - lightrag - WARNING - chunk-686e3b42c89890f0d5dafbb3e5133f69: LLM output format error; find LLM use <|#|> as record seperators instead new-line
+2026-04-04 19:09:19,451 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 19:09:19,451 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 19:09:19,452 - lightrag - WARNING - chunk-686e3b42c89890f0d5dafbb3e5133f69: LLM output format error; found 3/5 fields on REALTION `x-mitre-data-component--a7f22107-02e5-4982-9067-6625d4a1765a`~`attack-pattern--18cffc21-3260-437e-80e4-4ab8bf2ba5e9`
+2026-04-04 19:09:19,452 - lightrag - WARNING - chunk-686e3b42c89890f0d5dafbb3e5133f69: LLM output format error; found 2/5 fields on REALTION `The x-mitre-data-component is linked to the attack-pattern via a 'detects' relationship.`~`N/A`
+2026-04-04 19:09:19,452 - lightrag - WARNING - chunk-686e3b42c89890f0d5dafbb3e5133f69: LLM output format error; found 3/5 fields on REALTION `marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168`~`attack-pattern--18cffc21-3260-437e-80e4-4ab8bf2ba5e9`
+2026-04-04 19:09:19,452 - lightrag - WARNING - chunk-686e3b42c89890f0d5dafbb3e5133f69: LLM output format error; found 2/5 fields on REALTION `The marking-definition is linked to the attack-pattern via a 'detects' relationship.`~`N/A`
+2026-04-04 19:09:19,452 - lightrag - INFO - Chunk 7 of 64305 extracted 6 Ent + 1 Rel chunk-686e3b42c89890f0d5dafbb3e5133f69
+2026-04-04 19:09:42,421 - lightrag - INFO -  == LLM cache == saving: default:extract:15ba320e14437e2fb0278322a1883669
+2026-04-04 19:09:42,422 - lightrag - INFO - Chunk 8 of 64305 extracted 8 Ent + 5 Rel chunk-9a48a28c6c575f61b956648726191934
+2026-04-04 19:10:07,404 - lightrag - INFO -  == LLM cache == saving: default:extract:fa99fe010e8c1cdb2bab4dd48694ada3
+2026-04-04 19:10:32,835 - lightrag - INFO -  == LLM cache == saving: default:extract:dcf3f542753e4869fc6186e97d4fb5f6
+2026-04-04 19:11:05,566 - lightrag - INFO -  == LLM cache == saving: default:extract:3545c9ea3009a89ff850ebcd16fc59eb
+2026-04-04 19:11:36,389 - lightrag - INFO -  == LLM cache == saving: default:extract:281f3c45b6d10e845492dfde494bc8d2
+2026-04-04 19:11:58,047 - lightrag - INFO -  == LLM cache == saving: default:extract:888f05a5582421c1b9dfe3e8be6cfe42
+2026-04-04 19:11:58,048 - lightrag - INFO - Chunk 9 of 64305 extracted 7 Ent + 5 Rel chunk-33e3d9e3acd13589ce140acc058cc38a
+2026-04-04 19:12:28,384 - lightrag - INFO -  == LLM cache == saving: default:extract:34a3fc51a5be86800f98cc754e40f719
+2026-04-04 19:12:28,385 - lightrag - INFO - Chunk 10 of 64305 extracted 3 Ent + 1 Rel chunk-0826f80992275fb443d7c7b114891d63
+2026-04-04 19:13:00,470 - lightrag - INFO -  == LLM cache == saving: default:extract:7124a4d6a54d4fc2ce2b1796d63a98f0
+2026-04-04 19:13:00,472 - lightrag - INFO - Chunk 11 of 64305 extracted 6 Ent + 4 Rel chunk-030a5e03e8e64c94dca118b54f52777f
+2026-04-04 19:13:31,194 - lightrag - INFO -  == LLM cache == saving: default:extract:df2848c48fbd70972a1787c9214bdd9b
+2026-04-04 19:13:31,196 - lightrag - INFO - Chunk 12 of 64305 extracted 11 Ent + 7 Rel chunk-40f5627ddbd1b94b9a40d64b13b3cd4c
+2026-04-04 19:14:08,037 - lightrag - INFO -  == LLM cache == saving: default:extract:151c06f7d64ffd19545257885c1b7833
+2026-04-04 19:14:45,835 - lightrag - INFO -  == LLM cache == saving: default:extract:c29fb7a147f250c7eb2234be514f8792
+2026-04-04 19:15:05,591 - lightrag - INFO -  == LLM cache == saving: default:extract:1830e9a7dee76d056574b9f78a9c5872
+2026-04-04 19:15:38,535 - lightrag - INFO -  == LLM cache == saving: default:extract:731f8c6c7ab80f7015acedf6fc97c5aa
+2026-04-04 19:16:11,746 - lightrag - INFO -  == LLM cache == saving: default:extract:de2b30c8451b846eb0df8ae801197027
+2026-04-04 19:16:11,748 - lightrag - INFO - Chunk 13 of 64305 extracted 12 Ent + 7 Rel chunk-4a8171d13cac7cde8844170d2e04ce57
+2026-04-04 19:16:51,465 - lightrag - INFO -  == LLM cache == saving: default:extract:971530588ffbeb10aab79b880f3933de
+2026-04-04 19:16:51,467 - lightrag - INFO - Chunk 14 of 64305 extracted 8 Ent + 6 Rel chunk-a8e59a0794a79149cde0d6fe874a4f7d
+2026-04-04 19:17:05,446 - lightrag - INFO -  == LLM cache == saving: default:extract:8b40be2a788d7f7c746d505493934160
+2026-04-04 19:17:05,447 - lightrag - INFO - Chunk 15 of 64305 extracted 4 Ent + 1 Rel chunk-ddb09d3ae5be92496f1b5fc262d00c15
+2026-04-04 19:17:20,830 - lightrag - INFO -  == LLM cache == saving: default:extract:bf240100f4fc816eb734dc0d12832fb1
+2026-04-04 19:17:20,831 - lightrag - INFO - Chunk 16 of 64305 extracted 7 Ent + 8 Rel chunk-f9a0c6475ba7c399257da6be23333f55
+2026-04-04 19:17:44,646 - lightrag - INFO -  == LLM cache == saving: default:extract:39d7431eca0c33cc0090875bf572e257
+2026-04-04 19:17:44,646 - lightrag - WARNING - chunk-1d3885b9bd28f9eeafaff83a0b67d62c: LLM output format error; found 7/4 feilds on ENTITY `R.` @ `Lelli,`
+2026-04-04 19:17:44,647 - lightrag - WARNING - chunk-1d3885b9bd28f9eeafaff83a0b67d62c: LLM output format error; found 8/5 fields on REALTION `R.`~`Lelli,`
+2026-04-04 19:17:44,647 - lightrag - WARNING - chunk-1d3885b9bd28f9eeafaff83a0b67d62c: LLM output format error; found 8/5 fields on REALTION `R.`~`Lelli,`
+2026-04-04 19:17:44,647 - lightrag - WARNING - chunk-1d3885b9bd28f9eeafaff83a0b67d62c: LLM output format error; found 8/5 fields on REALTION `R.`~`Lelli,`
+2026-04-04 19:17:44,647 - lightrag - WARNING - chunk-1d3885b9bd28f9eeafaff83a0b67d62c: LLM output format error; found 8/5 fields on REALTION `R.`~`Lelli,`
+2026-04-04 19:17:44,647 - lightrag - WARNING - chunk-1d3885b9bd28f9eeafaff83a0b67d62c: LLM output format error; found 8/5 fields on REALTION `MSTIC NOBELIUM Mar 2021`~`R.`
+2026-04-04 19:18:12,338 - lightrag - INFO -  == LLM cache == saving: default:extract:256528f728a323bb628b97bbaebeb346
+2026-04-04 19:18:12,341 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 19:18:12,341 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 19:18:12,342 - lightrag - WARNING - chunk-08f37e5e509ee7f8f47c7fe973ad0461: LLM output format error; found 6/5 fields on REALTION `created`~`2022-04-14T16:36:05.395Z`
+2026-04-04 19:18:12,342 - lightrag - WARNING - Relationship extraction error: target entity became empty after cleaning. Original: '2.1'
+2026-04-04 19:18:28,668 - lightrag - INFO -  == LLM cache == saving: default:extract:0d0b1f85c8bfefecc26b0a6aa15ff51f
+2026-04-04 19:18:47,233 - lightrag - INFO -  == LLM cache == saving: default:extract:276f523e10392784c1fd2de91be8d54b
+2026-04-04 19:19:12,784 - lightrag - INFO -  == LLM cache == saving: default:extract:c6b2505a07197470d0b2ca87ddb1caa5
+2026-04-04 19:19:40,110 - lightrag - INFO -  == LLM cache == saving: default:extract:79389948a47758c332ae64fa3035c6f4
+2026-04-04 19:20:27,105 - lightrag - INFO -  == LLM cache == saving: default:extract:e3307c717e91f297a958a7973db718d7
+2026-04-04 19:21:08,076 - lightrag - INFO -  == LLM cache == saving: default:extract:1ccc275af13bb659fe324ad96f6fd0cd
+2026-04-04 19:21:08,078 - lightrag - WARNING - chunk-31c2f634ae6fc19628bab0dd75d0b8fe: LLM output format error; find LLM use <|#|> as record seperators instead new-line
+2026-04-04 19:21:08,080 - lightrag - WARNING - chunk-31c2f634ae6fc19628bab0dd75d0b8fe: LLM output format error; found 3/5 fields on REALTION `2025-04-16T21:52:52.232Z`~`marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168`
+2026-04-04 19:21:08,080 - lightrag - WARNING - chunk-31c2f634ae6fc19628bab0dd75d0b8fe: LLM output format error; found 2/5 fields on REALTION `The modified record refers to the marking definition.`~`N/A`
+2026-04-04 19:21:08,080 - lightrag - WARNING - chunk-31c2f634ae6fc19628bab0dd75d0b8fe: LLM output format error; found 3/5 fields on REALTION `marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168`~`attack-pattern--144e007b-e638-431d-a894-45d90c54ab90`
+2026-04-04 19:21:08,080 - lightrag - WARNING - chunk-31c2f634ae6fc19628bab0dd75d0b8fe: LLM output format error; found 2/5 fields on REALTION `The marking definition is related to the attack pattern.`~`N/A`
+2026-04-04 19:21:08,081 - lightrag - WARNING - chunk-31c2f634ae6fc19628bab0dd75d0b8fe: LLM output format error; found 4/5 fields on REALTION `x-mitre-data-component--45fd904d-6eb0-4b50-8478-a961f09f898b`~`spec_version`
+2026-04-04 19:21:22,879 - lightrag - INFO -  == LLM cache == saving: default:extract:e6abed3fd92fa755f87e237c16f322ff
+2026-04-04 19:21:22,880 - lightrag - WARNING - chunk-1d3885b9bd28f9eeafaff83a0b67d62c: LLM output format error; found 8/5 fields on REALTION `R.`~`Lelli,`
+2026-04-04 19:21:22,880 - lightrag - INFO - Chunk 17 of 64305 extracted 7 Ent + 2 Rel chunk-1d3885b9bd28f9eeafaff83a0b67d62c
+2026-04-04 19:21:54,623 - lightrag - INFO -  == LLM cache == saving: default:extract:3222d883001e07cea403071a949fc475
+2026-04-04 19:21:54,624 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 19:21:54,624 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 19:21:54,624 - lightrag - WARNING - chunk-08f37e5e509ee7f8f47c7fe973ad0461: LLM output format error; found 6/5 fields on REALTION `created`~`2022-04-14T16:36:05.395Z`
+2026-04-04 19:21:54,624 - lightrag - WARNING - Relationship extraction error: target entity became empty after cleaning. Original: '2.1'
+2026-04-04 19:21:54,625 - lightrag - INFO - Chunk 18 of 64305 extracted 7 Ent + 5 Rel chunk-08f37e5e509ee7f8f47c7fe973ad0461
+2026-04-04 19:22:11,603 - lightrag - INFO -  == LLM cache == saving: default:extract:43daf48343180887f550ca23abc401d1
+2026-04-04 19:22:11,604 - lightrag - WARNING - chunk-8e38b67f14ec6181505aa241a64c4bbd: LLM output format error; found 5/4 feilds on ENTITY `Extra Window Memory` @ `EWM`
+2026-04-04 19:22:11,604 - lightrag - WARNING - chunk-8e38b67f14ec6181505aa241a64c4bbd: LLM output format error; found 6/4 feilds on ENTITY `Malicious Code Injection` @ `Malicious Code Injection`
+2026-04-04 19:22:11,604 - lightrag - WARNING - chunk-8e38b67f14ec6181505aa241a64c4bbd: LLM output format error; found 5/4 feilds on ENTITY `Application Programming Interface` @ `API`
+2026-04-04 19:22:11,604 - lightrag - WARNING - chunk-8e38b67f14ec6181505aa241a64c4bbd: LLM output format error; found 6/5 fields on REALTION `EWM`~`Malicious Code Injection`
+2026-04-04 19:22:11,604 - lightrag - WARNING - chunk-8e38b67f14ec6181505aa241a64c4bbd: LLM output format error; found 6/5 fields on REALTION `Window Classes`~`Process-based defenses`
+2026-04-04 19:22:11,604 - lightrag - WARNING - chunk-8e38b67f14ec6181505aa241a64c4bbd: LLM output format error; found 6/5 fields on REALTION `Memory`~`Process-based defenses`
+2026-04-04 19:22:11,604 - lightrag - WARNING - chunk-8e38b67f14ec6181505aa241a64c4bbd: LLM output format error; found 6/5 fields on REALTION `Microsoft`~`Window Classes`
+2026-04-04 19:22:11,604 - lightrag - WARNING - chunk-8e38b67f14ec6181505aa241a64c4bbd: LLM output format error; found 6/5 fields on REALTION `API`~`EWM`
+2026-04-04 19:22:11,604 - lightrag - INFO - Chunk 1 of 6890 extracted 6 Ent + 5 Rel chunk-8e38b67f14ec6181505aa241a64c4bbd
+2026-04-04 19:22:27,235 - lightrag - INFO -  == LLM cache == saving: default:extract:b1ff87212601fdd0cd0b31bb688a4267
+2026-04-04 19:22:27,236 - lightrag - INFO - Chunk 2 of 6890 extracted 13 Ent + 8 Rel chunk-e81c69127c98bf5b5c7666a9260e1e1c
+2026-04-04 19:22:43,229 - lightrag - INFO -  == LLM cache == saving: default:extract:6640f440966658256ec67017ab2b7fdd
+2026-04-04 19:22:43,230 - lightrag - INFO - Chunk 3 of 6890 extracted 15 Ent + 11 Rel chunk-5ea546d8154286b88b74edfd4831282a
+2026-04-04 19:23:12,640 - lightrag - INFO -  == LLM cache == saving: default:extract:716023d842e71ad31514f97f8964a20e
+2026-04-04 19:23:12,642 - lightrag - INFO - Chunk 4 of 6890 extracted 14 Ent + 10 Rel chunk-ce0b2f687b29494770db163633d478a4
+2026-04-04 19:23:33,275 - lightrag - INFO -  == LLM cache == saving: default:extract:49a5e1fca8b4114a90ae901f24de8a02
+2026-04-04 19:23:33,278 - lightrag - INFO - Chunk 19 of 64305 extracted 15 Ent + 12 Rel chunk-0a888e51b62d4870332846766d7af0a8
+2026-04-04 19:24:17,791 - lightrag - INFO -  == LLM cache == saving: default:extract:09b2de712e5781157f369372eee7840b
+2026-04-04 19:24:17,792 - lightrag - WARNING - chunk-31c2f634ae6fc19628bab0dd75d0b8fe: LLM output format error; find LLM use <|#|> as record seperators instead new-line
+2026-04-04 19:24:17,793 - lightrag - WARNING - chunk-31c2f634ae6fc19628bab0dd75d0b8fe: LLM output format error; found 3/5 fields on REALTION `2025-04-16T21:52:52.232Z`~`marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168`
+2026-04-04 19:24:17,793 - lightrag - WARNING - chunk-31c2f634ae6fc19628bab0dd75d0b8fe: LLM output format error; found 2/5 fields on REALTION `The modified record refers to the marking definition.`~`N/A`
+2026-04-04 19:24:17,793 - lightrag - WARNING - chunk-31c2f634ae6fc19628bab0dd75d0b8fe: LLM output format error; found 3/5 fields on REALTION `marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168`~`attack-pattern--144e007b-e638-431d-a894-45d90c54ab90`
+2026-04-04 19:24:17,793 - lightrag - WARNING - chunk-31c2f634ae6fc19628bab0dd75d0b8fe: LLM output format error; found 2/5 fields on REALTION `The marking definition is related to the attack pattern.`~`N/A`
+2026-04-04 19:24:17,793 - lightrag - WARNING - chunk-31c2f634ae6fc19628bab0dd75d0b8fe: LLM output format error; found 4/5 fields on REALTION `x-mitre-data-component--45fd904d-6eb0-4b50-8478-a961f09f898b`~`spec_version`
+2026-04-04 19:24:17,793 - lightrag - INFO - Chunk 20 of 64305 extracted 12 Ent + 7 Rel chunk-31c2f634ae6fc19628bab0dd75d0b8fe
+2026-04-04 19:24:34,452 - lightrag - INFO -  == LLM cache == saving: default:extract:f8bfd439992c994fa9bebb6ebfa293b7
+2026-04-04 19:25:04,108 - lightrag - INFO -  == LLM cache == saving: default:extract:fdce69979d2bfa6125f2c085fa3d130e
+2026-04-04 19:25:04,109 - lightrag - WARNING - chunk-7aa4bd8234dbfaaf1410d42a14301e48: LLM output format error; found 4/5 fields on REALTION `relationship--0023f0a7-26ae-40ec-ac6e-9dacf5217fb9`~`uses`
+2026-04-04 19:25:19,421 - lightrag - INFO -  == LLM cache == saving: default:extract:3b706fae59a269a509738524ff12d49e
+2026-04-04 19:25:35,990 - lightrag - INFO -  == LLM cache == saving: default:extract:47e8934eb1a10bd47f1acb4480b0ea0d
+2026-04-04 19:25:58,980 - lightrag - INFO -  == LLM cache == saving: default:extract:eda3c443dfb09638211eb8f23c336a92
+2026-04-04 19:26:16,866 - lightrag - INFO -  == LLM cache == saving: default:extract:5a2d76328f3910523cf78282ad032382
+2026-04-04 19:26:32,982 - lightrag - INFO -  == LLM cache == saving: default:extract:b6c3adc450cd2a86d01538580a8fd27b
+2026-04-04 19:26:52,716 - lightrag - INFO -  == LLM cache == saving: default:extract:d8bb2530c65282982f3c0b3b269b753e
+2026-04-04 19:27:06,882 - lightrag - INFO -  == LLM cache == saving: default:extract:410e0f00221718bb624facf083232339
+2026-04-04 19:27:06,882 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '4.3'
+2026-04-04 19:27:06,883 - lightrag - INFO - Chunk 21 of 64305 extracted 9 Ent + 3 Rel chunk-2f396887bcf513711e2b969235e97a11
+2026-04-04 19:27:41,256 - lightrag - INFO -  == LLM cache == saving: default:extract:8d39c7532fd2d1803d3c5f4efd183eca
+2026-04-04 19:27:41,257 - lightrag - WARNING - chunk-7aa4bd8234dbfaaf1410d42a14301e48: LLM output format error; found 5/4 feilds on ENTITY `Host Header` @ `content`
+2026-04-04 19:27:41,258 - lightrag - WARNING - chunk-7aa4bd8234dbfaaf1410d42a14301e48: LLM output format error; found 5/4 feilds on ENTITY `Strategic Cyber LLC` @ `organization`
+2026-04-04 19:27:41,258 - lightrag - WARNING - chunk-7aa4bd8234dbfaaf1410d42a14301e48: LLM output format error; found 5/4 feilds on ENTITY `Cobalt Strike Manual 4.3 November 2020` @ `content`
+2026-04-04 19:27:41,258 - lightrag - WARNING - chunk-7aa4bd8234dbfaaf1410d42a14301e48: LLM output format error; found 5/4 feilds on ENTITY `Penetration Testers` @ `category`
+2026-04-04 19:27:41,258 - lightrag - WARNING - chunk-7aa4bd8234dbfaaf1410d42a14301e48: LLM output format error; found 5/4 feilds on ENTITY `April 13, 2021` @ `date`
+2026-04-04 19:27:41,258 - lightrag - WARNING - chunk-7aa4bd8234dbfaaf1410d42a14301e48: LLM output format error; found 5/4 feilds on ENTITY `url` @ `data`
+2026-04-04 19:27:41,258 - lightrag - WARNING - chunk-7aa4bd8234dbfaaf1410d42a14301e48: LLM output format error; found 5/4 feilds on ENTITY `Cobalt Strike` @ `software`
+2026-04-04 19:27:41,258 - lightrag - WARNING - chunk-7aa4bd8234dbfaaf1410d42a14301e48: LLM output format error; found 5/4 feilds on ENTITY `relationship--0023f0a7-26ae-40ec-ac6e-9dacf5217fb9` @ `category`
+2026-04-04 19:27:41,258 - lightrag - WARNING - chunk-7aa4bd8234dbfaaf1410d42a14301e48: LLM output format error; found 5/4 feilds on ENTITY `modified` @ `date`
+2026-04-04 19:27:41,258 - lightrag - WARNING - chunk-7aa4bd8234dbfaaf1410d42a14301e48: LLM output format error; found 5/4 feilds on ENTITY `marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168` @ `category`
+2026-04-04 19:27:41,258 - lightrag - WARNING - chunk-7aa4bd8234dbfaaf1410d42a14301e48: LLM output format error; found 5/4 feilds on ENTITY `uses` @ `category`
+2026-04-04 19:27:41,258 - lightrag - WARNING - chunk-7aa4bd8234dbfaaf1410d42a14301e48: LLM output format error; found 5/4 feilds on ENTITY `malware--a7881f21-e978-4fe4-af56` @ `software`
+2026-04-04 19:27:41,258 - lightrag - WARNING - chunk-7aa4bd8234dbfaaf1410d42a14301e48: LLM output format error; found 6/5 fields on REALTION `Host Header`~`Cobalt Strike Manual 4.3 November 2020`
+2026-04-04 19:27:41,258 - lightrag - WARNING - chunk-7aa4bd8234dbfaaf1410d42a14301e48: LLM output format error; found 6/5 fields on REALTION `Strategic Cyber LLC`~`Cobalt Strike Manual 4.3 November 2020`
+2026-04-04 19:27:41,258 - lightrag - WARNING - chunk-7aa4bd8234dbfaaf1410d42a14301e48: LLM output format error; found 6/5 fields on REALTION `Penetration Testers`~`Cobalt Strike`
+2026-04-04 19:27:41,258 - lightrag - WARNING - chunk-7aa4bd8234dbfaaf1410d42a14301e48: LLM output format error; found 6/5 fields on REALTION `April 13, 2021`~`Cobalt Strike Manual 4.3 November 2020`
+2026-04-04 19:27:41,258 - lightrag - WARNING - chunk-7aa4bd8234dbfaaf1410d42a14301e48: LLM output format error; found 6/5 fields on REALTION `url`~`Cobalt Strike Manual 4.3 November 2020`
+2026-04-04 19:27:41,258 - lightrag - WARNING - chunk-7aa4bd8234dbfaaf1410d42a14301e48: LLM output format error; found 6/5 fields on REALTION `Cobalt Strike`~`Host Header`
+2026-04-04 19:27:41,258 - lightrag - WARNING - chunk-7aa4bd8234dbfaaf1410d42a14301e48: LLM output format error; found 6/5 fields on REALTION `malware--a7881f21-e978-4fe4-af56`~`Host Header`
+2026-04-04 19:27:41,258 - lightrag - INFO - Chunk 22 of 64305 extracted 12 Ent + 8 Rel chunk-7aa4bd8234dbfaaf1410d42a14301e48
+2026-04-04 19:27:54,215 - lightrag - INFO -  == LLM cache == saving: default:extract:0750b330436af57fb9de7a6e6cc3cc80
+2026-04-04 19:27:54,216 - lightrag - INFO - Chunk 5 of 6890 extracted 8 Ent + 5 Rel chunk-d5ddde7e4ce98f07dddb2521d960b2a5
+2026-04-04 19:28:14,550 - lightrag - INFO -  == LLM cache == saving: default:extract:7035320f30f865ad4e46ec01746f2876
+2026-04-04 19:28:14,551 - lightrag - INFO - Chunk 6 of 6890 extracted 8 Ent + 4 Rel chunk-86f0e92ab95bd195fc9a27822c7e4444
+2026-04-04 19:28:29,394 - lightrag - INFO -  == LLM cache == saving: default:extract:1ebdcc7f9aada629fb7fe1940f6ffe2c
+2026-04-04 19:28:29,395 - lightrag - INFO - Chunk 7 of 6890 extracted 15 Ent + 9 Rel chunk-b8bdadcccde4e3f0972615cf65190e65
+2026-04-04 19:28:45,158 - lightrag - INFO -  == LLM cache == saving: default:extract:8fe2dbbf019e64698ae961344daa90f4
+2026-04-04 19:28:45,159 - lightrag - INFO - Chunk 8 of 6890 extracted 12 Ent + 5 Rel chunk-e96259fd8d2c2b42aeeeccddcf002365
+2026-04-04 19:29:03,579 - lightrag - INFO -  == LLM cache == saving: default:extract:a73fc07518952df66881a4823f3d8d11
+2026-04-04 19:29:03,580 - lightrag - INFO - Chunk 23 of 64305 extracted 9 Ent + 3 Rel chunk-ec5dfc1b7199c388a0cd7429b7d7ba7d
+2026-04-04 19:29:17,499 - lightrag - INFO -  == LLM cache == saving: default:extract:9099ee1ff218afde5c30f43531a0ec2f
+2026-04-04 19:29:17,499 - lightrag - INFO - Chunk 24 of 64305 extracted 8 Ent + 7 Rel chunk-51a1228c0ec5f88a341766475fb19629
+2026-04-04 19:29:38,480 - lightrag - INFO -  == LLM cache == saving: default:extract:afb41a5b9f611cfac9f98029957001d1
+2026-04-04 19:29:53,304 - lightrag - INFO -  == LLM cache == saving: default:extract:c08dff9e2eabea10fd7bcfc5ffc81987
+2026-04-04 19:30:12,924 - lightrag - INFO -  == LLM cache == saving: default:extract:b18e4e8cc57f94db91d8e6fd17a4f9f8
+2026-04-04 19:30:12,925 - lightrag - WARNING - chunk-e2e425bc0e19b5a08c68f84ae2dc136f: Complete delimiter can not be found in extraction result
+2026-04-04 19:30:12,925 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 19:30:12,926 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 19:30:12,926 - lightrag - WARNING - chunk-e2e425bc0e19b5a08c68f84ae2dc136f: LLM output format error; found 5/4 feilds on ENTITY `SetWindowLong` @ `method`
+2026-04-04 19:30:32,657 - lightrag - INFO -  == LLM cache == saving: default:extract:f3f5e5239e4177a08e8d0a5fb1b9adc3
+2026-04-04 19:30:57,780 - lightrag - INFO -  == LLM cache == saving: default:extract:7f93bd3fb724c660f92c48aef565ac29
+2026-04-04 19:31:25,032 - lightrag - INFO -  == LLM cache == saving: default:extract:538f4b04a514997618937779f0e964cd
+2026-04-04 19:31:35,145 - lightrag - INFO -  == LLM cache == saving: default:extract:f5f22be20ceb3ea7e65089b4e2d26465
+2026-04-04 19:32:01,807 - lightrag - INFO -  == LLM cache == saving: default:extract:6b7ffce21d3fecef8b1922873e431ce2
+2026-04-04 19:32:18,867 - lightrag - INFO -  == LLM cache == saving: default:extract:5f1952fadf786a821370e7eb3a7688f3
+2026-04-04 19:32:18,868 - lightrag - INFO - Chunk 25 of 64305 extracted 9 Ent + 7 Rel chunk-1093907ce9950dc1e4a958349713aa1d
+2026-04-04 19:32:34,949 - lightrag - INFO -  == LLM cache == saving: default:extract:aac35c5a68a323f25a464b17b075461a
+2026-04-04 19:32:34,950 - lightrag - INFO - Chunk 26 of 64305 extracted 8 Ent + 5 Rel chunk-7e53774c59c40f3f79c4b8a7a8d80c12
+2026-04-04 19:32:50,280 - lightrag - INFO -  == LLM cache == saving: default:extract:e68b06a75435a3351e773aa8b6139f77
+2026-04-04 19:32:50,282 - lightrag - WARNING - chunk-e2e425bc0e19b5a08c68f84ae2dc136f: LLM output format error; found 7/4 feilds on ENTITY `Process: OS API Execution` @ `method`
+2026-04-04 19:32:50,282 - lightrag - WARNING - chunk-e2e425bc0e19b5a08c68f84ae2dc136f: LLM output format error; found 6/5 fields on REALTION `Process: OS API Execution`~`Monitor for API calls related to enumerating and manipulating EWM such as GetWindowLong (Citation: Microsoft GetWindowLong function) and SetWindowLong (Citation: Microsoft Set Window Long function)`
+2026-04-04 19:32:50,285 - lightrag - WARNING - chunk-e2e425bc0e19b5a08c68f84ae2dc136f: LLM output format error; found 7/4 feilds on ENTITY `Microsoft GetWindowLong function` @ `method`
+2026-04-04 19:32:50,285 - lightrag - WARNING - chunk-e2e425bc0e19b5a08c68f84ae2dc136f: LLM output format error; found 7/4 feilds on ENTITY `Microsoft SetWindowLong function` @ `method`
+2026-04-04 19:32:50,286 - lightrag - INFO - Chunk 9 of 6890 extracted 12 Ent + 0 Rel chunk-e2e425bc0e19b5a08c68f84ae2dc136f
+2026-04-04 19:33:07,490 - lightrag - INFO -  == LLM cache == saving: default:extract:11c48d10dd8dcb386f41761d13f54084
+2026-04-04 19:33:07,491 - lightrag - INFO - Chunk 10 of 6890 extracted 10 Ent + 12 Rel chunk-6aa17439e0248ec92fa0a92841e36c94
+2026-04-04 19:33:22,171 - lightrag - INFO -  == LLM cache == saving: default:extract:66e256c6451d6d43eee7a6d2a7627df7
+2026-04-04 19:33:22,173 - lightrag - INFO - Chunk 11 of 6890 extracted 10 Ent + 8 Rel chunk-db81b270e6f0ecb67a85154defb46408
+2026-04-04 19:33:50,347 - lightrag - INFO -  == LLM cache == saving: default:extract:f06c27375e7b21ac4e4730d0b6652758
+2026-04-04 19:33:50,351 - lightrag - INFO - Chunk 12 of 6890 extracted 11 Ent + 8 Rel chunk-ab8fc54b41a74ec31ac1c25a6532e7bb
+2026-04-04 19:34:01,004 - lightrag - INFO -  == LLM cache == saving: default:extract:dcc207f1287c14e6ff3566429ed5a028
+2026-04-04 19:34:01,005 - lightrag - INFO - Chunk 27 of 64305 extracted 2 Ent + 1 Rel chunk-644e47106dc8fc24765d19cb38c944ef
+2026-04-04 19:34:17,658 - lightrag - INFO -  == LLM cache == saving: default:extract:b862818321bd6a7e21e8df4d5b1da655
+2026-04-04 19:34:17,659 - lightrag - INFO - Chunk 28 of 64305 extracted 15 Ent + 12 Rel chunk-d812c7f34723076426d954a953b604b3
+2026-04-04 19:34:42,356 - lightrag - INFO -  == LLM cache == saving: default:extract:c4d9fc690a7e41b3906c369818d0ca65
+2026-04-04 19:34:56,719 - lightrag - INFO -  == LLM cache == saving: default:extract:4533acb4d611bf8594d5e120b42002f5
+2026-04-04 19:35:19,257 - lightrag - INFO -  == LLM cache == saving: default:extract:ad5f04fd3fbaac24c5c0b682d73ecd51
+2026-04-04 19:35:45,819 - lightrag - INFO -  == LLM cache == saving: default:extract:a167ca6348f0a7b31c4979b883cd7ce9
+2026-04-04 19:36:02,371 - lightrag - INFO -  == LLM cache == saving: default:extract:099a09e2f8d6c1aeadff4595bdeb4043
+2026-04-04 19:36:19,152 - lightrag - INFO -  == LLM cache == saving: default:extract:3bb94420f492e0a7a7147e97a50e2cc1
+2026-04-04 19:36:38,455 - lightrag - INFO -  == LLM cache == saving: default:extract:7e56625241dbb4854e5aea819ef34ef7
+2026-04-04 19:36:54,356 - lightrag - INFO -  == LLM cache == saving: default:extract:37836c884cdebfab659e1abff78b5f0f
+2026-04-04 19:37:25,776 - lightrag - INFO -  == LLM cache == saving: default:extract:72dc1379475ccd6de731666ccda13916
+2026-04-04 19:37:25,778 - lightrag - INFO - Chunk 29 of 64305 extracted 10 Ent + 6 Rel chunk-d581fa8d1c721ea5f8bb551b617e1a0e
+2026-04-04 19:37:41,712 - lightrag - INFO -  == LLM cache == saving: default:extract:ac9984ca4b5cae696c4d5536bda01a2a
+2026-04-04 19:37:41,712 - lightrag - INFO - Chunk 30 of 64305 extracted 6 Ent + 2 Rel chunk-5b26e55bd7e4c12c729769cc2b7e7ee1
+2026-04-04 19:38:03,768 - lightrag - INFO -  == LLM cache == saving: default:extract:0f084d2bf26560abb29e40217c6e1588
+2026-04-04 19:38:03,770 - lightrag - INFO - Chunk 13 of 6890 extracted 15 Ent + 9 Rel chunk-dc00250c907622c0649a3225f698ebcf
+2026-04-04 19:38:22,375 - lightrag - INFO -  == LLM cache == saving: default:extract:0a7f12771af144f0b2ccc592e30786b3
+2026-04-04 19:38:22,376 - lightrag - WARNING - chunk-28b01eb5be17e9830153e7fb7f210ca7: LLM output format error; found 5/4 feilds on ENTITY `Attack.mitre.org` @ `website`
+2026-04-04 19:38:22,376 - lightrag - WARNING - chunk-28b01eb5be17e9830153e7fb7f210ca7: LLM output format error; found 5/4 feilds on ENTITY `ProofPoint` @ `organization`
+2026-04-04 19:38:22,376 - lightrag - WARNING - chunk-28b01eb5be17e9830153e7fb7f210ca7: LLM output format error; found 5/4 feilds on ENTITY `Serpent` @ `attack`
+2026-04-04 19:38:22,376 - lightrag - WARNING - chunk-28b01eb5be17e9830153e7fb7f210ca7: LLM output format error; found 5/4 feilds on ENTITY `SigmaHQ` @ `organization`
+2026-04-04 19:38:22,376 - lightrag - WARNING - chunk-28b01eb5be17e9830153e7fb7f210ca7: LLM output format error; found 5/4 feilds on ENTITY `Windows` @ `operating system`
+2026-04-04 19:38:22,376 - lightrag - WARNING - chunk-28b01eb5be17e9830153e7fb7f210ca7: LLM output format error; found 5/4 feilds on ENTITY `Task Scheduler` @ `software`
+2026-04-04 19:38:22,376 - lightrag - INFO - Chunk 14 of 6890 extracted 11 Ent + 15 Rel chunk-28b01eb5be17e9830153e7fb7f210ca7
+2026-04-04 19:38:39,268 - lightrag - INFO -  == LLM cache == saving: default:extract:d1f282871f9cda84360adac5479e77c0
+2026-04-04 19:38:39,269 - lightrag - INFO - Chunk 15 of 6890 extracted 8 Ent + 4 Rel chunk-41c18fda3f05e8b37fb9f29c211cbc7f
+2026-04-04 19:39:04,122 - lightrag - INFO -  == LLM cache == saving: default:extract:6862a53d074c2579d9cfd4b2f41bb578
+2026-04-04 19:39:04,124 - lightrag - INFO - Chunk 16 of 6890 extracted 10 Ent + 3 Rel chunk-5087e7234334741f843ff070e9342aef
+2026-04-04 19:39:22,967 - lightrag - INFO -  == LLM cache == saving: default:extract:28a8d72ef8dc475ce7d54fb6ae3d208f
+2026-04-04 19:39:22,968 - lightrag - INFO - Chunk 31 of 64305 extracted 13 Ent + 10 Rel chunk-7057493512cbc6485c7563824ca6fd2c
+2026-04-04 19:39:36,874 - lightrag - INFO -  == LLM cache == saving: default:extract:eb0d146080adfaa95bcbe2aa0dfbf977
+2026-04-04 19:39:36,874 - lightrag - INFO - Chunk 32 of 64305 extracted 7 Ent + 7 Rel chunk-4d28b6e356364e3fa45960cae9a56a2d
+2026-04-04 19:39:55,046 - lightrag - INFO -  == LLM cache == saving: default:extract:e788454232b4b82b6e2c5e09a3f0b4e1
+2026-04-04 19:40:09,652 - lightrag - INFO -  == LLM cache == saving: default:extract:51a2e3f499c258d8387f03ad4d2bac76
+2026-04-04 19:40:36,299 - lightrag - INFO -  == LLM cache == saving: default:extract:b4c4b35f285f3ea499898fa3578a7197
+2026-04-04 19:40:56,092 - lightrag - INFO -  == LLM cache == saving: default:extract:69a9e133017b5b9f881e5216277b2ca6
+2026-04-04 19:41:16,832 - lightrag - INFO -  == LLM cache == saving: default:extract:6ea2639837f82734985c6653514a9934
+2026-04-04 19:41:35,416 - lightrag - INFO -  == LLM cache == saving: default:extract:b9f03efcf1818eb8971409a63be87b98
+2026-04-04 19:41:50,976 - lightrag - INFO -  == LLM cache == saving: default:extract:5a2a1f02709b7a6e9924d4336bf4f0fa
+2026-04-04 19:42:10,127 - lightrag - INFO -  == LLM cache == saving: default:extract:fdaafa12067ef49f8cb882aee782c047
+2026-04-04 19:42:32,057 - lightrag - INFO -  == LLM cache == saving: default:extract:88a89aea6dc61f4727b59fd60f9baa66
+2026-04-04 19:42:32,058 - lightrag - INFO - Chunk 33 of 64305 extracted 15 Ent + 11 Rel chunk-eacd91e063699fc570db0605bef3304d
+2026-04-04 19:42:45,189 - lightrag - INFO -  == LLM cache == saving: default:extract:e4d09d313718f9db268b8945ae0f4c24
+2026-04-04 19:42:45,190 - lightrag - INFO - Chunk 34 of 64305 extracted 7 Ent + 4 Rel chunk-2a4fa0598fcbb6bebd18aaea9e9c9720
+2026-04-04 19:43:05,776 - lightrag - INFO -  == LLM cache == saving: default:extract:a7f93d20a9345c5f39e3b3f753acaf08
+2026-04-04 19:43:05,777 - lightrag - INFO - Chunk 17 of 6890 extracted 12 Ent + 9 Rel chunk-0fd6d27567f746e634a54c8d8b18d1b2
+2026-04-04 19:43:22,020 - lightrag - INFO -  == LLM cache == saving: default:extract:91a987d60dec1cf6cfc060029d3db920
+2026-04-04 19:43:22,022 - lightrag - INFO - Chunk 18 of 6890 extracted 12 Ent + 4 Rel chunk-33cbfb517d78752143d1c8b9deac7268
+2026-04-04 19:43:42,852 - lightrag - INFO -  == LLM cache == saving: default:extract:7e97be9731829bf7a6a1a96dcf0718f4
+2026-04-04 19:43:42,854 - lightrag - INFO - Chunk 19 of 6890 extracted 9 Ent + 5 Rel chunk-4a4adb230f78fc67ccc2d1f096f85df1
+2026-04-04 19:44:03,032 - lightrag - INFO -  == LLM cache == saving: default:extract:566ec58e05fd5db100ea30c7bd794c10
+2026-04-04 19:44:03,034 - lightrag - INFO - Chunk 20 of 6890 extracted 7 Ent + 5 Rel chunk-6ea3f8e66fc29dbad174ff74303ece1f
+2026-04-04 19:44:18,303 - lightrag - INFO -  == LLM cache == saving: default:extract:4b2ce42985cea4285a64dc27b7c609ff
+2026-04-04 19:44:18,304 - lightrag - INFO - Chunk 35 of 64305 extracted 8 Ent + 7 Rel chunk-494a4d376634888b4d5ce54bbcbe50cd
+2026-04-04 19:44:32,426 - lightrag - INFO -  == LLM cache == saving: default:extract:04acfcfd6708370d664e0f1b5c20ac77
+2026-04-04 19:44:32,427 - lightrag - INFO - Chunk 36 of 64305 extracted 10 Ent + 4 Rel chunk-9b0b5de7967eee606ebcd314cd66755f
+2026-04-04 19:44:53,310 - lightrag - INFO -  == LLM cache == saving: default:extract:3a07e51355675c9d4d587e35432e3ffe
+2026-04-04 19:45:20,349 - lightrag - INFO -  == LLM cache == saving: default:extract:a8afa7506f0882518a8bc73f8436c710
+2026-04-04 19:45:38,939 - lightrag - INFO -  == LLM cache == saving: default:extract:6c5e4f7763943053ef48a46d76b31598
+2026-04-04 19:45:58,985 - lightrag - INFO -  == LLM cache == saving: default:extract:27505b2e5726487f3b1309027a1f99df
+2026-04-04 19:45:58,986 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 19:45:58,986 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 19:46:26,524 - lightrag - INFO -  == LLM cache == saving: default:extract:1930e23bb83852b5c3d8f6a21b472c10
+2026-04-04 19:46:56,033 - lightrag - INFO -  == LLM cache == saving: default:extract:3f8fe6d374bc5ddf545d9341dcbe15f8
+2026-04-04 19:47:08,193 - lightrag - INFO -  == LLM cache == saving: default:extract:7f402cf11b1a50f8b9233eb41a82f400
+2026-04-04 19:47:19,187 - lightrag - INFO -  == LLM cache == saving: default:extract:51f8d528765e95c838e28f9e3804dccd
+2026-04-04 19:47:38,343 - lightrag - INFO -  == LLM cache == saving: default:extract:456d6106c321046ee7b1648a121e597d
+2026-04-04 19:47:38,345 - lightrag - INFO - Chunk 37 of 64305 extracted 14 Ent + 9 Rel chunk-ec098a53d93c242efa8015d151d9bdec
+2026-04-04 19:48:09,423 - lightrag - INFO -  == LLM cache == saving: default:extract:240c3363348642940c8632ea9e7ab2f6
+2026-04-04 19:48:09,425 - lightrag - INFO - Chunk 38 of 64305 extracted 12 Ent + 10 Rel chunk-e13045850ba8cc2869e096c10aa1a23e
+2026-04-04 19:48:31,425 - lightrag - INFO -  == LLM cache == saving: default:extract:7b551ad90549c015e9082e9b6de67234
+2026-04-04 19:48:31,427 - lightrag - INFO - Chunk 21 of 6890 extracted 12 Ent + 7 Rel chunk-9b03d12de397e1f42edf2ce3730de718
+2026-04-04 19:48:54,623 - lightrag - INFO -  == LLM cache == saving: default:extract:533dc1b03f6a960b7ed728875295df7e
+2026-04-04 19:48:54,624 - lightrag - WARNING - chunk-11779ec4302c3c71ae77fdb17ac87bbb: LLM output format error; found 4/5 fields on REALTION `marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168`~`reference`
+2026-04-04 19:48:54,624 - lightrag - WARNING - chunk-11779ec4302c3c71ae77fdb17ac87bbb: LLM output format error; found 4/5 fields on REALTION `2025-04-15T19:58:01.010Z`~`datetime`
+2026-04-04 19:48:54,624 - lightrag - INFO - Chunk 22 of 6890 extracted 13 Ent + 5 Rel chunk-11779ec4302c3c71ae77fdb17ac87bbb
+2026-04-04 19:49:25,076 - lightrag - INFO -  == LLM cache == saving: default:extract:c6afb341e84414deb6e1e4e572fdccda
+2026-04-04 19:49:25,077 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 19:49:25,079 - lightrag - INFO - Chunk 23 of 6890 extracted 21 Ent + 18 Rel chunk-d5482d52db4ffaf1e1bc9a9e4a149a57
+2026-04-04 19:49:39,689 - lightrag - INFO -  == LLM cache == saving: default:extract:bb57e5fef41031c9d03b4dfab9ca97f4
+2026-04-04 19:49:39,691 - lightrag - INFO - Chunk 24 of 6890 extracted 19 Ent + 12 Rel chunk-d3102d2a314459438ff8f6d7deec3334
+2026-04-04 19:49:51,878 - lightrag - INFO -  == LLM cache == saving: default:extract:5239e67ab1ec2ac2ebb0d925cfee91c5
+2026-04-04 19:49:51,878 - lightrag - WARNING - chunk-f593f31254ca7001a37ff4f1d64f1ef2: LLM output format error; found 5/4 feilds on ENTITY `Fox IT` @ `organization`
+2026-04-04 19:49:51,878 - lightrag - WARNING - chunk-f593f31254ca7001a37ff4f1d64f1ef2: LLM output format error; found 5/4 feilds on ENTITY `report` @ `document`
+2026-04-04 19:49:51,878 - lightrag - WARNING - chunk-f593f31254ca7001a37ff4f1d64f1ef2: LLM output format error; found 6/5 fields on REALTION `FoxIT`~`Operation Wocao`
+2026-04-04 19:49:51,878 - lightrag - WARNING - chunk-f593f31254ca7001a37ff4f1d64f1ef2: LLM output format error; found 6/5 fields on REALTION `Operation Wocao`~`hacking group`
+2026-04-04 19:49:51,878 - lightrag - INFO - Chunk 39 of 64305 extracted 4 Ent + 1 Rel chunk-f593f31254ca7001a37ff4f1d64f1ef2
+2026-04-04 19:50:03,696 - lightrag - INFO -  == LLM cache == saving: default:extract:2b28960aa41cac80c6245fb92fea14ea
+2026-04-04 19:50:03,697 - lightrag - WARNING - chunk-b1aa5e759536a6c3376f3e80702cfc39: LLM output format error; found 5/4 feilds on ENTITY `MITRE ATT&CK` @ `framework`
+2026-04-04 19:50:03,697 - lightrag - WARNING - chunk-b1aa5e759536a6c3376f3e80702cfc39: LLM output format error; found 6/5 fields on REALTION `Wizard Spider`~`attack-pattern--c32f7008-9fea-41f7-8366-5eb9b74bd896`
+2026-04-04 19:50:03,697 - lightrag - INFO - Chunk 40 of 64305 extracted 2 Ent + 1 Rel chunk-b1aa5e759536a6c3376f3e80702cfc39
+2026-04-04 19:50:19,994 - lightrag - INFO -  == LLM cache == saving: default:extract:543542d97cb906108a12f8fbb3a2b422
+2026-04-04 19:50:38,310 - lightrag - INFO -  == LLM cache == saving: default:extract:4fd084c01e49d941559fc5ed0b443394
+2026-04-04 19:51:04,073 - lightrag - INFO -  == LLM cache == saving: default:extract:df54103a7573123bd2188597c6ff9ae2
+2026-04-04 19:51:30,057 - lightrag - INFO -  == LLM cache == saving: default:extract:13c2aa422192158f4129609d9c576196
+2026-04-04 19:51:49,889 - lightrag - INFO -  == LLM cache == saving: default:extract:bf70c47535e98ad2070851dd1a001c35
+2026-04-04 19:52:10,696 - lightrag - INFO -  == LLM cache == saving: default:extract:10ce13f9ab2495192976b6b10d02499f
+2026-04-04 19:52:23,720 - lightrag - INFO -  == LLM cache == saving: default:extract:ec6941bb040c62e2b28a5a35f28956aa
+2026-04-04 19:52:38,660 - lightrag - INFO -  == LLM cache == saving: default:extract:14b526169048301e67d7123700d5e167
+2026-04-04 19:52:53,461 - lightrag - INFO -  == LLM cache == saving: default:extract:88332d698012642335fab4b2d621efc5
+2026-04-04 19:52:53,462 - lightrag - INFO - Chunk 41 of 64305 extracted 9 Ent + 4 Rel chunk-c419ac85c8c7e2744970673f85d58d05
+2026-04-04 19:53:06,454 - lightrag - INFO -  == LLM cache == saving: default:extract:288c6c0e80fff9c1d658b9eb641d3512
+2026-04-04 19:53:06,455 - lightrag - WARNING - chunk-55683549f35b3fba3696bfa2e8d040c7: LLM output format error; found 4/5 fields on REALTION `Mandiant`~`threat actor`
+2026-04-04 19:53:06,455 - lightrag - INFO - Chunk 42 of 64305 extracted 10 Ent + 4 Rel chunk-55683549f35b3fba3696bfa2e8d040c7
+2026-04-04 19:53:24,841 - lightrag - INFO -  == LLM cache == saving: default:extract:7c7991b5e206b4041c81630e42b0f93d
+2026-04-04 19:53:24,842 - lightrag - INFO - Chunk 25 of 6890 extracted 13 Ent + 11 Rel chunk-41b202e8d349db2352efcf53ee455e82
+2026-04-04 19:53:47,753 - lightrag - INFO -  == LLM cache == saving: default:extract:41c77ef8aabf861a8d3c6a8d39266325
+2026-04-04 19:53:47,755 - lightrag - INFO - Chunk 26 of 6890 extracted 17 Ent + 9 Rel chunk-bdd9c0f8dfa5b711d6e4807ca30f727b
+2026-04-04 19:54:00,038 - lightrag - INFO -  == LLM cache == saving: default:extract:4e64ae79b50fe0612e9e3c0926c136cb
+2026-04-04 19:54:00,038 - lightrag - INFO - Chunk 27 of 6890 extracted 11 Ent + 6 Rel chunk-34f66fc29444941d27e6e96bab67fbd2
+2026-04-04 19:54:17,626 - lightrag - INFO -  == LLM cache == saving: default:extract:9e8f34d622d53bc452e39001d7bac1f5
+2026-04-04 19:54:17,628 - lightrag - INFO - Chunk 28 of 6890 extracted 10 Ent + 7 Rel chunk-20b3a7acaf2dff1879be191fa6858985
+2026-04-04 19:54:34,977 - lightrag - INFO -  == LLM cache == saving: default:extract:9f86c3b55bac9f7d576b56d3f034ed23
+2026-04-04 19:54:34,977 - lightrag - WARNING - chunk-956d2cb8387c12be58eb931d91911eaa: LLM output format error; found 6/4 feilds on ENTITY `intrusion-set--dd2d9ca6-505b-4860-a604-233685b802c7` @ `category`
+2026-04-04 19:54:34,977 - lightrag - WARNING - chunk-956d2cb8387c12be58eb931d91911eaa: LLM output format error; found 6/4 feilds on ENTITY `attack-pattern--635cbe30-392d-4e27-978e-66774357c762` @ `category`
+2026-04-04 19:54:34,977 - lightrag - WARNING - chunk-956d2cb8387c12be58eb931d91911eaa: LLM output format error; found 7/5 fields on REALTION `intrusion-set--dd2d9ca6-505b-4860-a604-233685b802c7`~`attack-pattern--635cbe30-392d-4e27-978e-66774357c762`
+2026-04-04 19:54:34,977 - lightrag - INFO - Chunk 43 of 64305 extracted 2 Ent + 1 Rel chunk-956d2cb8387c12be58eb931d91911eaa
+2026-04-04 19:54:50,309 - lightrag - INFO -  == LLM cache == saving: default:extract:06a79b40c3eb5ae8de9f839326737e38
+2026-04-04 19:54:50,311 - lightrag - INFO - Chunk 44 of 64305 extracted 5 Ent + 3 Rel chunk-c18bc0fb5c086f1cee7a6a80e752c7a4
+2026-04-04 19:55:05,319 - lightrag - INFO -  == LLM cache == saving: default:extract:379f3ff6245cbd0b521db5733e03d750
+2026-04-04 19:55:21,789 - lightrag - INFO -  == LLM cache == saving: default:extract:73013e8072d7f6da7355f06d1f447927
+2026-04-04 19:55:21,790 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 19:55:21,790 - lightrag - WARNING - chunk-8e7d50e23e7712a08fe7b3231ea51711: LLM output format error; found 4/5 fields on REALTION `attack-pattern--3489cfc5-640f-4bb3-a103-9137b97de79f`~`uses`
+2026-04-04 19:55:21,790 - lightrag - WARNING - chunk-8e7d50e23e7712a08fe7b3231ea51711: LLM output format error; found 4/5 fields on REALTION `malware--3553b49d-d4ae-4fb6-ab17-0adbc520c888`~`uses`
+2026-04-04 19:55:40,752 - lightrag - INFO -  == LLM cache == saving: default:extract:a71a7bbc081608e0a9b4b3662e5f0399
+2026-04-04 19:56:11,103 - lightrag - INFO -  == LLM cache == saving: default:extract:973540fc3e1290f5a866155f3e004571
+2026-04-04 19:56:11,105 - lightrag - WARNING - chunk-254251439c976de1703e35f473ea58cd: LLM output format error; found 4/5 fields on REALTION `May 2020`~`year`
+2026-04-04 19:56:36,622 - lightrag - INFO -  == LLM cache == saving: default:extract:aaef4bb535ba8e8037888fec1007b4dd
+2026-04-04 19:56:57,474 - lightrag - INFO -  == LLM cache == saving: default:extract:db3ec6098f5d8f6766b5051983690688
+2026-04-04 19:57:14,753 - lightrag - INFO -  == LLM cache == saving: default:extract:ce11a9203df523b19185d0bbbd98ca4b
+2026-04-04 19:57:34,931 - lightrag - INFO -  == LLM cache == saving: default:extract:7be1ac7e6249c120ec09e3cc68455bf0
+2026-04-04 19:57:48,934 - lightrag - INFO -  == LLM cache == saving: default:extract:7f08b27a6266f3be18dc285f503b5ea4
+2026-04-04 19:57:48,934 - lightrag - INFO - Chunk 45 of 64305 extracted 7 Ent + 6 Rel chunk-13b63d827c8b210b3e28605d4265d2e6
+2026-04-04 19:58:05,523 - lightrag - INFO -  == LLM cache == saving: default:extract:4e4a982bf5a9a4337a5ed3b0dde7bbb4
+2026-04-04 19:58:05,525 - lightrag - WARNING - chunk-8e7d50e23e7712a08fe7b3231ea51711: LLM output format error; found 4/5 fields on REALTION `Attack Pattern--3489cfc5-640f-4bb3-a103-9137b97de79f`~`uses`
+2026-04-04 19:58:05,525 - lightrag - WARNING - chunk-8e7d50e23e7712a08fe7b3231ea51711: LLM output format error; found 4/5 fields on REALTION `malware--3553b49d-d4ae-4fb6-ab17-0adbc520c888`~`analyzed by`
+2026-04-04 19:58:05,525 - lightrag - INFO - Chunk 46 of 64305 extracted 7 Ent + 0 Rel chunk-8e7d50e23e7712a08fe7b3231ea51711
+2026-04-04 19:58:21,765 - lightrag - INFO -  == LLM cache == saving: default:extract:858150849be70a5ddaa5296ede09efbd
+2026-04-04 19:58:21,766 - lightrag - INFO - Chunk 29 of 6890 extracted 13 Ent + 7 Rel chunk-f7832d621b7a0ad08e4440e159d86cbd
+2026-04-04 19:58:40,692 - lightrag - INFO -  == LLM cache == saving: default:extract:e46d906aca61ab78008c432b96d8a167
+2026-04-04 19:58:40,693 - lightrag - WARNING - chunk-254251439c976de1703e35f473ea58cd: LLM output format error; found 4/5 fields on REALTION `crafted packet`~`filter criteria`
+2026-04-04 19:58:40,693 - lightrag - INFO - Chunk 30 of 6890 extracted 21 Ent + 12 Rel chunk-254251439c976de1703e35f473ea58cd
+2026-04-04 19:59:07,765 - lightrag - INFO -  == LLM cache == saving: default:extract:fc5212f9ef62144bf993dbd3a4111cf7
+2026-04-04 19:59:07,766 - lightrag - WARNING - chunk-e13457f360855f97da2f0afad36c1386: LLM output format error; found 7/4 feilds on ENTITY `ExaTrack` @ `Organization`
+2026-04-04 19:59:07,766 - lightrag - WARNING - chunk-e13457f360855f97da2f0afad36c1386: LLM output format error; found 7/4 feilds on ENTITY `mitre-attack` @ `Organization`
+2026-04-04 19:59:07,766 - lightrag - WARNING - chunk-e13457f360855f97da2f0afad36c1386: LLM output format error; found 7/4 feilds on ENTITY `Tricephalic Hellkeeper` @ `Content`
+2026-04-04 19:59:07,766 - lightrag - WARNING - chunk-e13457f360855f97da2f0afad36c1386: LLM output format error; found 7/4 feilds on ENTITY `Jamie Harries` @ `Person`
+2026-04-04 19:59:07,766 - lightrag - WARNING - chunk-e13457f360855f97da2f0afad36c1386: LLM output format error; found 7/4 feilds on ENTITY `packet sniffing` @ `Method`
+2026-04-04 19:59:07,766 - lightrag - WARNING - chunk-e13457f360855f97da2f0afad36c1386: LLM output format error; found 7/5 fields on REALTION `ExaTrack`~`Tricephalic Hellkeeper`
+2026-04-04 19:59:07,766 - lightrag - WARNING - chunk-e13457f360855f97da2f0afad36c1386: LLM output format error; found 7/5 fields on REALTION `Jamie Harries`~`Tricephalic Hellkeeper`
+2026-04-04 19:59:07,766 - lightrag - WARNING - chunk-e13457f360855f97da2f0afad36c1386: LLM output format error; found 7/5 fields on REALTION `libpcap`~`pcap_setfilter`
+2026-04-04 19:59:07,766 - lightrag - WARNING - chunk-e13457f360855f97da2f0afad36c1386: LLM output format error; found 7/5 fields on REALTION `setsockopt`~`SO_ATTACH_FILTER`
+2026-04-04 19:59:07,766 - lightrag - WARNING - chunk-e13457f360855f97da2f0afad36c1386: LLM output format error; found 7/5 fields on REALTION `Windows hosts`~`Winpcap`
+2026-04-04 19:59:07,766 - lightrag - INFO - Chunk 31 of 6890 extracted 13 Ent + 6 Rel chunk-e13457f360855f97da2f0afad36c1386
+2026-04-04 19:59:32,808 - lightrag - INFO -  == LLM cache == saving: default:extract:30021f0aac71ae31b8736c7860d6c82b
+2026-04-04 19:59:32,810 - lightrag - INFO - Chunk 32 of 6890 extracted 10 Ent + 7 Rel chunk-468bcad6a1e91b367b50109413641af0
+2026-04-04 19:59:49,713 - lightrag - INFO -  == LLM cache == saving: default:extract:1250a6608bfae2e7ce62c8ceb17b2339
+2026-04-04 19:59:49,714 - lightrag - INFO - Chunk 47 of 64305 extracted 9 Ent + 5 Rel chunk-ee51ef1b5850d44a7f61c0e3524ba75c
+2026-04-04 20:00:12,435 - lightrag - INFO -  == LLM cache == saving: default:extract:ab8d92886cbd00ac8c15eb0c6edf3be3
+2026-04-04 20:00:12,437 - lightrag - INFO - Chunk 48 of 64305 extracted 3 Ent + 2 Rel chunk-95e5e2c48aacf715b5230f6270e4f328
+2026-04-04 20:00:31,211 - lightrag - INFO -  == LLM cache == saving: default:extract:edd569e8a5d41604e87389235694db77
+2026-04-04 20:00:51,981 - lightrag - INFO -  == LLM cache == saving: default:extract:7a2685125cb7810b78d98f9679fd7bed
+2026-04-04 20:01:09,795 - lightrag - INFO -  == LLM cache == saving: default:extract:b217c31f03254cf016adfb053444ea03
+2026-04-04 20:01:27,391 - lightrag - INFO -  == LLM cache == saving: default:extract:7a10446c71da994eea1a7e2d2327155c
+2026-04-04 20:01:57,344 - lightrag - INFO -  == LLM cache == saving: default:extract:df785abd552133d39dcd2de1ea550b1c
+2026-04-04 20:01:57,345 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 20:01:57,346 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 20:01:57,346 - lightrag - WARNING - Relationship extraction error: source entity became empty after cleaning. Original: '2.1'
+2026-04-04 20:02:14,998 - lightrag - INFO -  == LLM cache == saving: default:extract:c90db7c2845ac696636888873d194c98
+2026-04-04 20:02:38,038 - lightrag - INFO -  == LLM cache == saving: default:extract:d368b6fffe019a782a8dc70122c77577
+2026-04-04 20:02:56,712 - lightrag - INFO -  == LLM cache == saving: default:extract:ae854c3a0b3c31c8359fccc552efe74e
+2026-04-04 20:03:11,176 - lightrag - INFO -  == LLM cache == saving: default:extract:1e7051a3227aa4f0cb1b4fec7d82ee23
+2026-04-04 20:03:11,177 - lightrag - INFO - Chunk 49 of 64305 extracted 6 Ent + 2 Rel chunk-49ad672a8da483546dd4bbd152fd4d33
+2026-04-04 20:03:27,018 - lightrag - INFO -  == LLM cache == saving: default:extract:50e85cea4332b6f5caf15a0bd79ffa33
+2026-04-04 20:03:27,019 - lightrag - INFO - Chunk 50 of 64305 extracted 12 Ent + 9 Rel chunk-749924c4be322944438849ea0e4ce1ec
+2026-04-04 20:03:42,885 - lightrag - INFO -  == LLM cache == saving: default:extract:1c4bb9fb5f072e73eef433f5d131980c
+2026-04-04 20:03:42,886 - lightrag - INFO - Chunk 33 of 6890 extracted 11 Ent + 4 Rel chunk-087625b1b846be5b2617fee5be8b6fd7
+2026-04-04 20:03:56,288 - lightrag - INFO -  == LLM cache == saving: default:extract:f99b4c885ce79bc1c246ab67e501d0eb
+2026-04-04 20:03:56,289 - lightrag - INFO - Chunk 34 of 6890 extracted 9 Ent + 7 Rel chunk-58b188331999cf1f263cb7b71b20ea6c
+2026-04-04 20:04:13,617 - lightrag - INFO -  == LLM cache == saving: default:extract:36313b5bc89d7c21edae23b5f60b6d6f
+2026-04-04 20:04:13,617 - lightrag - INFO - Chunk 35 of 6890 extracted 13 Ent + 11 Rel chunk-d20563d37175a1c365146ef1791a6da6
+2026-04-04 20:04:26,717 - lightrag - INFO -  == LLM cache == saving: default:extract:ac134e42b3dfefcda99761bc621d8def
+2026-04-04 20:04:26,719 - lightrag - INFO - Chunk 36 of 6890 extracted 8 Ent + 8 Rel chunk-bb1713184d30038e933d3aad510768e1
+2026-04-04 20:04:43,670 - lightrag - INFO -  == LLM cache == saving: default:extract:fae1522f26091ce18329fa497b023a07
+2026-04-04 20:04:43,671 - lightrag - WARNING - chunk-f72a3c331d40692b128a12a75cf8d5be: LLM output format error; found 4/5 fields on REALTION `Unit 42 DarkHydrus July 2018`~`event, report`
+2026-04-04 20:04:43,671 - lightrag - WARNING - chunk-f72a3c331d40692b128a12a75cf8d5be: LLM output format error; found 4/5 fields on REALTION `Unit42 DarkHydrus Jan 2019`~`event, report`
+2026-04-04 20:04:43,671 - lightrag - WARNING - chunk-f72a3c331d40692b128a12a75cf8d5be: LLM output format error; found 4/5 fields on REALTION `Unit42 DarkHydrus April 17, 2019`~`event, report`
+2026-04-04 20:04:43,671 - lightrag - INFO - Chunk 51 of 64305 extracted 13 Ent + 6 Rel chunk-f72a3c331d40692b128a12a75cf8d5be
+2026-04-04 20:04:57,287 - lightrag - INFO -  == LLM cache == saving: default:extract:b60b4d62ccf0ae20c0786455bdaaadf1
+2026-04-04 20:04:57,288 - lightrag - INFO - Chunk 52 of 64305 extracted 9 Ent + 7 Rel chunk-d316d37ba6fe944e1280fc0080c73fb9
+2026-04-04 20:05:06,871 - lightrag - INFO -  == LLM cache == saving: default:extract:8637f56f89d539021fb4a46f204522b8
+2026-04-04 20:05:30,220 - lightrag - INFO -  == LLM cache == saving: default:extract:63aa3eea938fd1027ed0c420d2988a8c
+2026-04-04 20:05:54,757 - lightrag - INFO -  == LLM cache == saving: default:extract:95462d0c3f3f8e959d10b240a2651a1c
+2026-04-04 20:05:54,758 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '1.0'
+2026-04-04 20:05:54,759 - lightrag - WARNING - Relationship extraction error: target entity became empty after cleaning. Original: '1.0'
+2026-04-04 20:06:10,487 - lightrag - INFO -  == LLM cache == saving: default:extract:f578a0a026dc3f9f827c3df82afd04c3
+2026-04-04 20:06:26,865 - lightrag - INFO -  == LLM cache == saving: default:extract:939d43158b781b4614b42439bba17745
+2026-04-04 20:06:47,528 - lightrag - INFO -  == LLM cache == saving: default:extract:05f92bfbec6e1da748c2467dd2a9ecdf
+2026-04-04 20:06:47,529 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 20:06:47,529 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 20:06:47,530 - lightrag - WARNING - Relationship extraction error: source entity became empty after cleaning. Original: '2.1'
+2026-04-04 20:06:47,530 - lightrag - WARNING - chunk-bdbdd6ed934adb7cee24aeb481e863d8: LLM output format error; found 4/5 fields on REALTION `enterprise-attack`~`attack-pattern`
+2026-04-04 20:06:47,530 - lightrag - WARNING - chunk-bdbdd6ed934adb7cee24aeb481e863d8: LLM output format error; found 4/5 fields on REALTION `detection`~`detection`
+2026-04-04 20:06:47,530 - lightrag - WARNING - chunk-bdbdd6ed934adb7cee24aeb481e863d8: LLM output format error; found 4/5 fields on REALTION `anti-virus`~`detection`
+2026-04-04 20:06:47,530 - lightrag - WARNING - chunk-bdbdd6ed934adb7cee24aeb481e863d8: LLM output format error; found 4/5 fields on REALTION `IDS`~`detection`
+2026-04-04 20:07:05,684 - lightrag - INFO -  == LLM cache == saving: default:extract:5d5a9b402ce64798568fe5de0613780a
+2026-04-04 20:07:15,292 - lightrag - INFO -  == LLM cache == saving: default:extract:aa98c4513519010c26419f4f763c8967
+2026-04-04 20:07:25,985 - lightrag - INFO -  == LLM cache == saving: default:extract:f46256a150c7caea6966c8db8ad21501
+2026-04-04 20:07:25,986 - lightrag - INFO - Chunk 53 of 64305 extracted 2 Ent + 1 Rel chunk-90027c5d8e543ee6a7d465e729a76d68
+2026-04-04 20:07:51,169 - lightrag - INFO -  == LLM cache == saving: default:extract:a6234c9347d2cfc64c517a6b38913bd4
+2026-04-04 20:07:51,170 - lightrag - INFO - Chunk 54 of 64305 extracted 8 Ent + 7 Rel chunk-7f8262642f4c617eb8dcdba8a03b22c3
+2026-04-04 20:08:10,268 - lightrag - INFO -  == LLM cache == saving: default:extract:bb74d0e563d2221df4e3b611b1851fc6
+2026-04-04 20:08:10,269 - lightrag - WARNING - chunk-247ca12acc7c13663da250cc04d55f8d: LLM output format error; found 4/5 fields on REALTION `attack.mitre.org`~`cybersecurity resources`
+2026-04-04 20:08:10,269 - lightrag - WARNING - chunk-247ca12acc7c13663da250cc04d55f8d: LLM output format error; found 4/5 fields on REALTION `cybersecurity`~`threat response`
+2026-04-04 20:08:10,269 - lightrag - INFO - Chunk 37 of 6890 extracted 14 Ent + 6 Rel chunk-247ca12acc7c13663da250cc04d55f8d
+2026-04-04 20:08:23,363 - lightrag - INFO -  == LLM cache == saving: default:extract:86c4d49dc287a8f9670ce71617bcde1a
+2026-04-04 20:08:23,363 - lightrag - INFO - Chunk 38 of 6890 extracted 9 Ent + 6 Rel chunk-be55392987dfc6156e1b5d9de77c6c2e
+2026-04-04 20:08:40,814 - lightrag - INFO -  == LLM cache == saving: default:extract:92a1a96a71fe5d8cbe81bbbad211d826
+2026-04-04 20:08:40,816 - lightrag - WARNING - chunk-574ae56467be6fd67798b0cd308bd197: LLM output format error; found 5/4 feilds on ENTITY `Attack Pattern` @ `MITRE`
+2026-04-04 20:08:40,816 - lightrag - WARNING - chunk-574ae56467be6fd67798b0cd308bd197: LLM output format error; found 5/4 feilds on ENTITY `T1066` @ `technique`
+2026-04-04 20:08:40,816 - lightrag - WARNING - chunk-574ae56467be6fd67798b0cd308bd197: LLM output format error; found 7/4 feilds on ENTITY `URL` @ `data`
+2026-04-04 20:08:40,816 - lightrag - WARNING - chunk-574ae56467be6fd67798b0cd308bd197: LLM output format error; found 5/4 feilds on ENTITY `Defense Evasion` @ `category`
+2026-04-04 20:08:40,816 - lightrag - WARNING - chunk-574ae56467be6fd67798b0cd308bd197: LLM output format error; found 5/4 feilds on ENTITY `Detection` @ `category`
+2026-04-04 20:08:40,816 - lightrag - INFO - Chunk 39 of 6890 extracted 7 Ent + 4 Rel chunk-574ae56467be6fd67798b0cd308bd197
+2026-04-04 20:08:59,733 - lightrag - INFO -  == LLM cache == saving: default:extract:4f26437e23ab3f2909cacc2299dbfd97
+2026-04-04 20:08:59,734 - lightrag - WARNING - chunk-bdbdd6ed934adb7cee24aeb481e863d8: LLM output format error; found 6/5 fields on REALTION `MITRE`~`attack-pattern`
+2026-04-04 20:08:59,734 - lightrag - WARNING - chunk-bdbdd6ed934adb7cee24aeb481e863d8: LLM output format error; found 6/5 fields on REALTION `version`~`2.1`
+2026-04-04 20:08:59,734 - lightrag - WARNING - chunk-bdbdd6ed934adb7cee24aeb481e863d8: LLM output format error; found 6/5 fields on REALTION `version`~`3.2.0`
+2026-04-04 20:08:59,734 - lightrag - INFO - Chunk 40 of 6890 extracted 11 Ent + 3 Rel chunk-bdbdd6ed934adb7cee24aeb481e863d8
+2026-04-04 20:09:13,761 - lightrag - INFO -  == LLM cache == saving: default:extract:895ca9d0d1bbd371163b81306b23cd52
+2026-04-04 20:09:13,762 - lightrag - INFO - Chunk 55 of 64305 extracted 7 Ent + 5 Rel chunk-77749f645797b44d44c823d0eb867bae
+2026-04-04 20:09:25,619 - lightrag - INFO -  == LLM cache == saving: default:extract:e9620bb9d14aaf8f5277826d1c1628a8
+2026-04-04 20:09:25,619 - lightrag - INFO - Chunk 56 of 64305 extracted 4 Ent + 3 Rel chunk-21dc296c1504ca1afc1f0dfe6286eb15
+2026-04-04 20:09:38,862 - lightrag - INFO -  == LLM cache == saving: default:extract:8d1587e95d90405a18f8279fc66f81fd
+2026-04-04 20:10:00,673 - lightrag - INFO -  == LLM cache == saving: default:extract:cfa24db07c67e8de232d6a45d8b766c3
+2026-04-04 20:10:14,120 - lightrag - INFO -  == LLM cache == saving: default:extract:469e67f3d5a5b7b2ba70c567421c5d5f
+2026-04-04 20:10:33,195 - lightrag - INFO -  == LLM cache == saving: default:extract:6bc7dbd02d0e62466fbbda9c851c8ebe
+2026-04-04 20:10:57,079 - lightrag - INFO -  == LLM cache == saving: default:extract:2da64bfa26742ada2a356bdd43dcbae4
+2026-04-04 20:11:15,574 - lightrag - INFO -  == LLM cache == saving: default:extract:64a40318fa79ca3b9b7b0ad84b279117
+2026-04-04 20:11:27,782 - lightrag - INFO -  == LLM cache == saving: default:extract:25437ae511bc444401f6586b6303cbc0
+2026-04-04 20:11:27,783 - lightrag - WARNING - chunk-a0d8793f8fd48192bb0c92f19687fa53: LLM output format error; found 4/5 fields on REALTION `identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5`~`attack-pattern--322bad5a-1c49-4d23-ab79-76d641794afa`
+2026-04-04 20:11:49,985 - lightrag - INFO -  == LLM cache == saving: default:extract:1b45bc6a4d6c723881c319e0264afee3
+2026-04-04 20:12:02,990 - lightrag - INFO -  == LLM cache == saving: default:extract:75f59cfe265b27fee402b36f56bc9a6c
+2026-04-04 20:12:02,991 - lightrag - INFO - Chunk 57 of 64305 extracted 4 Ent + 6 Rel chunk-eb3185b095645728b7f10c1082000562
+2026-04-04 20:12:16,355 - lightrag - INFO -  == LLM cache == saving: default:extract:f9307a981054d2b59e4fe2fbf18fd79a
+2026-04-04 20:12:16,356 - lightrag - INFO - Chunk 58 of 64305 extracted 9 Ent + 7 Rel chunk-6db0387c8dd53b06910de47899c1be15
+2026-04-04 20:12:32,522 - lightrag - INFO -  == LLM cache == saving: default:extract:ef6499c10bf63878dee0c512aba080e0
+2026-04-04 20:12:32,524 - lightrag - INFO - Chunk 41 of 6890 extracted 6 Ent + 4 Rel chunk-4a9e6539690269d449c5c79adae71115
+2026-04-04 20:13:02,765 - lightrag - INFO -  == LLM cache == saving: default:extract:58fd3452722f188926f8020390d943fd
+2026-04-04 20:13:02,765 - lightrag - WARNING - chunk-99bc4cc36a9cbf85fa4eb59eb5abc373: LLM output format error; found 5/4 feilds on ENTITY `identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5` @ `other`
+2026-04-04 20:13:02,774 - lightrag - INFO - Chunk 42 of 6890 extracted 13 Ent + 10 Rel chunk-99bc4cc36a9cbf85fa4eb59eb5abc373
+2026-04-04 20:13:17,055 - lightrag - INFO -  == LLM cache == saving: default:extract:623e57d1ca8de2e0c0cd0653e7d4cbff
+2026-04-04 20:13:17,056 - lightrag - INFO - Chunk 43 of 6890 extracted 13 Ent + 9 Rel chunk-09a92211a87f1063a757a63449639f33
+2026-04-04 20:13:32,002 - lightrag - INFO -  == LLM cache == saving: default:extract:d6ae82b3bbfe5d33c4b778a0f02b64df
+2026-04-04 20:13:32,004 - lightrag - INFO - Chunk 44 of 6890 extracted 13 Ent + 8 Rel chunk-7c76fb471612cf0a1d87e7fcdb3117e7
+2026-04-04 20:13:45,365 - lightrag - INFO -  == LLM cache == saving: default:extract:cdcb27b00820e80210ef541aeab3d2ad
+2026-04-04 20:13:45,365 - lightrag - WARNING - chunk-a0d8793f8fd48192bb0c92f19687fa53: LLM output format error; found 4/5 fields on REALTION `identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5`~`attack-pattern--322bad5a-1c49-4d23-ab79-76d641794afa`
+2026-04-04 20:13:45,365 - lightrag - INFO - Chunk 59 of 64305 extracted 2 Ent + 0 Rel chunk-a0d8793f8fd48192bb0c92f19687fa53
+2026-04-04 20:13:58,985 - lightrag - INFO -  == LLM cache == saving: default:extract:4d93be9bff90c254b177254fd43abd4d
+2026-04-04 20:13:58,986 - lightrag - INFO - Chunk 60 of 64305 extracted 14 Ent + 6 Rel chunk-f7a6249e4696b3c329e6c0009c3f7f37
+2026-04-04 20:14:20,863 - lightrag - INFO -  == LLM cache == saving: default:extract:d6bd0682d900a1008b537befbd25c545
+2026-04-04 20:14:32,513 - lightrag - INFO -  == LLM cache == saving: default:extract:23ad832b7a8b5247c3300e9efd6797c3
+2026-04-04 20:14:46,827 - lightrag - INFO -  == LLM cache == saving: default:extract:75486f7be7cfab1b2225052ec67c7be3
+2026-04-04 20:15:10,028 - lightrag - INFO -  == LLM cache == saving: default:extract:a13bb39f75866b00bda60953da6de1f3
+2026-04-04 20:15:34,128 - lightrag - INFO -  == LLM cache == saving: default:extract:d6444b1cabaa5768c2fc43381716fe88
+2026-04-04 20:15:34,130 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 20:15:34,130 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 20:15:59,391 - lightrag - INFO -  == LLM cache == saving: default:extract:96a73d572cbb578a373b03273d96f6ca
+2026-04-04 20:15:59,392 - lightrag - WARNING - chunk-41a3e049f388b67843ba98365a94389c: LLM output format error; found 5/4 feilds on ENTITY `x_mitre_attack_spec_version` @ `3.2.0`
+2026-04-04 20:16:23,598 - lightrag - INFO -  == LLM cache == saving: default:extract:d11eef4a6d1d779ca5637f969438897d
+2026-04-04 20:16:36,481 - lightrag - INFO -  == LLM cache == saving: default:extract:87bb51683383613a04efb1411d0f5ed5
+2026-04-04 20:17:02,683 - lightrag - INFO -  == LLM cache == saving: default:extract:052c76d1ac9f233416717093919dd5d4
+2026-04-04 20:17:02,685 - lightrag - INFO - Chunk 61 of 64305 extracted 11 Ent + 6 Rel chunk-d799865aa674a20926345b1fe6bf41ea
+2026-04-04 20:17:15,832 - lightrag - INFO -  == LLM cache == saving: default:extract:137acfd675f5ec9d80a1da56ef066969
+2026-04-04 20:17:15,832 - lightrag - INFO - Chunk 62 of 64305 extracted 3 Ent + 1 Rel chunk-0cce387f8e8c7a8c3c3d848487e58630
+2026-04-04 20:17:27,203 - lightrag - INFO -  == LLM cache == saving: default:extract:591f50456a4caac17bd5f4942c2b274d
+2026-04-04 20:17:27,203 - lightrag - WARNING - chunk-f861f6c9b5de0eac20bfd845a1a7c435: LLM output format error; found 7/4 feilds on ENTITY `diantz.exe` @ `software`
+2026-04-04 20:17:27,204 - lightrag - INFO - Chunk 45 of 6890 extracted 4 Ent + 1 Rel chunk-f861f6c9b5de0eac20bfd845a1a7c435
+2026-04-04 20:17:40,721 - lightrag - INFO -  == LLM cache == saving: default:extract:75fec8aa8922a83b0b25474d7aefc879
+2026-04-04 20:17:40,723 - lightrag - INFO - Chunk 46 of 6890 extracted 15 Ent + 8 Rel chunk-be777ce25e7a998b13512b5708d478bf
+2026-04-04 20:18:08,575 - lightrag - INFO -  == LLM cache == saving: default:extract:1de389538d1f1e67b6a0f6553766849e
+2026-04-04 20:18:08,576 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 20:18:08,577 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 20:18:08,577 - lightrag - INFO - Chunk 47 of 6890 extracted 8 Ent + 9 Rel chunk-aa4b6c4235c8e61aeca48b02e4058da9
+2026-04-04 20:18:36,760 - lightrag - INFO -  == LLM cache == saving: default:extract:df893d1eb740ea812cd8f42638867d61
+2026-04-04 20:18:36,760 - lightrag - WARNING - chunk-41a3e049f388b67843ba98365a94389c: LLM output format error; found 5/4 feilds on ENTITY `x_mitre_attack_spec_version` @ `3.2.0`
+2026-04-04 20:18:36,762 - lightrag - INFO - Chunk 48 of 6890 extracted 9 Ent + 9 Rel chunk-41a3e049f388b67843ba98365a94389c
+2026-04-04 20:19:03,159 - lightrag - INFO -  == LLM cache == saving: default:extract:a7cfd44fa5cde76b11688bbfc14c2801
+2026-04-04 20:19:03,160 - lightrag - INFO - Chunk 63 of 64305 extracted 6 Ent + 4 Rel chunk-4876ccdfe66be8fc2f8811aa281fb0b8
+2026-04-04 20:19:18,255 - lightrag - INFO -  == LLM cache == saving: default:extract:e86917e95a659ad20cf6d592198efcb0
+2026-04-04 20:19:18,256 - lightrag - INFO - Chunk 64 of 64305 extracted 10 Ent + 4 Rel chunk-d37e565f6588ed9dce4d566a232b81ab
+2026-04-04 20:19:42,739 - lightrag - INFO -  == LLM cache == saving: default:extract:63908b68daa8d31db302df94010f3f3b
+2026-04-04 20:19:42,741 - lightrag - WARNING - chunk-dd3f8651b10b7fbed3b7c80d39329b0b: LLM output format error; found 5/4 feilds on ENTITY `()` @ `DEADEYE`
+2026-04-04 20:19:42,741 - lightrag - WARNING - chunk-dd3f8651b10b7fbed3b7c80d39329b0b: LLM output format error; found 5/4 feilds on ENTITY `()` @ `payload`
+2026-04-04 20:19:42,741 - lightrag - WARNING - chunk-dd3f8651b10b7fbed3b7c80d39329b0b: LLM output format error; found 5/4 feilds on ENTITY `()` @ `encryption`
+2026-04-04 20:19:42,741 - lightrag - WARNING - chunk-dd3f8651b10b7fbed3b7c80d39329b0b: LLM output format error; found 5/4 feilds on ENTITY `()` @ `Mandiant`
+2026-04-04 20:20:11,487 - lightrag - INFO -  == LLM cache == saving: default:extract:b35c5998dfc2410aaa488aff6133220f
+2026-04-04 20:20:29,922 - lightrag - INFO -  == LLM cache == saving: default:extract:c0586d8f99ba1a60680409e781479b64
+2026-04-04 20:20:46,468 - lightrag - INFO -  == LLM cache == saving: default:extract:087752d49d642877cbc3ba1093e3d9bb
+2026-04-04 20:21:06,240 - lightrag - INFO -  == LLM cache == saving: default:extract:712d756289817f4d53807049ef11d424
+2026-04-04 20:21:30,549 - lightrag - INFO -  == LLM cache == saving: default:extract:31f873f30e609d91f193502c5245fe12
+2026-04-04 20:21:40,379 - lightrag - INFO -  == LLM cache == saving: default:extract:c5df127e7154bbdb65bcb08c11ecd982
+2026-04-04 20:21:59,754 - lightrag - INFO -  == LLM cache == saving: default:extract:e77512358ef376ec4332e1041dfa61ef
+2026-04-04 20:21:59,755 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 20:21:59,755 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 20:22:25,672 - lightrag - INFO -  == LLM cache == saving: default:extract:b12659d707e26dfa6a4ab7e9458f8936
+2026-04-04 20:22:25,673 - lightrag - WARNING - chunk-dd3f8651b10b7fbed3b7c80d39329b0b: LLM output format error; found 5/4 feilds on ENTITY `()` @ `DEADEYE`
+2026-04-04 20:22:25,674 - lightrag - WARNING - chunk-dd3f8651b10b7fbed3b7c80d39329b0b: LLM output format error; found 5/4 feilds on ENTITY `()` @ `payload`
+2026-04-04 20:22:25,674 - lightrag - WARNING - chunk-dd3f8651b10b7fbed3b7c80d39329b0b: LLM output format error; found 5/4 feilds on ENTITY `()` @ `encryption`
+2026-04-04 20:22:25,674 - lightrag - WARNING - chunk-dd3f8651b10b7fbed3b7c80d39329b0b: LLM output format error; found 5/4 feilds on ENTITY `()` @ `Mandiant`
+2026-04-04 20:22:25,674 - lightrag - INFO - Chunk 65 of 64305 extracted 6 Ent + 15 Rel chunk-dd3f8651b10b7fbed3b7c80d39329b0b
+2026-04-04 20:22:59,754 - lightrag - INFO -  == LLM cache == saving: default:extract:e266d365dd36757589bb6229a9b4137f
+2026-04-04 20:22:59,755 - lightrag - WARNING - chunk-1ba0d742d96e650b219b8e807dfd709a: LLM output format error; found 6/4 feilds on ENTITY `78cb6e5-0c4b-4611-8297-d1b8b55e40b5` @ `artifact`
+2026-04-04 20:22:59,755 - lightrag - WARNING - chunk-1ba0d742d96e650b219b8e807dfd709a: LLM output format error; found 6/4 feilds on ENTITY `DEADEYE` @ `organization`
+2026-04-04 20:22:59,755 - lightrag - WARNING - chunk-1ba0d742d96e650b219b8e807dfd709a: LLM output format error; found 6/4 feilds on ENTITY `APT41` @ `organization`
+2026-04-04 20:22:59,755 - lightrag - WARNING - chunk-1ba0d742d96e650b219b8e807dfd709a: LLM output format error; found 6/4 feilds on ENTITY `Rufus Brown` @ `person`
+2026-04-04 20:22:59,755 - lightrag - WARNING - chunk-1ba0d742d96e650b219b8e807dfd709a: LLM output format error; found 6/4 feilds on ENTITY `Van Ta` @ `person`
+2026-04-04 20:22:59,755 - lightrag - WARNING - chunk-1ba0d742d96e650b219b8e807dfd709a: LLM output format error; found 6/4 feilds on ENTITY `Douglas Bienstock` @ `person`
+2026-04-04 20:22:59,755 - lightrag - WARNING - chunk-1ba0d742d96e650b219b8e807dfd709a: LLM output format error; found 6/4 feilds on ENTITY `Geoff Ackerman` @ `person`
+2026-04-04 20:22:59,756 - lightrag - WARNING - chunk-1ba0d742d96e650b219b8e807dfd709a: LLM output format error; found 6/4 feilds on ENTITY `John Wolfram` @ `person`
+2026-04-04 20:22:59,756 - lightrag - INFO - Chunk 66 of 64305 extracted 10 Ent + 6 Rel chunk-1ba0d742d96e650b219b8e807dfd709a
+2026-04-04 20:23:22,313 - lightrag - INFO -  == LLM cache == saving: default:extract:db7becbcba5e96bf40192107c2d566a9
+2026-04-04 20:23:22,314 - lightrag - INFO - Chunk 49 of 6890 extracted 7 Ent + 5 Rel chunk-314205b6efd83071e5842b5d8c94c733
+2026-04-04 20:23:35,121 - lightrag - INFO -  == LLM cache == saving: default:extract:a50dd65d67ebfbdf459679183545d9f0
+2026-04-04 20:23:35,122 - lightrag - INFO - Chunk 50 of 6890 extracted 9 Ent + 7 Rel chunk-9e9270daffb085e686c70a9bbee0b14c
+2026-04-04 20:23:58,556 - lightrag - INFO -  == LLM cache == saving: default:extract:79d65c6eda714dad87e0da9f653528bf
+2026-04-04 20:23:58,559 - lightrag - INFO - Chunk 51 of 6890 extracted 9 Ent + 7 Rel chunk-de0c2e1f214164dba3ddb4182a9191ab
+2026-04-04 20:24:17,091 - lightrag - INFO -  == LLM cache == saving: default:extract:2ea8f887410746f73d8981b0c7d3390f
+2026-04-04 20:24:17,092 - lightrag - INFO - Chunk 52 of 6890 extracted 15 Ent + 14 Rel chunk-40e5162dc840df982f86f3b715fffd2c
+2026-04-04 20:24:29,390 - lightrag - INFO -  == LLM cache == saving: default:extract:0ccef54952f40beaaa40d3ae426f25db
+2026-04-04 20:24:29,391 - lightrag - INFO - Chunk 67 of 64305 extracted 3 Ent + 2 Rel chunk-66b27af04a71c09379f6afe3bcac969f
+2026-04-04 20:24:44,324 - lightrag - INFO -  == LLM cache == saving: default:extract:780a2495ffde0247150e10ab3d8998ec
+2026-04-04 20:24:44,325 - lightrag - INFO - Chunk 68 of 64305 extracted 10 Ent + 7 Rel chunk-292697e3403d660a102fe4ef773a0944
+2026-04-04 20:25:02,298 - lightrag - INFO -  == LLM cache == saving: default:extract:234e00fe9c1463ad7b8fe470790bbb3d
+2026-04-04 20:25:16,250 - lightrag - INFO -  == LLM cache == saving: default:extract:12313fcc4a446b51393e35d0a6f906c5
+2026-04-04 20:25:38,565 - lightrag - INFO -  == LLM cache == saving: default:extract:91b555c8c58e665cdca8bf69dac65aa6
+2026-04-04 20:25:57,511 - lightrag - INFO -  == LLM cache == saving: default:extract:d53d1c1087fc878ca13f21e6a3dfeb91
+2026-04-04 20:26:14,285 - lightrag - INFO -  == LLM cache == saving: default:extract:51da8a8dc8cb0fa09668f6e02645f2b0
+2026-04-04 20:26:41,957 - lightrag - INFO -  == LLM cache == saving: default:extract:426ce74e5042d4fbe561c236841fc919
+2026-04-04 20:27:02,179 - lightrag - INFO -  == LLM cache == saving: default:extract:434eac6792fcd523f9556c583bfb3694
+2026-04-04 20:27:18,136 - lightrag - INFO -  == LLM cache == saving: default:extract:85d0cfd7ce86d237f4853f0bc417f46d
+2026-04-04 20:27:31,411 - lightrag - INFO -  == LLM cache == saving: default:extract:c1f10fce7232d7f1ca252e319f53dc72
+2026-04-04 20:27:31,412 - lightrag - INFO - Chunk 69 of 64305 extracted 9 Ent + 5 Rel chunk-b6179bc9cf2660ab4a33b6ba4955ff6a
+2026-04-04 20:27:43,136 - lightrag - INFO -  == LLM cache == saving: default:extract:b92c5571e227b0cb8a05c908022ea1e7
+2026-04-04 20:27:43,137 - lightrag - INFO - Chunk 70 of 64305 extracted 7 Ent + 6 Rel chunk-0a2c234e361d9fe3006606ac03a7a9f3
+2026-04-04 20:28:10,583 - lightrag - INFO -  == LLM cache == saving: default:extract:d2a7b292de665b785d6c1739a6bc7874
+2026-04-04 20:28:10,585 - lightrag - INFO - Chunk 53 of 6890 extracted 12 Ent + 8 Rel chunk-642b1fcba1e25e8fcee0bd86d381c3b2
+2026-04-04 20:28:32,599 - lightrag - INFO -  == LLM cache == saving: default:extract:57d38e6f01d879149fb717ef2899b203
+2026-04-04 20:28:32,600 - lightrag - INFO - Chunk 54 of 6890 extracted 10 Ent + 5 Rel chunk-2a0ca4e749f6f88af3cb8c7b10998026
+2026-04-04 20:28:47,340 - lightrag - INFO -  == LLM cache == saving: default:extract:a254a77513d6ca0b3d319d5718f7b20b
+2026-04-04 20:28:47,340 - lightrag - WARNING - chunk-fdca4d51bcd11acd70c33177f6021049: LLM output format error; found 7/4 feilds on ENTITY `macOS` @ `operating system`
+2026-04-04 20:28:47,341 - lightrag - INFO - Chunk 55 of 6890 extracted 7 Ent + 6 Rel chunk-fdca4d51bcd11acd70c33177f6021049
+2026-04-04 20:29:01,823 - lightrag - INFO -  == LLM cache == saving: default:extract:ccc065568e9024164b9690e1885f2bae
+2026-04-04 20:29:01,823 - lightrag - INFO - Chunk 56 of 6890 extracted 12 Ent + 11 Rel chunk-aefb6e114f0abd93c69268626cc86a58
+2026-04-04 20:29:21,259 - lightrag - INFO -  == LLM cache == saving: default:extract:7616b2a9694083239c64ef517c997602
+2026-04-04 20:29:21,259 - lightrag - WARNING - chunk-92c913919b8a33d630aa1ac77a8b3d3f: LLM output format error; found 5/4 feilds on ENTITY `Attack Pattern` @ `ef67e13e-5598-4adc-bdb2-998225874fa9`
+2026-04-04 20:29:21,260 - lightrag - INFO - Chunk 71 of 64305 extracted 5 Ent + 3 Rel chunk-92c913919b8a33d630aa1ac77a8b3d3f
+2026-04-04 20:29:39,548 - lightrag - INFO -  == LLM cache == saving: default:extract:5a09f171d170e6ba74e756925658d808
+2026-04-04 20:29:39,548 - lightrag - WARNING - chunk-12327453311a8bc02e706d2113a076a6: LLM output format error; found 5/4 feilds on ENTITY `attack-pattern` @ `attack-pattern--8868cb5b-d575-4a60-acb2-07d37389a2fd`
+2026-04-04 20:29:39,548 - lightrag - WARNING - chunk-12327453311a8bc02e706d2113a076a6: LLM output format error; found 5/4 feilds on ENTITY `course-of-action` @ `course-of-action--20f6a9df-37c4-4e20-9e47-025983b1b39d`
+2026-04-04 20:29:39,548 - lightrag - WARNING - chunk-12327453311a8bc02e706d2113a076a6: LLM output format error; found 5/4 feilds on ENTITY `variant` @ `variant`
+2026-04-04 20:29:39,548 - lightrag - WARNING - chunk-12327453311a8bc02e706d2113a076a6: LLM output format error; found 5/4 feilds on ENTITY `stateful firewall` @ `stateful firewall`
+2026-04-04 20:29:39,548 - lightrag - WARNING - chunk-12327453311a8bc02e706d2113a076a6: LLM output format error; found 5/4 feilds on ENTITY `technique` @ `technique`
+2026-04-04 20:29:39,548 - lightrag - WARNING - chunk-12327453311a8bc02e706d2113a076a6: LLM output format error; found 6/5 fields on REALTION `attack-pattern`~`course-of-action`
+2026-04-04 20:29:39,548 - lightrag - INFO - Chunk 72 of 64305 extracted 5 Ent + 1 Rel chunk-12327453311a8bc02e706d2113a076a6
+2026-04-04 20:29:54,817 - lightrag - INFO -  == LLM cache == saving: default:extract:d3138bb5b9100480622d61f18dd42ba0
+2026-04-04 20:30:18,060 - lightrag - INFO -  == LLM cache == saving: default:extract:28842646b445097ac7e7defd001e05e5
+2026-04-04 20:30:18,061 - lightrag - WARNING - chunk-4c1ba807799e15542c6de3039f991430: LLM output format error; found 4/5 fields on REALTION `Browser Extensions`~`attacks`
+2026-04-04 20:30:37,464 - lightrag - INFO -  == LLM cache == saving: default:extract:b8171e8da616ad1cc13fe8770135b3f7
+2026-04-04 20:31:02,538 - lightrag - INFO -  == LLM cache == saving: default:extract:ec4660cc6f5e465bb569aca71426448b
+2026-04-04 20:31:19,316 - lightrag - INFO -  == LLM cache == saving: default:extract:f38391ebefd0e3b22e7815e570853d5c
+2026-04-04 20:31:43,162 - lightrag - INFO -  == LLM cache == saving: default:extract:f8ea6cc7ef7be3c9213cba8585692d81
+2026-04-04 20:31:43,163 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 20:31:43,163 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1.0'
+2026-04-04 20:31:58,534 - lightrag - INFO -  == LLM cache == saving: default:extract:bab887a64291565f7a6170749cd3fbaf
+2026-04-04 20:32:13,414 - lightrag - INFO -  == LLM cache == saving: default:extract:73e4e5dc61c94876906c303cf5f982e0
+2026-04-04 20:32:29,367 - lightrag - INFO -  == LLM cache == saving: default:extract:e1d4af9f948b2b1a1f977231f61e4372
+2026-04-04 20:32:29,369 - lightrag - INFO - Chunk 73 of 64305 extracted 10 Ent + 6 Rel chunk-4245dabef4d1c1a9febb136b164fb931
+2026-04-04 20:32:45,379 - lightrag - INFO -  == LLM cache == saving: default:extract:6df957ef9374dcf3b0250a699fded9ae
+2026-04-04 20:32:45,380 - lightrag - INFO - Chunk 74 of 64305 extracted 14 Ent + 9 Rel chunk-4c1ba807799e15542c6de3039f991430
+2026-04-04 20:33:03,983 - lightrag - INFO -  == LLM cache == saving: default:extract:fbc30deaa6764a602654a2f844de390e
+2026-04-04 20:33:03,984 - lightrag - INFO - Chunk 57 of 6890 extracted 12 Ent + 8 Rel chunk-48f382a701c9d860761bdcc5cefe88ba
+2026-04-04 20:33:26,306 - lightrag - INFO -  == LLM cache == saving: default:extract:e82964f09ace5e9fa48a444ac9fa6be3
+2026-04-04 20:33:26,307 - lightrag - INFO - Chunk 58 of 6890 extracted 13 Ent + 10 Rel chunk-4136b1a3ff81d43f414c459ddfa1dd5f
+2026-04-04 20:33:45,391 - lightrag - INFO -  == LLM cache == saving: default:extract:d463bd3631145db32337e3d1eafa4025
+2026-04-04 20:33:45,392 - lightrag - INFO - Chunk 59 of 6890 extracted 6 Ent + 4 Rel chunk-dd130d6f6a27fca86377e16c5cb5f702
+2026-04-04 20:34:01,692 - lightrag - INFO -  == LLM cache == saving: default:extract:ca8b81b02b93b262102241670625b81f
+2026-04-04 20:34:01,694 - lightrag - INFO - Chunk 60 of 6890 extracted 11 Ent + 9 Rel chunk-79e3eaed4bbc6874ef0e4bab533e432d
+2026-04-04 20:34:14,775 - lightrag - INFO -  == LLM cache == saving: default:extract:ef320b210ca07f2890d32bb2768d32a6
+2026-04-04 20:34:14,776 - lightrag - INFO - Chunk 75 of 64305 extracted 8 Ent + 7 Rel chunk-ad114cadc013bd0972f8bbabbdbab270
+2026-04-04 20:34:31,061 - lightrag - INFO -  == LLM cache == saving: default:extract:2e7ecee8df3256b4235ef109cc62cf67
+2026-04-04 20:34:31,062 - lightrag - INFO - Chunk 76 of 64305 extracted 4 Ent + 2 Rel chunk-1b0625b5355fb14da8e4411d5039aa2e
+2026-04-04 20:34:41,466 - lightrag - INFO -  == LLM cache == saving: default:extract:24eca3ebbd64421cf3c07633c31ea917
+2026-04-04 20:35:02,978 - lightrag - INFO -  == LLM cache == saving: default:extract:7b1b6ce2010ad7f54bac032b29a2994c
+2026-04-04 20:35:20,693 - lightrag - INFO -  == LLM cache == saving: default:extract:9e8c6a0aca90526904cf6f224e0c679e
+2026-04-04 20:35:20,694 - lightrag - WARNING - chunk-9298b0e5a9be188adb55ba8323246c13: LLM output format error; found 6/5 fields on REALTION `macOS systems`~`log show --predicate`
+2026-04-04 20:35:48,967 - lightrag - INFO -  == LLM cache == saving: default:extract:f13d64cdbbfd4897ef11aaa611420d4e
+2026-04-04 20:36:05,244 - lightrag - INFO -  == LLM cache == saving: default:extract:aa6c638ab2fdd65b1860b90319a1b47d
+2026-04-04 20:36:28,008 - lightrag - INFO -  == LLM cache == saving: default:extract:e446eb5ddb309a5e5da93199e02478ff
+2026-04-04 20:36:51,077 - lightrag - INFO -  == LLM cache == saving: default:extract:102a7bf2c4ea1e178a0a0ba4f7f438f9
+2026-04-04 20:36:51,078 - lightrag - WARNING - chunk-5115126f1fdfbe9153392325251eae06: LLM output format error; found 5/4 feilds on ENTITY `A.` @ `,March 4, 2021`
+2026-04-04 20:36:51,079 - lightrag - WARNING - chunk-5115126f1fdfbe9153392325251eae06: LLM output format error; found 6/5 fields on REALTION `A.`~`,March 4, 2021`
+2026-04-04 20:36:51,079 - lightrag - WARNING - chunk-5115126f1fdfbe9153392325251eae06: LLM output format error; found 6/5 fields on REALTION `,A.`~`,March 4, 2021`
+2026-04-04 20:36:51,079 - lightrag - WARNING - chunk-5115126f1fdfbe9153392325251eae06: LLM output format error; found 6/5 fields on REALTION `,A.`~`,March 4, 2021`
+2026-04-04 20:36:51,079 - lightrag - WARNING - chunk-5115126f1fdfbe9153392325251eae06: LLM output format error; found 6/5 fields on REALTION `,A.`~`,March 4, 2021`
+2026-04-04 20:37:03,022 - lightrag - INFO -  == LLM cache == saving: default:extract:7a47b7b160f8cb9a6ae1ad3e6a057811
+2026-04-04 20:37:03,023 - lightrag - WARNING - chunk-e170893dad386aae4520c80f4ec66a40: LLM output format error; found 5/4 feilds on ENTITY `identity` @ `identity`
+2026-04-04 20:37:13,306 - lightrag - INFO -  == LLM cache == saving: default:extract:9cc0214dc852e69953a0f41b0cddf61f
+2026-04-04 20:37:13,307 - lightrag - INFO - Chunk 77 of 64305 extracted 2 Ent + 1 Rel chunk-8b187a96244a461f836e7b461e02bbdc
+2026-04-04 20:37:38,949 - lightrag - INFO -  == LLM cache == saving: default:extract:6f6ceb77b7ba994f3a5b8e1615a3e175
+2026-04-04 20:37:38,951 - lightrag - INFO - Chunk 78 of 64305 extracted 8 Ent + 7 Rel chunk-a127da4c797c6bea4010941751fd0667
+2026-04-04 20:37:57,094 - lightrag - INFO -  == LLM cache == saving: default:extract:d349b4a75cda296c6190cb0cbaa8b39b
+2026-04-04 20:37:57,095 - lightrag - WARNING - chunk-9298b0e5a9be188adb55ba8323246c13: LLM output format error; found 6/5 fields on REALTION `macOS`~`log show --predicate`
+2026-04-04 20:37:57,095 - lightrag - INFO - Chunk 61 of 6890 extracted 12 Ent + 3 Rel chunk-9298b0e5a9be188adb55ba8323246c13
+2026-04-04 20:38:27,843 - lightrag - INFO -  == LLM cache == saving: default:extract:83c84cc0e3647ead37be80052e0f871f
+2026-04-04 20:38:27,845 - lightrag - INFO - Chunk 62 of 6890 extracted 14 Ent + 11 Rel chunk-6c69f560211174a64f9099d0dd3a9cb0
+2026-04-04 20:38:45,452 - lightrag - INFO -  == LLM cache == saving: default:extract:d1499c0ea47bfbfd29b3b4ad105ec44c
+2026-04-04 20:38:45,453 - lightrag - INFO - Chunk 63 of 6890 extracted 8 Ent + 4 Rel chunk-9fa67e4f0ee3b5d283de6884e9009807
+2026-04-04 20:39:10,210 - lightrag - INFO -  == LLM cache == saving: default:extract:b1e40303182189482d62885e2fcd2bbe
+2026-04-04 20:39:10,211 - lightrag - INFO - Chunk 64 of 6890 extracted 9 Ent + 7 Rel chunk-46035fb12b79cabaf1d309ac355ad1ec
+2026-04-04 20:39:25,281 - lightrag - INFO -  == LLM cache == saving: default:extract:035735c322d39a799fa1cbd0dd067578
+2026-04-04 20:39:25,281 - lightrag - WARNING - chunk-5115126f1fdfbe9153392325251eae06: LLM output format error; found 6/5 fields on REALTION `A.`~`,March 4, 2021`
+2026-04-04 20:39:25,281 - lightrag - INFO - Chunk 79 of 64305 extracted 10 Ent + 3 Rel chunk-5115126f1fdfbe9153392325251eae06
+2026-04-04 20:39:38,340 - lightrag - INFO -  == LLM cache == saving: default:extract:b6369154b98c4e451be793e16f9553b2
+2026-04-04 20:39:38,340 - lightrag - WARNING - chunk-e170893dad386aae4520c80f4ec66a40: LLM output format error; found 5/4 feilds on ENTITY `identity` @ `identity`
+2026-04-04 20:39:38,340 - lightrag - INFO - Chunk 80 of 64305 extracted 2 Ent + 2 Rel chunk-e170893dad386aae4520c80f4ec66a40
+2026-04-04 20:40:02,192 - lightrag - INFO -  == LLM cache == saving: default:extract:a1a76beb25afb95c638524b4783e4453
+2026-04-04 20:40:19,265 - lightrag - INFO -  == LLM cache == saving: default:extract:2849901d6ec687f0e0881322440adcb5
+2026-04-04 20:40:45,367 - lightrag - INFO -  == LLM cache == saving: default:extract:c4055c52c331cb6777a00e5e3eafd035
+2026-04-04 20:41:12,117 - lightrag - INFO -  == LLM cache == saving: default:extract:03ab46bba83f7f29c2c0579ddcbd6317
+2026-04-04 20:41:28,027 - lightrag - INFO -  == LLM cache == saving: default:extract:a4d9eee912e220e6db99372306b1eb87
+2026-04-04 20:41:48,530 - lightrag - INFO -  == LLM cache == saving: default:extract:6e56bb4401fa99a30b90e378f4247856
+2026-04-04 20:42:06,584 - lightrag - INFO -  == LLM cache == saving: default:extract:7989d2443ffee6cdf41162e894e303ca
+2026-04-04 20:42:22,994 - lightrag - INFO -  == LLM cache == saving: default:extract:67e770984ef707caa8f28e61f24ab0cf
+2026-04-04 20:42:22,994 - lightrag - WARNING - chunk-33defcbd7eb32d1426ecdeacda46eea3: LLM output format error; find LLM use <|#|> as record seperators instead new-line
+2026-04-04 20:42:22,995 - lightrag - WARNING - chunk-33defcbd7eb32d1426ecdeacda46eea3: LLM output format error; found 2/4 feilds on ENTITY `identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5` @ `N/A`
+2026-04-04 20:42:49,314 - lightrag - INFO -  == LLM cache == saving: default:extract:732f41965613bf99a2a95687ff25a6cd
+2026-04-04 20:42:49,318 - lightrag - INFO - Chunk 81 of 64305 extracted 10 Ent + 6 Rel chunk-adfeccaaddee8edc5c3393f6f538aef9
+2026-04-04 20:43:02,082 - lightrag - INFO -  == LLM cache == saving: default:extract:8ba9f296c042f8b575ccf707c591897c
+2026-04-04 20:43:02,082 - lightrag - INFO - Chunk 82 of 64305 extracted 7 Ent + 7 Rel chunk-25d79e2166fbe2a15f409256e3e8c234
+2026-04-04 20:43:20,908 - lightrag - INFO -  == LLM cache == saving: default:extract:c794f3b8cf04ac8469863957011e3d87
+2026-04-04 20:43:20,910 - lightrag - INFO - Chunk 65 of 6890 extracted 17 Ent + 11 Rel chunk-5ff1ef2d8c3ddec7aadd23edd1fa5c71
+2026-04-04 20:43:37,370 - lightrag - INFO -  == LLM cache == saving: default:extract:f8a5237f623b47bf63c11d26feba7636
+2026-04-04 20:43:37,371 - lightrag - INFO - Chunk 66 of 6890 extracted 17 Ent + 13 Rel chunk-e3e5f666daf093a4318bdb9b0ef38fdd
+2026-04-04 20:43:50,649 - lightrag - INFO -  == LLM cache == saving: default:extract:d469a6ba0cbcfb15af3352ef68dd1964
+2026-04-04 20:43:50,651 - lightrag - WARNING - chunk-1c12c125634773964111b08989548d93: LLM output format error; found 4/5 fields on REALTION `WMI`~`management`
+2026-04-04 20:43:50,651 - lightrag - INFO - Chunk 67 of 6890 extracted 8 Ent + 4 Rel chunk-1c12c125634773964111b08989548d93
+2026-04-04 20:44:08,274 - lightrag - INFO -  == LLM cache == saving: default:extract:20f1948c51bfd000c69f20ae04404eb5
+2026-04-04 20:44:08,276 - lightrag - INFO - Chunk 68 of 6890 extracted 12 Ent + 8 Rel chunk-3e8c7fc1030a447a494ef6edf0f4f322
+2026-04-04 20:44:29,320 - lightrag - INFO -  == LLM cache == saving: default:extract:a63ac6e16b28ecf645ea50db0914e5af
+2026-04-04 20:44:29,321 - lightrag - INFO - Chunk 83 of 64305 extracted 5 Ent + 3 Rel chunk-33faab8878d858a84caecee92019af63
+2026-04-04 20:44:43,051 - lightrag - INFO -  == LLM cache == saving: default:extract:84740948b88a7583857223d9442bb220
+2026-04-04 20:44:43,052 - lightrag - INFO - Chunk 84 of 64305 extracted 7 Ent + 4 Rel chunk-33defcbd7eb32d1426ecdeacda46eea3
+2026-04-04 20:45:07,869 - lightrag - INFO -  == LLM cache == saving: default:extract:da20ee797c155ac13d20feb6c9994969
+2026-04-04 20:45:39,090 - lightrag - INFO -  == LLM cache == saving: default:extract:1c36c63941922348b14695532137a082
+2026-04-04 20:45:39,092 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 20:45:39,092 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 20:45:39,092 - lightrag - WARNING - chunk-f025e9680f7ac74d81bdf1e4ce3c8e94: LLM output format error; found 6/5 fields on REALTION `intrusion-set--e1fc262c-dad2-4b82-abda-5f08dd134971`~`malware--64fa0de0-6240-41f4-8638-f4ca7ed528fd`
+2026-04-04 20:45:39,092 - lightrag - WARNING - chunk-f025e9680f7ac74d81bdf1e4ce3c8e94: LLM output format error; found 6/5 fields on REALTION `marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168`~`intrusion-set--e1fc262c-dad2-4b82-abda-5f08dd134971`
+2026-04-04 20:45:39,092 - lightrag - WARNING - chunk-f025e9680f7ac74d81bdf1e4ce3c8e94: LLM output format error; found 6/5 fields on REALTION `2.1`~`marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168`
+2026-04-04 20:45:39,092 - lightrag - WARNING - chunk-f025e9680f7ac74d81bdf1e4ce3c8e94: LLM output format error; found 6/5 fields on REALTION `3.2.0`~`marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168`
+2026-04-04 20:45:39,092 - lightrag - WARNING - chunk-f025e9680f7ac74d81bdf1e4ce3c8e94: LLM output format error; found 6/5 fields on REALTION `identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5`~`intrusion-set--e1fc262c-dad2-4b82-abda-5f08dd134971`
+2026-04-04 20:45:56,756 - lightrag - INFO -  == LLM cache == saving: default:extract:14f7f658bc38d4c3694799330334e7b9
+2026-04-04 20:46:19,012 - lightrag - INFO -  == LLM cache == saving: default:extract:da419bbf8189260734c3922f47b1df64
+2026-04-04 20:46:45,718 - lightrag - INFO -  == LLM cache == saving: default:extract:e4f3227223ee4b1fd5c086dc52af659b
+2026-04-04 20:47:08,751 - lightrag - INFO -  == LLM cache == saving: default:extract:3d2cc0deb4060f7c73912ff554ef0cbf
+2026-04-04 20:47:27,472 - lightrag - INFO -  == LLM cache == saving: default:extract:2fffdf6f45ca1d3fddccf43245860e6d
+2026-04-04 20:47:45,449 - lightrag - INFO -  == LLM cache == saving: default:extract:fa6510702b70d64a87214f1bb860cbf8
+2026-04-04 20:48:03,946 - lightrag - INFO -  == LLM cache == saving: default:extract:82177ca8ec456817be4db134beb14a11
+2026-04-04 20:48:03,947 - lightrag - INFO - Chunk 85 of 64305 extracted 13 Ent + 5 Rel chunk-6d6acc5593375e78777dbcaad73b9205
+2026-04-04 20:48:46,207 - lightrag - INFO -  == LLM cache == saving: default:extract:393b67e27c821166a44af13bd9700867
+2026-04-04 20:48:46,207 - lightrag - WARNING - chunk-f025e9680f7ac74d81bdf1e4ce3c8e94: LLM output format error; found 9/4 feilds on ENTITY `intrusion-set--e1fc262c-dad2-4b82-abda-5f08dd134971` @ `category`
+2026-04-04 20:48:46,208 - lightrag - WARNING - chunk-f025e9680f7ac74d81bdf1e4ce3c8e94: LLM output format error; found 9/4 feilds on ENTITY `malware--64fa0de0-6240-41f4-8638-f4ca7ed528fd` @ `category`
+2026-04-04 20:48:46,208 - lightrag - WARNING - chunk-f025e9680f7ac74d81bdf1e4ce3c8e94: LLM output format error; found 9/4 feilds on ENTITY `uses` @ `category`
+2026-04-04 20:48:46,208 - lightrag - WARNING - chunk-f025e9680f7ac74d81bdf1e4ce3c8e94: LLM output format error; found 9/4 feilds on ENTITY `16T21:52:56.513Z` @ `category`
+2026-04-04 20:48:46,208 - lightrag - WARNING - chunk-f025e9680f7ac74d81bdf1e4ce3c8e94: LLM output format error; found 9/4 feilds on ENTITY `marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168` @ `category`
+2026-04-04 20:48:46,208 - lightrag - WARNING - chunk-f025e9680f7ac74d81bdf1e4ce3c8e94: LLM output format error; found 9/4 feilds on ENTITY `2.1` @ `category`
+2026-04-04 20:48:46,208 - lightrag - WARNING - chunk-f025e9680f7ac74d81bdf1e4ce3c8e94: LLM output format error; found 9/4 feilds on ENTITY `3.2.0` @ `category`
+2026-04-04 20:48:46,208 - lightrag - WARNING - chunk-f025e9680f7ac74d81bdf1e4ce3c8e94: LLM output format error; found 9/4 feilds on ENTITY `identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5` @ `category`
+2026-04-04 20:48:46,208 - lightrag - WARNING - chunk-f025e9680f7ac74d81bdf1e4ce3c8e94: LLM output format error; found 6/5 fields on REALTION `intrusion-set--e1fc262c-dad2-4b82-abda-5f08dd134971`~`malware--64fa0de0-6240-41f4-8638-f4ca7ed528fd`
+2026-04-04 20:48:46,208 - lightrag - WARNING - chunk-f025e9680f7ac74d81bdf1e4ce3c8e94: LLM output format error; found 6/5 fields on REALTION `marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168`~`intrusion-set--e1fc262c-dad2-4b82-abda-5f08dd134971`
+2026-04-04 20:48:46,208 - lightrag - WARNING - chunk-f025e9680f7ac74d81bdf1e4ce3c8e94: LLM output format error; found 6/5 fields on REALTION `2.1`~`marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168`
+2026-04-04 20:48:46,208 - lightrag - WARNING - chunk-f025e9680f7ac74d81bdf1e4ce3c8e94: LLM output format error; found 6/5 fields on REALTION `3.2.0`~`marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168`
+2026-04-04 20:48:46,208 - lightrag - WARNING - chunk-f025e9680f7ac74d81bdf1e4ce3c8e94: LLM output format error; found 6/5 fields on REALTION `identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5`~`intrusion-set--e1fc262c-dad2-4b82-abda-5f08dd134971`
+2026-04-04 20:48:46,208 - lightrag - INFO - Chunk 86 of 64305 extracted 6 Ent + 0 Rel chunk-f025e9680f7ac74d81bdf1e4ce3c8e94
+2026-04-04 20:48:59,158 - lightrag - INFO -  == LLM cache == saving: default:extract:812965c46023487c1db0054d95eea739
+2026-04-04 20:48:59,160 - lightrag - INFO - Chunk 69 of 6890 extracted 9 Ent + 8 Rel chunk-c093df602f63de0799298b1e7d5e1206
+2026-04-04 20:49:25,094 - lightrag - INFO -  == LLM cache == saving: default:extract:2446a8b36cd5b01ea0c468bdd32f4b23
+2026-04-04 20:49:25,095 - lightrag - WARNING - chunk-de0e1ea0bf62e8ec7b679ec8664c43f1: LLM output format error; found 8/4 feilds on ENTITY `WMI Command-Line Utility` @ `tool`
+2026-04-04 20:49:25,095 - lightrag - WARNING - chunk-de0e1ea0bf62e8ec7b679ec8664c43f1: LLM output format error; found 6/4 feilds on ENTITY `Windows Management Instrumentation (WMI)` @ `software`
+2026-04-04 20:49:25,095 - lightrag - WARNING - chunk-de0e1ea0bf62e8ec7b679ec8664c43f1: LLM output format error; found 74/5 fields on REALTION `WMI Command-Line Utility`~`Windows Management Instrumentation`
+2026-04-04 20:49:25,095 - lightrag - INFO - Chunk 70 of 6890 extracted 8 Ent + 7 Rel chunk-de0e1ea0bf62e8ec7b679ec8664c43f1
+2026-04-04 20:49:43,823 - lightrag - INFO -  == LLM cache == saving: default:extract:9729618b2bfd116e59f3187c4cfe7e49
+2026-04-04 20:49:43,824 - lightrag - INFO - Chunk 71 of 6890 extracted 15 Ent + 6 Rel chunk-5995f555979d5dde9ded126a26534739
+2026-04-04 20:50:03,681 - lightrag - INFO -  == LLM cache == saving: default:extract:ca1df26c39e950a9d56ef8321fc896b4
+2026-04-04 20:50:03,682 - lightrag - INFO - Chunk 72 of 6890 extracted 14 Ent + 13 Rel chunk-4d6f0719d779fcdfb644847ea7bfc6a6
+2026-04-04 20:50:19,208 - lightrag - INFO -  == LLM cache == saving: default:extract:9a94258b2e0027380547e80d46231414
+2026-04-04 20:50:19,209 - lightrag - INFO - Chunk 87 of 64305 extracted 11 Ent + 8 Rel chunk-c915ea98b0e0df603ee33f3847cf4881
+2026-04-04 20:50:43,959 - lightrag - INFO -  == LLM cache == saving: default:extract:7d6e8db3fda5d44c312b386157454f35
+2026-04-04 20:50:43,960 - lightrag - WARNING - chunk-ef1ed0ff4c827c6dfdc8376137f4f582: LLM output format error; found 10/4 feilds on ENTITY `ClearSky Cyber Security` @ `organization`
+2026-04-04 20:50:43,960 - lightrag - WARNING - chunk-ef1ed0ff4c827c6dfdc8376137f4f582: LLM output format error; found 10/4 feilds on ENTITY `Trend Micro` @ `organization`
+2026-04-04 20:50:43,960 - lightrag - WARNING - chunk-ef1ed0ff4c827c6dfdc8376137f4f582: LLM output format error; found 10/4 feilds on ENTITY `Operation Wilted Tulip` @ `event`
+2026-04-04 20:50:43,960 - lightrag - WARNING - chunk-ef1ed0ff4c827c6dfdc8376137f4f582: LLM output format error; found 7/4 feilds on ENTITY `August 21, 2017` @ `date`
+2026-04-04 20:50:43,960 - lightrag - WARNING - chunk-ef1ed0ff4c827c6dfdc8376137f4f582: LLM output format error; found 15/5 fields on REALTION `ClearSky Cyber Security`~`Operation Wilted Tulip`
+2026-04-04 20:50:43,960 - lightrag - WARNING - chunk-ef1ed0ff4c827c6dfdc8376137f4f582: LLM output format error; found 18/5 fields on REALTION `Trend Micro`~`Operation Wilted Tulip`
+2026-04-04 20:50:43,960 - lightrag - INFO - Chunk 88 of 64305 extracted 7 Ent + 5 Rel chunk-ef1ed0ff4c827c6dfdc8376137f4f582
+2026-04-04 20:51:01,681 - lightrag - INFO -  == LLM cache == saving: default:extract:75b5f6520cac3d07ddb83f62134456bd
+2026-04-04 20:51:18,158 - lightrag - INFO -  == LLM cache == saving: default:extract:84a322c8c7b472948a5b1af5e6812e1c
+2026-04-04 20:51:41,639 - lightrag - INFO -  == LLM cache == saving: default:extract:a4f9658b7df8f735a5a8c9135194acd8
+2026-04-04 20:52:11,556 - lightrag - INFO -  == LLM cache == saving: default:extract:1f15ec3b1629ef185e8ed04d7eb59f86
+2026-04-04 20:52:11,558 - lightrag - WARNING - chunk-667603b249174cb6426e02e384b476ba: LLM output format error; found 5/4 feilds on ENTITY `/{user}/home/` @ `~/`
+2026-04-04 20:52:11,559 - lightrag - WARNING - chunk-667603b249174cb6426e02e384b476ba: LLM output format error; found 6/5 fields on REALTION `Shell`~`/{etc}/profile`
+2026-04-04 20:52:11,559 - lightrag - WARNING - chunk-667603b249174cb6426e02e384b476ba: LLM output format error; found 8/5 fields on REALTION `Shell`~`~/`
+2026-04-04 20:52:11,559 - lightrag - WARNING - chunk-667603b249174cb6426e02e384b476ba: LLM output format error; found 6/5 fields on REALTION `Scripts`~`/{etc}/profile`
+2026-04-04 20:52:11,559 - lightrag - WARNING - chunk-667603b249174cb6426e02e384b476ba: LLM output format error; found 6/5 fields on REALTION `Scripts`~`/{etc}/profile.d`
+2026-04-04 20:52:43,230 - lightrag - INFO -  == LLM cache == saving: default:extract:fe8642817422ddc3a113fe4c0b3077ec
+2026-04-04 20:53:14,843 - lightrag - INFO -  == LLM cache == saving: default:extract:77d1812a3b853f2602b6bc84faad8211
+2026-04-04 20:53:32,762 - lightrag - INFO -  == LLM cache == saving: default:extract:40017fd73dc0230c5305cad724ea31f0
+2026-04-04 20:53:40,519 - lightrag - INFO -  == LLM cache == saving: default:extract:69e4b3877d01f746de46055ed4077e90
+2026-04-04 20:53:40,519 - lightrag - WARNING - chunk-5b5f646a8fcba2afb7aea9dec955866a: Complete delimiter can not be found in extraction result
+2026-04-04 20:54:00,545 - lightrag - INFO -  == LLM cache == saving: default:extract:86d38aa8e295cafe08ae934da2631f6b
+2026-04-04 20:54:00,547 - lightrag - INFO - Chunk 89 of 64305 extracted 12 Ent + 12 Rel chunk-40ae60eb4b6a362a203d79f723dd2482
+2026-04-04 20:54:14,160 - lightrag - INFO -  == LLM cache == saving: default:extract:0aa40789f55f2758cfa8641a2b61518a
+2026-04-04 20:54:14,161 - lightrag - INFO - Chunk 90 of 64305 extracted 7 Ent + 6 Rel chunk-975fbb8d32f2d6e2efe6a4df84faafca
+2026-04-04 20:54:30,876 - lightrag - INFO -  == LLM cache == saving: default:extract:583ed14b1e2e01fcab6a41d5c340a82a
+2026-04-04 20:54:30,877 - lightrag - WARNING - chunk-4b94e6e1c3076bcd233222bab2a5b62c: LLM output format error; found 4/5 fields on REALTION `Environment Variables`~`Setting`
+2026-04-04 20:54:30,877 - lightrag - INFO - Chunk 73 of 6890 extracted 15 Ent + 8 Rel chunk-4b94e6e1c3076bcd233222bab2a5b62c
+2026-04-04 20:55:07,338 - lightrag - INFO -  == LLM cache == saving: default:extract:4b6f779183a3fca24c0a1fe7c56fcf06
+2026-04-04 20:55:07,340 - lightrag - WARNING - chunk-667603b249174cb6426e02e384b476ba: LLM output format error; found 5/4 feilds on ENTITY `/{user}/home/` @ `~/`
+2026-04-04 20:55:07,340 - lightrag - WARNING - chunk-667603b249174cb6426e02e384b476ba: LLM output format error; found 6/5 fields on REALTION `Shell`~`/{etc}/profile`
+2026-04-04 20:55:07,340 - lightrag - WARNING - chunk-667603b249174cb6426e02e384b476ba: LLM output format error; found 8/5 fields on REALTION `Shell`~`~/`
+2026-04-04 20:55:07,341 - lightrag - WARNING - chunk-667603b249174cb6426e02e384b476ba: LLM output format error; found 6/5 fields on REALTION `Scripts`~`/{etc}/profile`
+2026-04-04 20:55:07,341 - lightrag - WARNING - chunk-667603b249174cb6426e02e384b476ba: LLM output format error; found 6/5 fields on REALTION `Scripts`~`/{etc}/profile.d`
+2026-04-04 20:55:07,341 - lightrag - INFO - Chunk 74 of 6890 extracted 11 Ent + 8 Rel chunk-667603b249174cb6426e02e384b476ba
+2026-04-04 20:55:32,483 - lightrag - INFO -  == LLM cache == saving: default:extract:a81003018c86fe6003553b290d8ff31b
+2026-04-04 20:55:32,485 - lightrag - INFO - Chunk 75 of 6890 extracted 24 Ent + 18 Rel chunk-93637eed5867ebdc04829c6896b7784d
+2026-04-04 20:56:10,212 - lightrag - INFO -  == LLM cache == saving: default:extract:36e5be2d83be6a4cabf55434f5392588
+2026-04-04 20:56:10,213 - lightrag - WARNING - chunk-72c002158786224bb372bd726bd9e168: Complete delimiter can not be found in extraction result
+2026-04-04 20:56:10,234 - lightrag - INFO - Chunk 76 of 6890 extracted 14 Ent + 14 Rel chunk-72c002158786224bb372bd726bd9e168
+2026-04-04 20:56:23,466 - lightrag - INFO -  == LLM cache == saving: default:extract:7e6764da5bd30b54b19b0287dbc06a6e
+2026-04-04 20:56:23,467 - lightrag - INFO - Chunk 91 of 64305 extracted 9 Ent + 5 Rel chunk-6acb64bca36d0e360be33c95ffebbff0
+2026-04-04 20:56:32,061 - lightrag - INFO -  == LLM cache == saving: default:extract:ce86a750a46123bd6ffa738a4022ab9a
+2026-04-04 20:56:32,062 - lightrag - WARNING - chunk-5b5f646a8fcba2afb7aea9dec955866a: Complete delimiter can not be found in extraction result
+2026-04-04 20:56:32,062 - lightrag - INFO - Chunk 92 of 64305 extracted 0 Ent + 0 Rel chunk-5b5f646a8fcba2afb7aea9dec955866a
+2026-04-04 20:56:53,002 - lightrag - INFO -  == LLM cache == saving: default:extract:71a9662973dc22b111f7f30292acf75f
+2026-04-04 20:57:09,604 - lightrag - INFO -  == LLM cache == saving: default:extract:c4532dbd2d63e02ffed50da818d9a279
+2026-04-04 20:57:41,811 - lightrag - INFO -  == LLM cache == saving: default:extract:d0d41d0dc2cf61198dd0dc9765e47d69
+2026-04-04 20:58:01,843 - lightrag - INFO -  == LLM cache == saving: default:extract:f69b93f052a7fc2a25657dd3f1d150c2
+2026-04-04 20:58:25,308 - lightrag - INFO -  == LLM cache == saving: default:extract:927bc006aac12d2cf05febb263a57f4a
+2026-04-04 20:58:46,979 - lightrag - INFO -  == LLM cache == saving: default:extract:b44e7c99cea7393a64cbb6605dd4fbec
+2026-04-04 20:59:01,048 - lightrag - INFO -  == LLM cache == saving: default:extract:293792ef35b4c986eb6f13cb3d7c0628
+2026-04-04 20:59:01,048 - lightrag - WARNING - chunk-489e262ce694b1f998a05574d3dcec69: LLM output format error; find LLM use <|#|> as record seperators instead new-line
+2026-04-04 20:59:01,049 - lightrag - WARNING - chunk-489e262ce694b1f998a05574d3dcec69: LLM output format error; found 3/5 fields on REALTION `category`~`The input describes a relationship between an intrusion-set and an attack-pattern.`
+2026-04-04 20:59:01,049 - lightrag - WARNING - chunk-489e262ce694b1f998a05574d3dcec69: LLM output format error; found 6/5 fields on REALTION `uses`~`intrusion-set`
+2026-04-04 20:59:24,064 - lightrag - INFO -  == LLM cache == saving: default:extract:342b376542cd9b2cd5b637e5c7df1a11
+2026-04-04 20:59:43,304 - lightrag - INFO -  == LLM cache == saving: default:extract:a2231a6382f7dc3587526afdf3a7c15a
+2026-04-04 20:59:43,306 - lightrag - INFO - Chunk 93 of 64305 extracted 10 Ent + 5 Rel chunk-a2ed0c499c432e6aff713e30dba2ca78
+2026-04-04 20:59:55,590 - lightrag - INFO -  == LLM cache == saving: default:extract:0f4c198f28f11f1c68b99d0e514076df
+2026-04-04 20:59:55,591 - lightrag - INFO - Chunk 94 of 64305 extracted 6 Ent + 3 Rel chunk-d90c4f79e32c65bd786c9298c44a1299
+2026-04-04 21:00:15,973 - lightrag - INFO -  == LLM cache == saving: default:extract:0e995f75606363acf66c3fecf7ea07b9
+2026-04-04 21:00:15,975 - lightrag - INFO - Chunk 77 of 6890 extracted 16 Ent + 10 Rel chunk-b0a30a26836fe68d79c9d66e3541faad
+2026-04-04 21:00:32,442 - lightrag - INFO -  == LLM cache == saving: default:extract:174b8f451d4b27a5bb8f9e299fd7e571
+2026-04-04 21:00:32,442 - lightrag - WARNING - chunk-687bc65298601690de9508d85efd9b56: LLM output format error; found 5/4 feilds on ENTITY `macOS` @ `operating_system`
+2026-04-04 21:00:32,442 - lightrag - WARNING - chunk-687bc65298601690de9508d85efd9b56: LLM output format error; found 5/4 feilds on ENTITY `Apple Inc.` @ `organization`
+2026-04-04 21:00:32,442 - lightrag - WARNING - chunk-687bc65298601690de9508d85efd9b56: LLM output format error; found 12/5 fields on REALTION `macOS`~`Apple Inc.`
+2026-04-04 21:00:32,442 - lightrag - WARNING - chunk-687bc65298601690de9508d85efd9b56: LLM output format error; found 6/5 fields on REALTION `bashrc`~`macOS`
+2026-04-04 21:00:32,443 - lightrag - INFO - Chunk 78 of 6890 extracted 9 Ent + 5 Rel chunk-687bc65298601690de9508d85efd9b56
+2026-04-04 21:00:46,042 - lightrag - INFO -  == LLM cache == saving: default:extract:d9dd98a6d2edbb4ab38eec08391e6dd4
+2026-04-04 21:00:46,042 - lightrag - INFO - Chunk 79 of 6890 extracted 11 Ent + 8 Rel chunk-6be2f18250cc68a22ff7b1ac85b3feee
+2026-04-04 21:01:11,175 - lightrag - INFO -  == LLM cache == saving: default:extract:64d835ef16a8fca7a57a6d0c92e7b18b
+2026-04-04 21:01:11,177 - lightrag - INFO - Chunk 80 of 6890 extracted 12 Ent + 7 Rel chunk-393bcbaacf160c6b3993f2c0ed7f225e
+2026-04-04 21:01:25,061 - lightrag - INFO -  == LLM cache == saving: default:extract:1fdf946ac0fb2314bc0ea018fc76c8f2
+2026-04-04 21:01:25,061 - lightrag - WARNING - chunk-489e262ce694b1f998a05574d3dcec69: LLM output format error; found 5/4 feilds on ENTITY `MITRE ATT&CK` @ `framework`
+2026-04-04 21:01:25,061 - lightrag - WARNING - chunk-489e262ce694b1f998a05574d3dcec69: LLM output format error; found 6/4 feilds on ENTITY `attack-pattern` @ `970a3432-3237-47ad-bcca-7d8cbb217736`
+2026-04-04 21:01:25,061 - lightrag - WARNING - chunk-489e262ce694b1f998a05574d3dcec69: LLM output format error; found 6/5 fields on REALTION `uses`~`intrusion-set--f8cb7b36-62ef-4488-8a6d-a7033e3271c1`
+2026-04-04 21:01:25,061 - lightrag - INFO - Chunk 95 of 64305 extracted 3 Ent + 1 Rel chunk-489e262ce694b1f998a05574d3dcec69
+2026-04-04 21:01:49,601 - lightrag - INFO -  == LLM cache == saving: default:extract:7aced73b1568ef5c4d5662fee31f1317
+2026-04-04 21:01:49,602 - lightrag - INFO - Chunk 96 of 64305 extracted 6 Ent + 4 Rel chunk-6f8dc6e0f12213af3469fe76a08da29e
+2026-04-04 21:02:15,983 - lightrag - INFO -  == LLM cache == saving: default:extract:6bd22e4ba81506e38d9248798b99df6a
+2026-04-04 21:02:15,984 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 21:02:15,984 - lightrag - WARNING - Relationship extraction error: target entity became empty after cleaning. Original: '2.1'
+2026-04-04 21:02:15,984 - lightrag - WARNING - chunk-dd50a4e4bd2bc9b375ef152ec4374058: LLM output format error; found 4/5 fields on REALTION `x_mitre_modified_by_ref`~`identity`
+2026-04-04 21:02:36,804 - lightrag - INFO -  == LLM cache == saving: default:extract:af4b75e6d9787dae26204e88eab0db02
+2026-04-04 21:02:53,786 - lightrag - INFO -  == LLM cache == saving: default:extract:c7c35aabc6a260442d9036dcae6d142d
+2026-04-04 21:03:26,065 - lightrag - INFO -  == LLM cache == saving: default:extract:eac320e7eb462ff193c717ca9d371de6
+2026-04-04 21:03:26,066 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '1.2'
+2026-04-04 21:03:44,248 - lightrag - INFO -  == LLM cache == saving: default:extract:e0ef83bd01bdc83d7e475fa9a2dd2303
+2026-04-04 21:04:02,525 - lightrag - INFO -  == LLM cache == saving: default:extract:941d799f7690c24ab61cacfd2784ee85
+2026-04-04 21:04:20,689 - lightrag - INFO -  == LLM cache == saving: default:extract:368155fb7ec9ed39720b098a1f027da3
+2026-04-04 21:04:33,894 - lightrag - INFO -  == LLM cache == saving: default:extract:72bad30f5d57ac431b69bc7712321364
+2026-04-04 21:05:03,448 - lightrag - INFO -  == LLM cache == saving: default:extract:12e05dc6d77e606d035aa34af0c6e933
+2026-04-04 21:05:03,449 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 21:05:03,450 - lightrag - WARNING - Relationship extraction error: target entity became empty after cleaning. Original: '2.1'
+2026-04-04 21:05:03,450 - lightrag - WARNING - chunk-dd50a4e4bd2bc9b375ef152ec4374058: LLM output format error; found 4/5 fields on REALTION `x_mitre_modified_by_ref`~`identity`
+2026-04-04 21:05:03,450 - lightrag - INFO - Chunk 97 of 64305 extracted 10 Ent + 5 Rel chunk-dd50a4e4bd2bc9b375ef152ec4374058
+2026-04-04 21:05:19,217 - lightrag - INFO -  == LLM cache == saving: default:extract:bacd69203ff90652e1365d2250e31b28
+2026-04-04 21:05:19,218 - lightrag - INFO - Chunk 98 of 64305 extracted 13 Ent + 9 Rel chunk-d37e952f8869b44aaf3b029561ac4080
+2026-04-04 21:05:35,050 - lightrag - INFO -  == LLM cache == saving: default:extract:0559fda6328a7965372cd93acbcf629d
+2026-04-04 21:05:35,051 - lightrag - WARNING - chunk-2e52cf841ea613ea306d4c00b7c30859: LLM output format error; found 7/4 feilds on ENTITY `Technical Document` @ `content`
+2026-04-04 21:05:35,051 - lightrag - WARNING - chunk-2e52cf841ea613ea306d4c00b7c30859: LLM output format error; found 7/4 feilds on ENTITY `Monitoring` @ `process`
+2026-04-04 21:05:35,051 - lightrag - WARNING - chunk-2e52cf841ea613ea306d4c00b7c30859: LLM output format error; found 8/5 fields on REALTION `Text`~`Linux`
+2026-04-04 21:05:35,051 - lightrag - WARNING - chunk-2e52cf841ea613ea306d4c00b7c30859: LLM output format error; found 8/5 fields on REALTION `Text`~`macOS`
+2026-04-04 21:05:35,051 - lightrag - WARNING - chunk-2e52cf841ea613ea306d4c00b7c30859: LLM output format error; found 8/5 fields on REALTION `Text`~`Apple’s Security Endpoint Framework`
+2026-04-04 21:05:35,051 - lightrag - INFO - Chunk 81 of 6890 extracted 7 Ent + 4 Rel chunk-2e52cf841ea613ea306d4c00b7c30859
+2026-04-04 21:05:54,741 - lightrag - INFO -  == LLM cache == saving: default:extract:3114f268375f21d4c7a947eef113288b
+2026-04-04 21:05:54,743 - lightrag - INFO - Chunk 82 of 6890 extracted 19 Ent + 17 Rel chunk-3ebe1c77f8a017b18746ef44f6accdd8
+2026-04-04 21:06:12,348 - lightrag - INFO -  == LLM cache == saving: default:extract:5ce829a819792d4f7d621796ae58030a
+2026-04-04 21:06:12,349 - lightrag - INFO - Chunk 83 of 6890 extracted 10 Ent + 6 Rel chunk-eacf49c8fa8031b841b7fce461479912
+2026-04-04 21:06:28,985 - lightrag - INFO -  == LLM cache == saving: default:extract:44b1effaf6451a822d7b593ad33f7f50
+2026-04-04 21:06:28,987 - lightrag - INFO - Chunk 84 of 6890 extracted 9 Ent + 8 Rel chunk-ff067b9f24eecc79b709369accfe320f
+2026-04-04 21:06:43,378 - lightrag - INFO -  == LLM cache == saving: default:extract:c8e8b0e6145e9bf49fa6c8173c63bc3b
+2026-04-04 21:06:43,379 - lightrag - WARNING - chunk-7ddb046364ae6737fcccd0a3dd82cbaa: LLM output format error; found 5/4 feilds on ENTITY `FireEye Maze May 2020` @ `report`
+2026-04-04 21:06:43,379 - lightrag - WARNING - chunk-7ddb046364ae6737fcccd0a3dd82cbaa: LLM output format error; found 5/4 feilds on ENTITY `May 7, 2020` @ `date`
+2026-04-04 21:06:43,379 - lightrag - WARNING - chunk-7ddb046364ae6737fcccd0a3dd82cbaa: LLM output format error; found 6/5 fields on REALTION `Kennelly`~`FireEye Maze May 2020`
+2026-04-04 21:06:43,379 - lightrag - WARNING - chunk-7ddb046364ae6737fcccd0a3dd82cbaa: LLM output format error; found 6/5 fields on REALTION `FireEye`~`Maze Ransomware`
+2026-04-04 21:06:43,379 - lightrag - INFO - Chunk 99 of 64305 extracted 8 Ent + 4 Rel chunk-7ddb046364ae6737fcccd0a3dd82cbaa
+2026-04-04 21:06:58,137 - lightrag - INFO -  == LLM cache == saving: default:extract:0dcedb460dcb6a3f9f6bde1e0bc196cf
+2026-04-04 21:06:58,137 - lightrag - WARNING - chunk-389f845f78748fb75e10c93d449bc631: LLM output format error; find LLM use <|#|> as record seperators instead new-line
+2026-04-04 21:06:58,137 - lightrag - WARNING - chunk-389f845f78748fb75e10c93d449bc631: LLM output format error; found 5/4 feilds on ENTITY `Malware` @ `d9f7383c-95ec-4080-bbce-121c9384457b`
+2026-04-04 21:06:58,137 - lightrag - WARNING - chunk-389f845f78748fb75e10c93d449bc631: LLM output format error; found 5/4 feilds on ENTITY `Attack Pattern` @ `b80d107d-fa0d-4b60-9684-b0433e8bdba0`
+2026-04-04 21:06:58,138 - lightrag - WARNING - chunk-389f845f78748fb75e10c93d449bc631: LLM output format error; found 2/4 feilds on ENTITY `uses` @ `N/A`
+2026-04-04 21:06:58,138 - lightrag - WARNING - chunk-389f845f78748fb75e10c93d449bc631: LLM output format error; found 2/5 fields on REALTION `Describes the action of one entity utilizing another.`~`N/A`
+2026-04-04 21:06:58,138 - lightrag - WARNING - chunk-389f845f78748fb75e10c93d449bc631: LLM output format error; found 7/5 fields on REALTION `Malware`~`d9f7383c-95ec-4080-bbce-121c9384457b`
+2026-04-04 21:06:58,138 - lightrag - INFO - Chunk 100 of 64305 extracted 3 Ent + 1 Rel chunk-389f845f78748fb75e10c93d449bc631
+2026-04-04 21:07:09,523 - lightrag - INFO -  == LLM cache == saving: default:extract:a48ad41a58c245ec3da25bbdae3b363b
+2026-04-04 21:07:23,662 - lightrag - INFO -  == LLM cache == saving: default:extract:c0bf669a2a410d4a2bf17770bda9647e
+2026-04-04 21:07:52,685 - lightrag - INFO -  == LLM cache == saving: default:extract:44d6ddfe59995754f5dab013632fcc26
+2026-04-04 21:07:52,686 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 21:07:52,686 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 21:08:12,856 - lightrag - INFO -  == LLM cache == saving: default:extract:c06325252bae22e1b2fa3c3829c9721c
+2026-04-04 21:08:37,020 - lightrag - INFO -  == LLM cache == saving: default:extract:d473b545a67939ea421e3546d22f6047
+2026-04-04 21:09:07,308 - lightrag - INFO -  == LLM cache == saving: default:extract:d062e3a6d1866d305abe09382117c99c
+2026-04-04 21:09:23,278 - lightrag - INFO -  == LLM cache == saving: default:extract:41f59c856e1713aa0c91ba1ca99ea279
+2026-04-04 21:09:38,449 - lightrag - INFO -  == LLM cache == saving: default:extract:7684b578d7d7cca784bf7da70ede2ef5
+2026-04-04 21:09:53,681 - lightrag - INFO -  == LLM cache == saving: default:extract:a878583ba5d92975109c8744b3c7ebe1
+2026-04-04 21:09:53,682 - lightrag - WARNING - chunk-45e97b6a7dfd2d34226d8276a5dc5b40: Complete delimiter can not be found in extraction result
+2026-04-04 21:09:53,682 - lightrag - WARNING - chunk-45e97b6a7dfd2d34226d8276a5dc5b40: LLM output format error; found 10/4 feilds on ENTITY `Symantec` @ `organization`
+2026-04-04 21:09:53,682 - lightrag - WARNING - chunk-45e97b6a7dfd2d34226d8276a5dc5b40: LLM output format error; found 23/5 fields on REALTION `Symantec Threat Hunter Team`~`Raindrop`
+2026-04-04 21:09:53,682 - lightrag - INFO - Chunk 101 of 64305 extracted 3 Ent + 2 Rel chunk-45e97b6a7dfd2d34226d8276a5dc5b40
+2026-04-04 21:10:06,610 - lightrag - INFO -  == LLM cache == saving: default:extract:6c5e26586199ce89bb6e44ebc6e08a2c
+2026-04-04 21:10:06,611 - lightrag - INFO - Chunk 102 of 64305 extracted 7 Ent + 4 Rel chunk-468b43695433fa7e145e4d35e5e4d5b4
+2026-04-04 21:10:26,277 - lightrag - INFO -  == LLM cache == saving: default:extract:c7162d85f17a02bdb4cce6fe0e9eb681
+2026-04-04 21:10:26,279 - lightrag - INFO - Chunk 85 of 6890 extracted 15 Ent + 6 Rel chunk-6df1c0d688d0ed5972f37f2bb881d717
+2026-04-04 21:10:41,052 - lightrag - INFO -  == LLM cache == saving: default:extract:f7e71b0495194662ae99d7e94dc84504
+2026-04-04 21:10:41,053 - lightrag - INFO - Chunk 86 of 6890 extracted 12 Ent + 11 Rel chunk-22c948a2bbb238e292d4434b19a09d9e
+2026-04-04 21:11:07,257 - lightrag - INFO -  == LLM cache == saving: default:extract:020455c376df5a4a5454d44708a4e4b0
+2026-04-04 21:11:07,258 - lightrag - INFO - Chunk 87 of 6890 extracted 17 Ent + 15 Rel chunk-bf91d38e14f86039f625af1bbc6b1df4
+2026-04-04 21:11:25,736 - lightrag - INFO -  == LLM cache == saving: default:extract:2bfb6dbcdaa1e675dc7d80c52208df56
+2026-04-04 21:11:25,737 - lightrag - INFO - Chunk 88 of 6890 extracted 21 Ent + 13 Rel chunk-24403321f43d5b574ed309d56e4d8935
+2026-04-04 21:11:39,959 - lightrag - INFO -  == LLM cache == saving: default:extract:3bb336d474d546038ef602b9c0da2fd2
+2026-04-04 21:11:39,960 - lightrag - INFO - Chunk 103 of 64305 extracted 9 Ent + 4 Rel chunk-5a285f5535dae31e6604362f37231bdf
+2026-04-04 21:11:59,002 - lightrag - INFO -  == LLM cache == saving: default:extract:8c39776238a229da4750d62e4bdb5724
+2026-04-04 21:11:59,004 - lightrag - INFO - Chunk 104 of 64305 extracted 11 Ent + 6 Rel chunk-8700240a31aa2e6f96167de020b5cf4c
+2026-04-04 21:12:16,762 - lightrag - INFO -  == LLM cache == saving: default:extract:92ad6d1797d4e5dcb0f2487d8c721907
+2026-04-04 21:12:37,832 - lightrag - INFO -  == LLM cache == saving: default:extract:c58acf7d95fca5fe24b6a8d3cd6fe46f
+2026-04-04 21:12:37,834 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 21:12:37,834 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 21:13:17,711 - lightrag - INFO -  == LLM cache == saving: default:extract:9185ed2ba7441c730532c475bed74d43
+2026-04-04 21:13:45,380 - lightrag - INFO -  == LLM cache == saving: default:extract:cfe7bb9b3e9018bb56f9c0381c73409f
+2026-04-04 21:13:45,381 - lightrag - WARNING - chunk-257f563225b3b1d38db0e6c74b9abda3: LLM output format error; found 3/4 feilds on ENTITY `[Local Data Staging](https://attack.mitre.org/techniques/T1074/001)` @ `[Local Data Staging](https://attack.mitre.org/techniques/T1074/001) is a technique that allows attackers to create a local copy of data on the victim's system.`
+2026-04-04 21:13:45,381 - lightrag - WARNING - chunk-257f563225b3b1d38db0e6c74b9abda3: LLM output format error; found 3/4 feilds on ENTITY `[Registry](https://en.wikipedia.org/wiki/Windows_registry)` @ `[Registry](https://en.wikipedia.org/wiki/Windows_registry) is a hierarchical database used by Windows to store settings and options.`
+2026-04-04 21:14:10,171 - lightrag - INFO -  == LLM cache == saving: default:extract:2ea4c7fea2ea2e741b04fa0af58b5da8
+2026-04-04 21:14:28,362 - lightrag - INFO -  == LLM cache == saving: default:extract:0f2586301816e3181065fe6ab719f63d
+2026-04-04 21:14:44,774 - lightrag - INFO -  == LLM cache == saving: default:extract:189d5d2545c7aef592b886c1b366fa39
+2026-04-04 21:14:59,437 - lightrag - INFO -  == LLM cache == saving: default:extract:d3cfc6c8b6a12e8238d34f1b84c3fb6b
+2026-04-04 21:15:13,918 - lightrag - INFO -  == LLM cache == saving: default:extract:dadb2061abce0ac3188e635939e9a980
+2026-04-04 21:15:13,919 - lightrag - INFO - Chunk 105 of 64305 extracted 11 Ent + 3 Rel chunk-47ea8574443fc63cbb855b1255fd2179
+2026-04-04 21:15:35,624 - lightrag - INFO -  == LLM cache == saving: default:extract:513d83f9428486f6b79cd475fbf3d346
+2026-04-04 21:15:35,625 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 21:15:35,625 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 21:15:35,625 - lightrag - INFO - Chunk 106 of 64305 extracted 8 Ent + 1 Rel chunk-8bc0a1cd22117c7191f77806ce832111
+2026-04-04 21:15:53,724 - lightrag - INFO -  == LLM cache == saving: default:extract:65a66005d98585a8ec2f93a4dcff4f00
+2026-04-04 21:15:53,726 - lightrag - INFO - Chunk 89 of 6890 extracted 21 Ent + 22 Rel chunk-a6bdd803f9817dae1126eff83f547ce3
+2026-04-04 21:16:11,913 - lightrag - INFO -  == LLM cache == saving: default:extract:21c10d53f87c0217793ebb7736506f64
+2026-04-04 21:16:11,913 - lightrag - INFO - Chunk 90 of 6890 extracted 10 Ent + 8 Rel chunk-257f563225b3b1d38db0e6c74b9abda3
+2026-04-04 21:16:38,341 - lightrag - INFO -  == LLM cache == saving: default:extract:d3040d1f9b39f1dea78b93cc735c7f03
+2026-04-04 21:16:38,342 - lightrag - INFO - Chunk 91 of 6890 extracted 11 Ent + 8 Rel chunk-7e5d0a463bc054aa1c5caed4c2f9b585
+2026-04-04 21:16:52,997 - lightrag - INFO -  == LLM cache == saving: default:extract:4abc033e855a37fcf5488b2ddedd5c12
+2026-04-04 21:16:52,999 - lightrag - INFO - Chunk 92 of 6890 extracted 10 Ent + 5 Rel chunk-0e08942345a42959d5a68a9823e5eaa0
+2026-04-04 21:17:05,911 - lightrag - INFO -  == LLM cache == saving: default:extract:d400b295cbd541db45f83e1e19b4a8c3
+2026-04-04 21:17:05,912 - lightrag - INFO - Chunk 107 of 64305 extracted 6 Ent + 5 Rel chunk-f4c9c2c8ff89137e4a2ed8395aaf69ed
+2026-04-04 21:17:19,091 - lightrag - INFO -  == LLM cache == saving: default:extract:c7c847b08fe51b0fd8c99d4488129877
+2026-04-04 21:17:19,092 - lightrag - INFO - Chunk 108 of 64305 extracted 7 Ent + 5 Rel chunk-386450e26ebe2cb9001fa5bdcab5df7f
+2026-04-04 21:17:35,349 - lightrag - INFO -  == LLM cache == saving: default:extract:2241f2ae2ddab02b83ace4d948dd4fb5
+2026-04-04 21:17:35,350 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 21:17:51,185 - lightrag - INFO -  == LLM cache == saving: default:extract:5714e2104d10edb5ae2fac8a480dddf8
+2026-04-04 21:18:08,823 - lightrag - INFO -  == LLM cache == saving: default:extract:2e3cb468f4d1637df7fe80d89ab30287
+2026-04-04 21:18:27,978 - lightrag - INFO -  == LLM cache == saving: default:extract:eab6618fd190635b7bfd2906c504a447
+2026-04-04 21:19:01,986 - lightrag - INFO -  == LLM cache == saving: default:extract:32aa5a35ad2bf00d085a1eb95ac43c39
+2026-04-04 21:19:01,987 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 21:19:01,988 - lightrag - WARNING - chunk-98bc35aeda04d7d0033f687cf7b2b85c: LLM output format error; found 6/5 fields on REALTION `Christopher Peacock`~`Simona David`
+2026-04-04 21:19:01,988 - lightrag - WARNING - chunk-98bc35aeda04d7d0033f687cf7b2b85c: LLM output format error; found 6/5 fields on REALTION `Denise Tan`~`Xavier Rousseau`
+2026-04-04 21:19:01,988 - lightrag - WARNING - Relationship extraction error: source entity became empty after cleaning. Original: '2.1'
+2026-04-04 21:19:30,518 - lightrag - INFO -  == LLM cache == saving: default:extract:c72550f1d1246c7ca3a61963afaa095d
+2026-04-04 21:19:45,607 - lightrag - INFO -  == LLM cache == saving: default:extract:cf7c1726beeca8e92ebdd890ad9cf831
+2026-04-04 21:20:02,070 - lightrag - INFO -  == LLM cache == saving: default:extract:b4fd93745c5fca77d93a59c8816679fb
+2026-04-04 21:20:14,412 - lightrag - INFO -  == LLM cache == saving: default:extract:228a7daaa6eaf5391f657c4768d92d24
+2026-04-04 21:20:14,412 - lightrag - WARNING - chunk-943960b06cb8158f09bcaf9fa8ce5dfa: LLM output format error; found 5/4 feilds on ENTITY `version` @ `2.1`
+2026-04-04 21:20:14,412 - lightrag - WARNING - Relationship extraction error: target entity became empty after cleaning. Original: '2.1'
+2026-04-04 21:20:14,413 - lightrag - INFO - Chunk 109 of 64305 extracted 6 Ent + 2 Rel chunk-943960b06cb8158f09bcaf9fa8ce5dfa
+2026-04-04 21:20:27,558 - lightrag - INFO -  == LLM cache == saving: default:extract:ee94802cc15cc0c57741b8d8bfae1e42
+2026-04-04 21:20:27,559 - lightrag - INFO - Chunk 110 of 64305 extracted 8 Ent + 5 Rel chunk-16ffc68a308e125d9aa88a466d0081c8
+2026-04-04 21:20:44,340 - lightrag - INFO -  == LLM cache == saving: default:extract:0ff0ce27e463eb5a9c771cda6406e797
+2026-04-04 21:20:44,341 - lightrag - INFO - Chunk 93 of 6890 extracted 9 Ent + 8 Rel chunk-e81658f6d54f1eea5852e40bef3e72e3
+2026-04-04 21:21:02,048 - lightrag - INFO -  == LLM cache == saving: default:extract:78bb9f285307f16d8f8d210f41ddbdef
+2026-04-04 21:21:02,050 - lightrag - INFO - Chunk 94 of 6890 extracted 11 Ent + 5 Rel chunk-53d9ba03e34fa0e36fbf72ec7ea7f605
+2026-04-04 21:21:39,731 - lightrag - INFO -  == LLM cache == saving: default:extract:3833f78c0da7481859a1f11753cbb8d4
+2026-04-04 21:21:39,732 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 21:21:39,733 - lightrag - WARNING - chunk-98bc35aeda04d7d0033f687cf7b2b85c: LLM output format error; found 6/5 fields on REALTION `Christopher Peacock`~`Simona David`
+2026-04-04 21:21:39,733 - lightrag - WARNING - chunk-98bc35aeda04d7d0033f687cf7b2b85c: LLM output format error; found 6/5 fields on REALTION `Denise Tan`~`Xavier Rousseau`
+2026-04-04 21:21:39,733 - lightrag - WARNING - Relationship extraction error: source entity became empty after cleaning. Original: '2.1'
+2026-04-04 21:21:39,733 - lightrag - INFO - Chunk 95 of 6890 extracted 16 Ent + 7 Rel chunk-98bc35aeda04d7d0033f687cf7b2b85c
+2026-04-04 21:22:06,794 - lightrag - INFO -  == LLM cache == saving: default:extract:d8cbb94ae26aa165390aa63fa91eaa96
+2026-04-04 21:22:06,797 - lightrag - INFO - Chunk 96 of 6890 extracted 13 Ent + 16 Rel chunk-6def267549cf0dad9ce8ffb57068be9c
+2026-04-04 21:22:21,882 - lightrag - INFO -  == LLM cache == saving: default:extract:ecbcf22a9d7751fba64b2472448de9d2
+2026-04-04 21:22:21,883 - lightrag - INFO - Chunk 111 of 64305 extracted 8 Ent + 6 Rel chunk-c9ac57fb5d067c282f21d27830f779e8
+2026-04-04 21:22:42,184 - lightrag - INFO -  == LLM cache == saving: default:extract:9aa5203b54862172f3664eade101355e
+2026-04-04 21:22:42,186 - lightrag - INFO - Chunk 112 of 64305 extracted 7 Ent + 4 Rel chunk-4b2b5f4ad3550ed43939397febed408b
+2026-04-04 21:22:58,681 - lightrag - INFO -  == LLM cache == saving: default:extract:457f11966b793a8ad79d43b307bed9e6
+2026-04-04 21:22:58,682 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 21:22:58,682 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 21:23:14,700 - lightrag - INFO -  == LLM cache == saving: default:extract:354c5cbdf97b03c1d8baa59e56b477bd
+2026-04-04 21:23:29,968 - lightrag - INFO -  == LLM cache == saving: default:extract:6bfdc2404363b6c70433879d26a717f1
+2026-04-04 21:23:53,267 - lightrag - INFO -  == LLM cache == saving: default:extract:cd79d879bf1e0303aa7a4a52dccbab24
+2026-04-04 21:24:07,912 - lightrag - INFO -  == LLM cache == saving: default:extract:4a6d85edc272ee96b98dd5c691a77b62
+2026-04-04 21:24:22,209 - lightrag - INFO -  == LLM cache == saving: default:extract:74a1b7a23c6c4c929cb9ae3555c3256f
+2026-04-04 21:24:38,529 - lightrag - INFO -  == LLM cache == saving: default:extract:8bf99edc3aa4f6bf57e3dad622ab0fd2
+2026-04-04 21:25:00,371 - lightrag - INFO -  == LLM cache == saving: default:extract:25d83e467dc91c24768d1ca5d4d9f1a3
+2026-04-04 21:25:14,214 - lightrag - INFO -  == LLM cache == saving: default:extract:e10877aa2ebea3a9168a3e0d44e2556d
+2026-04-04 21:25:14,215 - lightrag - INFO - Chunk 113 of 64305 extracted 9 Ent + 3 Rel chunk-43d923aefe445b3a3832aeef544d200d
+2026-04-04 21:25:30,948 - lightrag - INFO -  == LLM cache == saving: default:extract:7ecb85c5c921ae618d33984b629d9ef5
+2026-04-04 21:25:30,950 - lightrag - INFO - Chunk 114 of 64305 extracted 6 Ent + 5 Rel chunk-3f70548d1fa50661615409b0ae633626
+2026-04-04 21:25:46,761 - lightrag - INFO -  == LLM cache == saving: default:extract:e9738ee4df5151d39fc280e9f3d47985
+2026-04-04 21:25:46,762 - lightrag - WARNING - chunk-aea9dc0dbfc8c9cd44b4793c62663eb8: LLM output format error; found 5/4 feilds on ENTITY `Master Boot Record` @ `MBR`
+2026-04-04 21:25:46,762 - lightrag - WARNING - chunk-aea9dc0dbfc8c9cd44b4793c62663eb8: LLM output format error; found 5/4 feilds on ENTITY `Volume Boot Record` @ `VBR`
+2026-04-04 21:25:46,762 - lightrag - WARNING - chunk-aea9dc0dbfc8c9cd44b4793c62663eb8: LLM output format error; found 5/4 feilds on ENTITY `BIOS` @ `Basic Input/Output System`
+2026-04-04 21:25:46,762 - lightrag - WARNING - chunk-aea9dc0dbfc8c9cd44b4793c62663eb8: LLM output format error; found 6/5 fields on REALTION `Bootkit`~`Malware`
+2026-04-04 21:25:46,762 - lightrag - WARNING - chunk-aea9dc0dbfc8c9cd44b4793c62663eb8: LLM output format error; found 6/5 fields on REALTION `Adversaries`~`Bootkit`
+2026-04-04 21:25:46,762 - lightrag - WARNING - chunk-aea9dc0dbfc8c9cd44b4793c62663eb8: LLM output format error; found 6/5 fields on REALTION `MTrends`~`Bootkit`
+2026-04-04 21:25:46,762 - lightrag - INFO - Chunk 97 of 6890 extracted 7 Ent + 3 Rel chunk-aea9dc0dbfc8c9cd44b4793c62663eb8
+2026-04-04 21:26:05,817 - lightrag - INFO -  == LLM cache == saving: default:extract:33bbf844b4253eeb15901690e3f2fbe9
+2026-04-04 21:26:05,818 - lightrag - INFO - Chunk 98 of 6890 extracted 13 Ent + 11 Rel chunk-84ffd5d862225d97815fcb4815eb4586
+2026-04-04 21:26:21,679 - lightrag - INFO -  == LLM cache == saving: default:extract:9345bfd5fe607beaae2c78f621248283
+2026-04-04 21:26:21,681 - lightrag - INFO - Chunk 99 of 6890 extracted 10 Ent + 6 Rel chunk-911ef68541b1ee679d923e867ce9e199
+2026-04-04 21:26:35,707 - lightrag - INFO -  == LLM cache == saving: default:extract:1e740a02f18f537715f6706c50e91466
+2026-04-04 21:26:35,709 - lightrag - INFO - Chunk 100 of 6890 extracted 9 Ent + 3 Rel chunk-02e86c338c359eac4753322a7034656a
+2026-04-04 21:26:51,525 - lightrag - INFO -  == LLM cache == saving: default:extract:85c748cbdec5ab82fbc64672944f7ea4
+2026-04-04 21:26:51,526 - lightrag - WARNING - chunk-07a52e32c7be670a15a8832f38dffa8f: LLM output format error; found 4/5 fields on REALTION `Bitdefender Whitepaper Chinese APT`~`report, threat`
+2026-04-04 21:26:51,526 - lightrag - INFO - Chunk 115 of 64305 extracted 10 Ent + 5 Rel chunk-07a52e32c7be670a15a8832f38dffa8f
+2026-04-04 21:27:06,319 - lightrag - INFO -  == LLM cache == saving: default:extract:c429cf8f3a7e9e4ba885cd1c150e8126
+2026-04-04 21:27:06,320 - lightrag - WARNING - chunk-40da11287424b436d662702717f4eb21: LLM output format error; found 4/5 fields on REALTION `identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5`~`created`
+2026-04-04 21:27:06,320 - lightrag - WARNING - chunk-40da11287424b436d662702717f4eb21: LLM output format error; found 4/5 fields on REALTION `campaign--8d2bc130-89fe-466e-a4f9-6bce6129c2b8`~`uses`
+2026-04-04 21:27:06,320 - lightrag - INFO - Chunk 116 of 64305 extracted 5 Ent + 4 Rel chunk-40da11287424b436d662702717f4eb21
+2026-04-04 21:27:26,918 - lightrag - INFO -  == LLM cache == saving: default:extract:07dc456e0c1b854081e1f7ec17188ad8
+2026-04-04 21:27:46,807 - lightrag - INFO -  == LLM cache == saving: default:extract:c2341c264bf71252b6d3fd21845b250b
+2026-04-04 21:28:16,458 - lightrag - INFO -  == LLM cache == saving: default:extract:e0177de68ac2ecdd668f20f77cff36d9
+2026-04-04 21:28:16,459 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 21:28:16,460 - lightrag - WARNING - Relationship extraction error: source entity became empty after cleaning. Original: '3.2.0'
+2026-04-04 21:28:35,456 - lightrag - INFO -  == LLM cache == saving: default:extract:a53ebe6043d6b5dd3de4aea814fc0476
+2026-04-04 21:28:56,350 - lightrag - INFO -  == LLM cache == saving: default:extract:ca6dca9d2a789c2cce6eee3808c46e8a
+2026-04-04 21:29:10,563 - lightrag - INFO -  == LLM cache == saving: default:extract:a61ff38ce345639e841ef15ed539bf11
+2026-04-04 21:29:32,022 - lightrag - INFO -  == LLM cache == saving: default:extract:8f9d8790fcc72460c5d13af12504bd6c
+2026-04-04 21:29:32,023 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 21:29:32,023 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 21:29:51,050 - lightrag - INFO -  == LLM cache == saving: default:extract:a46b3937fb01a625ab00260b66318fc1
+2026-04-04 21:30:08,089 - lightrag - INFO -  == LLM cache == saving: default:extract:9993416815181139b9103739a8c56a32
+2026-04-04 21:30:08,090 - lightrag - INFO - Chunk 117 of 64305 extracted 11 Ent + 7 Rel chunk-f24641400241e39f36de71cc686de6b8
+2026-04-04 21:30:26,084 - lightrag - INFO -  == LLM cache == saving: default:extract:6e232a2695556c1c85956edd7a5d09e5
+2026-04-04 21:30:26,085 - lightrag - INFO - Chunk 118 of 64305 extracted 12 Ent + 8 Rel chunk-3c904e3bb160845cb3d494e597ef909e
+2026-04-04 21:30:43,492 - lightrag - INFO -  == LLM cache == saving: default:extract:ede7680eb23ae6b8cdce583f2f2793ae
+2026-04-04 21:30:43,493 - lightrag - INFO - Chunk 101 of 6890 extracted 16 Ent + 14 Rel chunk-23862d6253ec1d7319e0af3fd15593d2
+2026-04-04 21:31:05,805 - lightrag - INFO -  == LLM cache == saving: default:extract:08a61d8dafea4668cb6ce2509afe63eb
+2026-04-04 21:31:05,807 - lightrag - INFO - Chunk 102 of 6890 extracted 10 Ent + 7 Rel chunk-e435e07938a4c6ff3824d3a2313f1b19
+2026-04-04 21:31:23,675 - lightrag - INFO -  == LLM cache == saving: default:extract:6a55e7d181631de068c0e92dd3a638fd
+2026-04-04 21:31:23,677 - lightrag - INFO - Chunk 103 of 6890 extracted 15 Ent + 12 Rel chunk-33a09043841c9f236fb734e27094d1f5
+2026-04-04 21:31:35,560 - lightrag - INFO -  == LLM cache == saving: default:extract:de18cb4c399a5731aff133859b5a178c
+2026-04-04 21:31:35,560 - lightrag - WARNING - chunk-c18b6a957c5fb0406084e1a4f7599a7d: LLM output format error; found 5/4 feilds on ENTITY `Anomali` @ `organization`
+2026-04-04 21:31:35,561 - lightrag - WARNING - chunk-c18b6a957c5fb0406084e1a4f7599a7d: LLM output format error; found 5/4 feilds on ENTITY `Golang` @ `language`
+2026-04-04 21:31:35,562 - lightrag - INFO - Chunk 104 of 6890 extracted 5 Ent + 3 Rel chunk-c18b6a957c5fb0406084e1a4f7599a7d
+2026-04-04 21:31:58,249 - lightrag - INFO -  == LLM cache == saving: default:extract:5bfd0da31e1f1f7eacc5bf35edd17646
+2026-04-04 21:31:58,250 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 21:31:58,250 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 21:31:58,250 - lightrag - INFO - Chunk 119 of 64305 extracted 4 Ent + 3 Rel chunk-fecdae4273fc899dbb2da2e80ce73108
+2026-04-04 21:32:11,647 - lightrag - INFO -  == LLM cache == saving: default:extract:7ab272633f127e70d0f1bad87a95e490
+2026-04-04 21:32:11,647 - lightrag - INFO - Chunk 120 of 64305 extracted 9 Ent + 8 Rel chunk-a22438e02881d8889cd150dd6f390fc2
+2026-04-04 21:32:27,577 - lightrag - INFO -  == LLM cache == saving: default:extract:3d3449ced91f347c459b13fc64d4d9d8
+2026-04-04 21:32:42,541 - lightrag - INFO -  == LLM cache == saving: default:extract:6677802903851d4c4a598118b83115ff
+2026-04-04 21:32:42,542 - lightrag - WARNING - chunk-e0c92ae9ff53313429258a405a2b0b64: LLM output format error; found 6/4 feilds on ENTITY `campaign` @ `organization`
+2026-04-04 21:32:42,542 - lightrag - WARNING - chunk-e0c92ae9ff53313429258a405a2b0b64: LLM output format error; found 6/4 feilds on ENTITY `attack-pattern` @ `organization`
+2026-04-04 21:32:42,542 - lightrag - WARNING - chunk-e0c92ae9ff53313429258a405a2b0b64: LLM output format error; found 7/5 fields on REALTION `campaign`~`attack-pattern`
+2026-04-04 21:33:01,748 - lightrag - INFO -  == LLM cache == saving: default:extract:7bd3d7ac767889d114fb215989967532
+2026-04-04 21:33:23,832 - lightrag - INFO -  == LLM cache == saving: default:extract:aa60d00cc680a1ef38ff2e508c0f4166
+2026-04-04 21:33:44,519 - lightrag - INFO -  == LLM cache == saving: default:extract:7a4e8b0d592bbcc2431f25a62d72b370
+2026-04-04 21:33:58,185 - lightrag - INFO -  == LLM cache == saving: default:extract:0a01bc36b5b5606d3440757b08161366
+2026-04-04 21:34:07,767 - lightrag - INFO -  == LLM cache == saving: default:extract:0dab891f8fe1c2c4c48e98c8494e2316
+2026-04-04 21:34:07,767 - lightrag - WARNING - chunk-6035c878f2004ba30ca28cae4aabf0f6: LLM output format error; found 6/4 feilds on ENTITY `type` @ `relationship, x_mitre_attack_spec_version, x_mitre_deprecated, x_mitre_modified_by_ref`
+2026-04-04 21:34:21,634 - lightrag - INFO -  == LLM cache == saving: default:extract:f614cae02a0b5acb977ab69d65fd5af1
+2026-04-04 21:34:35,437 - lightrag - INFO -  == LLM cache == saving: default:extract:97e9be9760d25886c8a821b3daed7ff4
+2026-04-04 21:34:35,438 - lightrag - INFO - Chunk 121 of 64305 extracted 9 Ent + 3 Rel chunk-10f32ecc394704f550aebfdeeac6584a
+2026-04-04 21:34:52,016 - lightrag - INFO -  == LLM cache == saving: default:extract:59b996177726e790182f91584fe84114
+2026-04-04 21:34:52,016 - lightrag - WARNING - chunk-e0c92ae9ff53313429258a405a2b0b64: LLM output format error; found 6/4 feilds on ENTITY `campaign` @ `organization`
+2026-04-04 21:34:52,016 - lightrag - WARNING - chunk-e0c92ae9ff53313429258a405a2b0b64: LLM output format error; found 6/4 feilds on ENTITY `attack-pattern` @ `organization`
+2026-04-04 21:34:52,016 - lightrag - WARNING - chunk-e0c92ae9ff53313429258a405a2b0b64: LLM output format error; found 7/5 fields on REALTION `campaign`~`attack-pattern`
+2026-04-04 21:34:52,017 - lightrag - INFO - Chunk 122 of 64305 extracted 0 Ent + 0 Rel chunk-e0c92ae9ff53313429258a405a2b0b64
+2026-04-04 21:35:16,598 - lightrag - INFO -  == LLM cache == saving: default:extract:7c6af8c9e0d63a5453a7d714b58fe994
+2026-04-04 21:35:16,599 - lightrag - INFO - Chunk 105 of 6890 extracted 12 Ent + 5 Rel chunk-b3cec1a9d8bceac8f3abc4433560133a
+2026-04-04 21:35:40,575 - lightrag - INFO -  == LLM cache == saving: default:extract:cb8db4a886ea42a5a56b89abd1a51b21
+2026-04-04 21:35:40,576 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 21:35:40,576 - lightrag - WARNING - Relationship extraction error: target entity became empty after cleaning. Original: '3.2.0'
+2026-04-04 21:35:40,576 - lightrag - INFO - Chunk 106 of 6890 extracted 15 Ent + 9 Rel chunk-5649c1636ec3908510d374d3db3965d4
+2026-04-04 21:36:02,783 - lightrag - INFO -  == LLM cache == saving: default:extract:061db48ed190c852c33c6a396b90e7f7
+2026-04-04 21:36:02,784 - lightrag - INFO - Chunk 107 of 6890 extracted 18 Ent + 13 Rel chunk-f91c72557782b717df9f3dd0a1e7dc9e
+2026-04-04 21:36:15,210 - lightrag - INFO -  == LLM cache == saving: default:extract:0b537ce8f2b4b2a785881d1f98a00580
+2026-04-04 21:36:15,210 - lightrag - INFO - Chunk 108 of 6890 extracted 8 Ent + 5 Rel chunk-ac343a266fb3fb718d30c7dd99ee368c
+2026-04-04 21:36:27,542 - lightrag - INFO -  == LLM cache == saving: default:extract:ffb0f22fa9236003a4b83beb794890ce
+2026-04-04 21:36:27,543 - lightrag - WARNING - chunk-6035c878f2004ba30ca28cae4aabf0f6: LLM output format error; find LLM use <|#|> as record seperators instead new-line
+2026-04-04 21:36:27,543 - lightrag - WARNING - chunk-6035c878f2004ba30ca28cae4aabf0f6: LLM output format error; found 2/4 feilds on ENTITY `type` @ `N/A`
+2026-04-04 21:36:27,543 - lightrag - WARNING - chunk-6035c878f2004ba30ca28cae4aabf0f6: LLM output format error; found 10/5 fields on REALTION `x_mitre_attack_spec_version`~`3.2.0`
+2026-04-04 21:36:27,543 - lightrag - INFO - Chunk 123 of 64305 extracted 0 Ent + 0 Rel chunk-6035c878f2004ba30ca28cae4aabf0f6
+2026-04-04 21:36:43,113 - lightrag - INFO -  == LLM cache == saving: default:extract:9ced9a8124b123ad6ba02eb4def88b77
+2026-04-04 21:36:43,115 - lightrag - INFO - Chunk 124 of 64305 extracted 3 Ent + 1 Rel chunk-b07a232225bce40ee9c36b5f286781fe
+2026-04-04 21:36:56,039 - lightrag - INFO -  == LLM cache == saving: default:extract:f60ddbe4dfc277cd4730356b9849b186
+2026-04-04 21:37:08,472 - lightrag - INFO -  == LLM cache == saving: default:extract:c97109e812e5911f37088a11d64b6acc
+2026-04-04 21:37:31,058 - lightrag - INFO -  == LLM cache == saving: default:extract:a5a14dbc2b5a6e2b55b02b0657fa9b50
+2026-04-04 21:37:57,526 - lightrag - INFO -  == LLM cache == saving: default:extract:d3d9c1603d304fb5a209dac2ac04f024
+2026-04-04 21:38:23,492 - lightrag - INFO -  == LLM cache == saving: default:extract:e1385abbf0ffe743055269ffd7f945fb
+2026-04-04 21:38:40,607 - lightrag - INFO -  == LLM cache == saving: default:extract:ded210fa9c5d15336f45d49e78373928
+2026-04-04 21:39:03,269 - lightrag - INFO -  == LLM cache == saving: default:extract:cb4d8b72cd77292fc0b532720c0fd966
+2026-04-04 21:39:21,978 - lightrag - INFO -  == LLM cache == saving: default:extract:4cd85fb5010dab2ce50077992e785709
+2026-04-04 21:39:35,093 - lightrag - INFO -  == LLM cache == saving: default:extract:4d9a88a84e583a5eb30c799bfad3f113
+2026-04-04 21:39:35,094 - lightrag - INFO - Chunk 125 of 64305 extracted 4 Ent + 5 Rel chunk-86258ada50c62f2fa84f301fead070d2
+2026-04-04 21:39:48,542 - lightrag - INFO -  == LLM cache == saving: default:extract:819c7b8b59d31d55369c335d447776a6
+2026-04-04 21:39:48,543 - lightrag - INFO - Chunk 126 of 64305 extracted 6 Ent + 4 Rel chunk-c0e1556c4bc905cace15a8243c60529c
+2026-04-04 21:40:06,686 - lightrag - INFO -  == LLM cache == saving: default:extract:85e4a686875dd8f70c96634f492b3c4e
+2026-04-04 21:40:06,690 - lightrag - INFO - Chunk 109 of 6890 extracted 11 Ent + 8 Rel chunk-20c332b408a1feade425b612bdd575ca
+2026-04-04 21:40:37,012 - lightrag - INFO -  == LLM cache == saving: default:extract:8abe54f92b2b93fb1f2f5cf2d9f568e3
+2026-04-04 21:40:37,015 - lightrag - INFO - Chunk 110 of 6890 extracted 12 Ent + 9 Rel chunk-338f0178b7b674a112edb90190b5d84a
+2026-04-04 21:40:54,225 - lightrag - INFO -  == LLM cache == saving: default:extract:d2577234abf2c9df52a05b38f04ca6a2
+2026-04-04 21:40:54,227 - lightrag - INFO - Chunk 111 of 6890 extracted 17 Ent + 12 Rel chunk-c617f5c56853cca7442b33b2971ac732
+2026-04-04 21:41:11,064 - lightrag - INFO -  == LLM cache == saving: default:extract:a83205d49e091f30247d366faf8f8c48
+2026-04-04 21:41:11,066 - lightrag - INFO - Chunk 112 of 6890 extracted 8 Ent + 3 Rel chunk-cba00db87f1ad663f2796aa80ab52373
+2026-04-04 21:41:38,756 - lightrag - INFO -  == LLM cache == saving: default:extract:04e81f6604839e86f4f861e223c891ea
+2026-04-04 21:41:38,757 - lightrag - WARNING - chunk-a402bae98c025edb31c7b14907b2b8cb: LLM output format error; found 5/4 feilds on ENTITY `marking-definition` @ `marking-definition`
+2026-04-04 21:41:38,757 - lightrag - WARNING - chunk-a402bae98c025edb31c7b14907b2b8cb: LLM output format error; found 5/4 feilds on ENTITY `marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168` @ `marking-definition`
+2026-04-04 21:41:38,757 - lightrag - WARNING - chunk-a402bae98c025edb31c7b14907b2b8cb: LLM output format error; found 5/4 feilds on ENTITY `relationship_type` @ `relationship_type`
+2026-04-04 21:41:38,757 - lightrag - WARNING - chunk-a402bae98c025edb31c7b14907b2b8cb: LLM output format error; found 5/4 feilds on ENTITY `source_ref` @ `source_ref`
+2026-04-04 21:41:38,757 - lightrag - WARNING - chunk-a402bae98c025edb31c7b14907b2b8cb: LLM output format error; found 5/4 feilds on ENTITY `spec_version` @ `spec_version`
+2026-04-04 21:41:38,757 - lightrag - WARNING - chunk-a402bae98c025edb31c7b14907b2b8cb: LLM output format error; found 5/4 feilds on ENTITY `target_ref` @ `target_ref`
+2026-04-04 21:41:38,757 - lightrag - WARNING - chunk-a402bae98c025edb31c7b14907b2b8cb: LLM output format error; found 5/4 feilds on ENTITY `type` @ `type`
+2026-04-04 21:41:38,757 - lightrag - WARNING - chunk-a402bae98c025edb31c7b14907b2b8cb: LLM output format error; found 5/4 feilds on ENTITY `x_mitre_attack_spec_version` @ `x_mitre_attack_spec_version`
+2026-04-04 21:41:38,757 - lightrag - WARNING - chunk-a402bae98c025edb31c7b14907b2b8cb: LLM output format error; found 5/4 feilds on ENTITY `x_mitre_deprecated` @ `x_mitre_deprecated`
+2026-04-04 21:41:38,757 - lightrag - WARNING - chunk-a402bae98c025edb31c7b14907b2b8cb: LLM output format error; found 5/4 feilds on ENTITY `x_mitre_modified_by_ref` @ `x_mitre_modified_by_ref`
+2026-04-04 21:41:38,758 - lightrag - INFO - Chunk 127 of 64305 extracted 10 Ent + 7 Rel chunk-a402bae98c025edb31c7b14907b2b8cb
+2026-04-04 21:41:52,875 - lightrag - INFO -  == LLM cache == saving: default:extract:07d99f9f45fc72221a78ef3329ea1738
+2026-04-04 21:41:52,876 - lightrag - WARNING - chunk-ddbf00b1577775c400d77989da537533: LLM output format error; found 7/4 feilds on ENTITY `US-CERT` @ `organization`
+2026-04-04 21:41:52,877 - lightrag - INFO - Chunk 128 of 64305 extracted 6 Ent + 6 Rel chunk-ddbf00b1577775c400d77989da537533
+2026-04-04 21:42:11,728 - lightrag - INFO -  == LLM cache == saving: default:extract:346df717021d5a1054f9eed8c682fb16
+2026-04-04 21:42:30,909 - lightrag - INFO -  == LLM cache == saving: default:extract:6afd9371eeb1a358f30ac6ce5b634091
+2026-04-04 21:42:44,057 - lightrag - INFO -  == LLM cache == saving: default:extract:1ed11ef6dfc3e2771686f95cc9ed5d24
+2026-04-04 21:43:14,322 - lightrag - INFO -  == LLM cache == saving: default:extract:e4509f96427ddbe4ed112aa5498f5663
+2026-04-04 21:43:46,487 - lightrag - INFO -  == LLM cache == saving: default:extract:18c5df5aeadfb7e41d3aaf049edc720e
+2026-04-04 21:44:08,664 - lightrag - INFO -  == LLM cache == saving: default:extract:87f9dc39dab1ffbd07ed2cd505256b17
+2026-04-04 21:44:22,808 - lightrag - INFO -  == LLM cache == saving: default:extract:2dcbca92061a3df5413c7223b4b63dad
+2026-04-04 21:44:39,616 - lightrag - INFO -  == LLM cache == saving: default:extract:c784279d69fc6ff4c97f36d58f31e6e7
+2026-04-04 21:44:53,354 - lightrag - INFO -  == LLM cache == saving: default:extract:e3576831f48c1cd6a208a5bc33b7eebf
+2026-04-04 21:44:53,355 - lightrag - INFO - Chunk 129 of 64305 extracted 10 Ent + 5 Rel chunk-3d88d290397fa1382ca7dcec216d1e1d
+2026-04-04 21:45:15,191 - lightrag - INFO -  == LLM cache == saving: default:extract:d824def0cb076e25073b1d36d87ac7e0
+2026-04-04 21:45:15,192 - lightrag - INFO - Chunk 130 of 64305 extracted 4 Ent + 2 Rel chunk-0ff426c0ab7b5058f323c18851c99594
+2026-04-04 21:45:29,537 - lightrag - INFO -  == LLM cache == saving: default:extract:4dd2a25b78625a7173fa69f86e324274
+2026-04-04 21:45:29,539 - lightrag - INFO - Chunk 113 of 6890 extracted 8 Ent + 6 Rel chunk-a95e88f7b86076ffa79a5dcb774e9698
+2026-04-04 21:45:48,664 - lightrag - INFO -  == LLM cache == saving: default:extract:730fe41f5be9bfe6b50c7c910e2bc017
+2026-04-04 21:45:48,666 - lightrag - INFO - Chunk 114 of 6890 extracted 21 Ent + 14 Rel chunk-dca54335b2874370dd144e90e29145b3
+2026-04-04 21:46:08,166 - lightrag - INFO -  == LLM cache == saving: default:extract:c3b3c512e793417147708c120aee01b9
+2026-04-04 21:46:08,167 - lightrag - INFO - Chunk 115 of 6890 extracted 16 Ent + 11 Rel chunk-5538c27d5bd244de78e6d7909b4c3f1b
+2026-04-04 21:46:35,418 - lightrag - INFO -  == LLM cache == saving: default:extract:95c764fefbb6b6f5ef752e4f706f2a2d
+2026-04-04 21:46:35,420 - lightrag - INFO - Chunk 116 of 6890 extracted 12 Ent + 7 Rel chunk-c1a1097ca51556f31d2fb48352410f4f
+2026-04-04 21:46:51,127 - lightrag - INFO -  == LLM cache == saving: default:extract:2e566502aea9b283b80953c1778ac7c2
+2026-04-04 21:46:51,129 - lightrag - INFO - Chunk 131 of 64305 extracted 5 Ent + 3 Rel chunk-53225dfac6ff6c3bcb74f438323c1dd2
+2026-04-04 21:47:07,992 - lightrag - INFO -  == LLM cache == saving: default:extract:267fec32ace166bc76aa928279c493c7
+2026-04-04 21:47:07,994 - lightrag - INFO - Chunk 132 of 64305 extracted 10 Ent + 8 Rel chunk-087fb588af6f176a402b33132870b353
+2026-04-04 21:47:26,193 - lightrag - INFO -  == LLM cache == saving: default:extract:868893ef5a04f0aafee86f7cf465dff7
+2026-04-04 21:47:42,288 - lightrag - INFO -  == LLM cache == saving: default:extract:fffc30b93ad2b0b2476c5371e29514b9
+2026-04-04 21:48:02,982 - lightrag - INFO -  == LLM cache == saving: default:extract:5cd6f9fa821ea59e9cbe27ee7789d733
+2026-04-04 21:48:02,983 - lightrag - WARNING - chunk-799b794cceec7cf8eb5826d8dd619d16: LLM output format error; found 6/5 fields on REALTION `Tu, L.`~`Ma, Y.`
+2026-04-04 21:48:26,806 - lightrag - INFO -  == LLM cache == saving: default:extract:104ad33d049404237e65b3a76e40ad89
+2026-04-04 21:48:26,808 - lightrag - WARNING - chunk-a1c768e0aad6c05a49ad925a9b72d066: LLM output format error; found 12/5 fields on REALTION `Tu`~`Ma`
+2026-04-04 21:48:41,889 - lightrag - INFO -  == LLM cache == saving: default:extract:69a66acab8bb5808b00e1d9a4e9a1d1f
+2026-04-04 21:49:01,244 - lightrag - INFO -  == LLM cache == saving: default:extract:89c75a467f09a798dda49694a07df569
+2026-04-04 21:49:21,072 - lightrag - INFO -  == LLM cache == saving: default:extract:0aa1d45c3a398829646c9cbf85504270
+2026-04-04 21:49:21,074 - lightrag - WARNING - chunk-8944a2c81774ca07fd7a2c5cb2db7f41: LLM output format error; find LLM use <|#|> as record seperators instead new-line
+2026-04-04 21:49:21,074 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 21:49:21,074 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 21:49:21,074 - lightrag - WARNING - chunk-8944a2c81774ca07fd7a2c5cb2db7f41: LLM output format error; found 3/5 fields on REALTION `category`~`Describes the connection between different entities.`
+2026-04-04 21:49:37,119 - lightrag - INFO -  == LLM cache == saving: default:extract:49139e6d4e5cf0e6910d6df7d35a55eb
+2026-04-04 21:49:49,113 - lightrag - INFO -  == LLM cache == saving: default:extract:c8939e6e60e2e7eb83aa4a10b7aa25e8
+2026-04-04 21:49:49,114 - lightrag - INFO - Chunk 133 of 64305 extracted 8 Ent + 6 Rel chunk-289b3affa1198769c5820fd4cd0526a0
+2026-04-04 21:50:02,029 - lightrag - INFO -  == LLM cache == saving: default:extract:e324d10a7a0f2798bd14ebb91ef103d2
+2026-04-04 21:50:02,030 - lightrag - INFO - Chunk 134 of 64305 extracted 7 Ent + 4 Rel chunk-4f5773248325f46655ef7de4dd60c867
+2026-04-04 21:50:17,141 - lightrag - INFO -  == LLM cache == saving: default:extract:2e6d03d821eba5ed6c2e3fe39df363be
+2026-04-04 21:50:17,142 - lightrag - INFO - Chunk 117 of 6890 extracted 13 Ent + 6 Rel chunk-799b794cceec7cf8eb5826d8dd619d16
+2026-04-04 21:50:43,060 - lightrag - INFO -  == LLM cache == saving: default:extract:95de3e5d869522712f29680965faa672
+2026-04-04 21:50:43,062 - lightrag - WARNING - chunk-a1c768e0aad6c05a49ad925a9b72d066: LLM output format error; found 10/5 fields on REALTION `Tu`~`Ma`
+2026-04-04 21:50:43,062 - lightrag - INFO - Chunk 118 of 6890 extracted 13 Ent + 2 Rel chunk-a1c768e0aad6c05a49ad925a9b72d066
+2026-04-04 21:50:58,783 - lightrag - INFO -  == LLM cache == saving: default:extract:7dee016440c0a76e63ee3380429e74c2
+2026-04-04 21:50:58,784 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 21:50:58,785 - lightrag - INFO - Chunk 119 of 6890 extracted 11 Ent + 6 Rel chunk-2e9590f9b8f91e04c216d0a849248a55
+2026-04-04 21:51:16,990 - lightrag - INFO -  == LLM cache == saving: default:extract:f55e5b81f7e31f90267cc11cd149918e
+2026-04-04 21:51:16,991 - lightrag - INFO - Chunk 120 of 6890 extracted 14 Ent + 6 Rel chunk-e09b1a9627109502f5d4f77bf333945f
+2026-04-04 21:51:41,172 - lightrag - INFO -  == LLM cache == saving: default:extract:c3062a8da6c6b95088849e9254e747b9
+2026-04-04 21:51:41,173 - lightrag - WARNING - chunk-8944a2c81774ca07fd7a2c5cb2db7f41: LLM output format error; find LLM use <|#|> as record seperators instead new-line
+2026-04-04 21:51:41,173 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 21:51:41,173 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 21:51:41,173 - lightrag - WARNING - chunk-8944a2c81774ca07fd7a2c5cb2db7f41: LLM output format error; found 3/5 fields on REALTION `category`~`Describes the connection between different entities.`
+2026-04-04 21:51:41,174 - lightrag - INFO - Chunk 135 of 64305 extracted 6 Ent + 3 Rel chunk-8944a2c81774ca07fd7a2c5cb2db7f41
+2026-04-04 21:51:55,347 - lightrag - INFO -  == LLM cache == saving: default:extract:792f379fe0fd8ed5efce4ae75e77f112
+2026-04-04 21:51:55,347 - lightrag - INFO - Chunk 136 of 64305 extracted 8 Ent + 6 Rel chunk-4433a364ff6976010399bcb24d84bbda
+2026-04-04 21:52:11,772 - lightrag - INFO -  == LLM cache == saving: default:extract:07b6200cc7b84f5252fb324a688a62fc
+2026-04-04 21:52:32,543 - lightrag - INFO -  == LLM cache == saving: default:extract:4307099bceaf6d05602cb901ef816631
+2026-04-04 21:52:32,545 - lightrag - WARNING - chunk-8a716ca1e54b9c743d52ccc26c4bf986: LLM output format error; find LLM use <|#|> as record seperators instead new-line
+2026-04-04 21:52:32,545 - lightrag - WARNING - chunk-8a716ca1e54b9c743d52ccc26c4bf986: LLM output format error; found 3/5 fields on REALTION `category`~`This represents a structured data entry describing a relationship between two entities.`
+2026-04-04 21:52:32,545 - lightrag - WARNING - chunk-8a716ca1e54b9c743d52ccc26c4bf986: LLM output format error; found 4/5 fields on REALTION `uses`~`relationship type`
+2026-04-04 21:52:32,545 - lightrag - WARNING - chunk-8a716ca1e54b9c743d52ccc26c4bf986: LLM output format error; found 4/5 fields on REALTION `uses`~`relationship type`
+2026-04-04 21:52:48,398 - lightrag - INFO -  == LLM cache == saving: default:extract:bc1c856579c17b3352503c5bef4a3bad
+2026-04-04 21:52:48,399 - lightrag - WARNING - chunk-edda3f578845b73fb21a332db929546a: LLM output format error; found 4/5 fields on REALTION `Monitor network traffic for anomalies associated with known AiTM behavior`~`Monitor network traffic`
+2026-04-04 21:52:48,399 - lightrag - WARNING - chunk-edda3f578845b73fb21a332db929546a: LLM output format error; found 4/5 fields on REALTION `Consider monitoring for modifications to system configuration files involved in shaping network traffic flow`~`Monitor network traffic`
+2026-04-04 21:52:48,399 - lightrag - WARNING - chunk-edda3f578845b73fb21a332db929546a: LLM output format error; found 4/5 fields on REALTION `Enterprise-attack`~`Enterprise-attack`
+2026-04-04 21:52:48,399 - lightrag - WARNING - chunk-edda3f578845b73fb21a332db929546a: LLM output format error; found 4/5 fields on REALTION `identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5`~`Monitor network traffic for anomalies associated with known AiTM behavior`
+2026-04-04 21:52:48,399 - lightrag - WARNING - chunk-edda3f578845b73fb21a332db929546a: LLM output format error; found 4/5 fields on REALTION `Windows`~`Enterprise-attack`
+2026-04-04 21:52:48,399 - lightrag - WARNING - chunk-edda3f578845b73fb21a332db929546a: LLM output format error; found 4/5 fields on REALTION `macOS`~`Enterprise-attack`
+2026-04-04 21:52:48,399 - lightrag - WARNING - chunk-edda3f578845b73fb21a332db929546a: LLM output format error; found 4/5 fields on REALTION `Linux`~`Enterprise-attack`
+2026-04-04 21:52:48,399 - lightrag - WARNING - chunk-edda3f578845b73fb21a332db929546a: LLM output format error; found 4/5 fields on REALTION `Network Devices`~`Enterprise-attack`
+2026-04-04 21:53:09,283 - lightrag - INFO -  == LLM cache == saving: default:extract:86411fcffe3ee5222d70fe286931d0fc
+2026-04-04 21:53:09,284 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.5'
+2026-04-04 21:53:29,664 - lightrag - INFO -  == LLM cache == saving: default:extract:dab6ad5e4775615f3514b3e9117d4abb
+2026-04-04 21:53:29,666 - lightrag - WARNING - chunk-ddb9d11399ea2e907a40a1618756b238: LLM output format error; found 4/5 fields on REALTION `dscl . list /Users | grep -v '_'`~`command`
+2026-04-04 21:53:29,666 - lightrag - WARNING - chunk-ddb9d11399ea2e907a40a1618756b238: LLM output format error; found 4/5 fields on REALTION `Environment Variables`~`command`
+2026-04-04 21:53:56,294 - lightrag - INFO -  == LLM cache == saving: default:extract:80b9542929d2acfcfc93150690575943
+2026-04-04 21:54:13,680 - lightrag - INFO -  == LLM cache == saving: default:extract:f3df96c29e30f4a99f4aa452ede25aa7
+2026-04-04 21:54:30,524 - lightrag - INFO -  == LLM cache == saving: default:extract:1b9ff4a5f9ad2bf44b3581c9b7db5b22
+2026-04-04 21:54:30,525 - lightrag - WARNING - chunk-228ce56938c8373ee1564778ae9d539d: LLM output format error; found 4/5 fields on REALTION `Delete`~`access type, file removal`
+2026-04-04 21:54:42,162 - lightrag - INFO -  == LLM cache == saving: default:extract:0979e7ce1d7fe4d0d237dc8373b01f7c
+2026-04-04 21:54:42,163 - lightrag - INFO - Chunk 137 of 64305 extracted 7 Ent + 6 Rel chunk-13e49a746886cb21c05e43a4fe9bb250
+2026-04-04 21:55:13,734 - lightrag - INFO -  == LLM cache == saving: default:extract:c4027f8f758ae22bbcf90fe4452cc44d
+2026-04-04 21:55:13,737 - lightrag - WARNING - chunk-8a716ca1e54b9c743d52ccc26c4bf986: LLM output format error; find LLM use <|#|> as record seperators instead new-line
+2026-04-04 21:55:13,738 - lightrag - WARNING - chunk-8a716ca1e54b9c743d52ccc26c4bf986: LLM output format error; found 4/5 fields on REALTION `uses`~`relationship type`
+2026-04-04 21:55:13,738 - lightrag - WARNING - chunk-8a716ca1e54b9c743d52ccc26c4bf986: LLM output format error; found 4/5 fields on REALTION `uses`~`relationship type`
+2026-04-04 21:55:13,738 - lightrag - INFO - Chunk 138 of 64305 extracted 16 Ent + 6 Rel chunk-8a716ca1e54b9c743d52ccc26c4bf986
+2026-04-04 21:55:28,419 - lightrag - INFO -  == LLM cache == saving: default:extract:1a64de4269419bf3eed7d2ba438259c4
+2026-04-04 21:55:28,420 - lightrag - WARNING - chunk-edda3f578845b73fb21a332db929546a: LLM output format error; found 6/5 fields on REALTION `Monitor network traffic for anomalies associated with known AiTM behavior`~`Monitor network traffic`
+2026-04-04 21:55:28,420 - lightrag - WARNING - chunk-edda3f578845b73fb21a332db929546a: LLM output format error; found 6/5 fields on REALTION `Consider monitoring for modifications to system configuration files involved in shaping network traffic flow`~`Monitor network traffic`
+2026-04-04 21:55:28,420 - lightrag - WARNING - chunk-edda3f578845b73fb21a332db929546a: LLM output format error; found 4/5 fields on REALTION `Enterprise-attack`~`Enterprise-attack`
+2026-04-04 21:55:28,420 - lightrag - WARNING - chunk-edda3f578845b73fb21a332db929546a: LLM output format error; found 6/5 fields on REALTION `identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5`~`Monitor network traffic for anomalies associated with known AiTM behavior`
+2026-04-04 21:55:28,420 - lightrag - INFO - Chunk 121 of 6890 extracted 6 Ent + 0 Rel chunk-edda3f578845b73fb21a332db929546a
+2026-04-04 21:55:52,235 - lightrag - INFO -  == LLM cache == saving: default:extract:4ad0e4445dfcfc9654e85990ecae5696
+2026-04-04 21:55:52,236 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.5'
+2026-04-04 21:55:52,238 - lightrag - INFO - Chunk 122 of 6890 extracted 9 Ent + 6 Rel chunk-b40be6bb859326940a60d6997f7fc341
+2026-04-04 21:56:08,907 - lightrag - INFO -  == LLM cache == saving: default:extract:ad2300c5631d43dbbe8a2d661642fc2d
+2026-04-04 21:56:08,908 - lightrag - WARNING - chunk-ddb9d11399ea2e907a40a1618756b238: LLM output format error; found 4/5 fields on REALTION `dscl . list /Users | grep -v '_'`~`command`
+2026-04-04 21:56:08,908 - lightrag - WARNING - chunk-ddb9d11399ea2e907a40a1618756b238: LLM output format error; found 4/5 fields on REALTION `Environment Variables`~`command`
+2026-04-04 21:56:08,909 - lightrag - INFO - Chunk 123 of 6890 extracted 13 Ent + 3 Rel chunk-ddb9d11399ea2e907a40a1618756b238
+2026-04-04 21:56:26,101 - lightrag - INFO -  == LLM cache == saving: default:extract:1dc2dd7c15cecdc5dad17fa4b77b2c0a
+2026-04-04 21:56:26,102 - lightrag - INFO - Chunk 124 of 6890 extracted 18 Ent + 13 Rel chunk-cde4468bc6bc5cce878627102f77eca7
+2026-04-04 21:56:41,992 - lightrag - INFO -  == LLM cache == saving: default:extract:6bcf6d66ab3738c632cd042feb679ea1
+2026-04-04 21:56:41,993 - lightrag - INFO - Chunk 139 of 64305 extracted 11 Ent + 7 Rel chunk-3913293316a326da8e8d53fccf7a8073
+2026-04-04 21:56:55,766 - lightrag - INFO -  == LLM cache == saving: default:extract:0b4b48adcfd22ee79b1f3402dfff0a0c
+2026-04-04 21:56:55,767 - lightrag - INFO - Chunk 140 of 64305 extracted 13 Ent + 6 Rel chunk-228ce56938c8373ee1564778ae9d539d
+2026-04-04 21:57:03,277 - lightrag - INFO -  == LLM cache == saving: default:extract:ab35ae30b95724ffd45f2c76342c8efe
+2026-04-04 21:57:23,348 - lightrag - INFO -  == LLM cache == saving: default:extract:90aa319c70222ab8e744ccb81ee0c465
+2026-04-04 21:57:47,694 - lightrag - INFO -  == LLM cache == saving: default:extract:f128917de813a9d411e6265fc4455c3d
+2026-04-04 21:58:08,058 - lightrag - INFO -  == LLM cache == saving: default:extract:6ff5a3bbb1bdbbe761a5f29e708b94fb
+2026-04-04 21:58:39,834 - lightrag - INFO -  == LLM cache == saving: default:extract:d6aa8640b0f9592efea8d6b5c0f2a653
+2026-04-04 21:59:09,826 - lightrag - INFO -  == LLM cache == saving: default:extract:004bedd0cdc9d6293f172bc1f9f60872
+2026-04-04 21:59:28,188 - lightrag - INFO -  == LLM cache == saving: default:extract:1444a50ce9370776b29efb914bc2c56b
+2026-04-04 21:59:47,641 - lightrag - INFO -  == LLM cache == saving: default:extract:30370f1508596af7dde38bb6696f42da
+2026-04-04 21:59:56,525 - lightrag - INFO -  == LLM cache == saving: default:extract:1dc69e085cdff44b0a42b21b2b0c76ee
+2026-04-04 21:59:56,525 - lightrag - INFO - Chunk 141 of 64305 extracted 1 Ent + 0 Rel chunk-d4b2243ab70cad60f3f5be0fc95bdf2d
+2026-04-04 22:00:21,204 - lightrag - INFO -  == LLM cache == saving: default:extract:80c1dd7908d5cba74bd4fda2db47d85a
+2026-04-04 22:00:21,206 - lightrag - INFO - Chunk 142 of 64305 extracted 10 Ent + 6 Rel chunk-9c9ec8e0f49e6923e38b35be636108f0
+2026-04-04 22:00:36,402 - lightrag - INFO -  == LLM cache == saving: default:extract:50e9200206af71850e8b6eb14377f98e
+2026-04-04 22:00:36,402 - lightrag - INFO - Chunk 125 of 6890 extracted 12 Ent + 10 Rel chunk-4d8d144a7e4895fc32f7f49aff6d8ec0
+2026-04-04 22:00:51,630 - lightrag - INFO -  == LLM cache == saving: default:extract:7f351d6ac38cf14a4e21fdff2e1d1a5e
+2026-04-04 22:00:51,631 - lightrag - INFO - Chunk 126 of 6890 extracted 12 Ent + 6 Rel chunk-d9514f0f14937c12c87e396b06ac2e0d
+2026-04-04 22:01:17,230 - lightrag - INFO -  == LLM cache == saving: default:extract:e1f4b6c8682793aabf7215314e8f3c80
+2026-04-04 22:01:17,233 - lightrag - INFO - Chunk 127 of 6890 extracted 13 Ent + 11 Rel chunk-be1b892cd617c05175620687c4d8fd6b
+2026-04-04 22:01:50,149 - lightrag - INFO -  == LLM cache == saving: default:extract:d37151b419d791f25f50e83aa18084d3
+2026-04-04 22:01:50,154 - lightrag - INFO - Chunk 128 of 6890 extracted 17 Ent + 8 Rel chunk-27d31db5f291691050c63dbaf45eaebb
+2026-04-04 22:02:05,371 - lightrag - INFO -  == LLM cache == saving: default:extract:4bf5f3a725cb6359e1385bf3fae07e5b
+2026-04-04 22:02:05,372 - lightrag - INFO - Chunk 143 of 64305 extracted 9 Ent + 8 Rel chunk-36dfc63ca5e20b30bf5535a176499bd5
+2026-04-04 22:02:18,654 - lightrag - INFO -  == LLM cache == saving: default:extract:c5075ecf234cfb97a334fa87bc80528b
+2026-04-04 22:02:18,655 - lightrag - INFO - Chunk 144 of 64305 extracted 12 Ent + 4 Rel chunk-da24770b329137e8fe8773f29d13a0a2
+2026-04-04 22:02:39,483 - lightrag - INFO -  == LLM cache == saving: default:extract:c7e2dfa844bb1cb43672d00838a93c02
+2026-04-04 22:02:39,483 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 22:02:50,829 - lightrag - INFO -  == LLM cache == saving: default:extract:ad35595258296223a101f6e3a2e6f1f5
+2026-04-04 22:03:07,212 - lightrag - INFO -  == LLM cache == saving: default:extract:9872c4dc56844475e893fef9ac0b8786
+2026-04-04 22:03:27,080 - lightrag - INFO -  == LLM cache == saving: default:extract:53a0818160bd316d4eb7a1a032f4a9a7
+2026-04-04 22:03:51,010 - lightrag - INFO -  == LLM cache == saving: default:extract:cba1805c1c4c912c2813b96320e924ba
+2026-04-04 22:04:09,142 - lightrag - INFO -  == LLM cache == saving: default:extract:be7e499ad90df8e2daef66f9260e520b
+2026-04-04 22:04:23,552 - lightrag - INFO -  == LLM cache == saving: default:extract:e4a061d383b24b5f520228e02e6ef70f
+2026-04-04 22:04:32,863 - lightrag - INFO -  == LLM cache == saving: default:extract:ceaf5d41c09eb340c1193962a06e297e
+2026-04-04 22:04:56,328 - lightrag - INFO -  == LLM cache == saving: default:extract:646b060fd5472655219448e8e727261d
+2026-04-04 22:04:56,331 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 22:04:56,331 - lightrag - INFO - Chunk 145 of 64305 extracted 9 Ent + 9 Rel chunk-fd77fbeba7c92080ad11619d974b37db
+2026-04-04 22:05:08,580 - lightrag - INFO -  == LLM cache == saving: default:extract:c7d9497138ceddca5501340aa07e4227
+2026-04-04 22:05:08,581 - lightrag - INFO - Chunk 146 of 64305 extracted 5 Ent + 4 Rel chunk-c528763ce729530d4635415f26e226c9
+2026-04-04 22:05:21,404 - lightrag - INFO -  == LLM cache == saving: default:extract:7a97cb0ad2d9e59dae48b7e306a4eb0f
+2026-04-04 22:05:21,405 - lightrag - INFO - Chunk 129 of 6890 extracted 10 Ent + 4 Rel chunk-19fda877c93f182e185e6cc104c381bd
+2026-04-04 22:05:34,287 - lightrag - INFO -  == LLM cache == saving: default:extract:91da42a9fcf6e2bedeb05d728ae85094
+2026-04-04 22:05:34,290 - lightrag - INFO - Chunk 130 of 6890 extracted 12 Ent + 9 Rel chunk-d2de423bc01653e5f7901491cbe9ac74
+2026-04-04 22:05:48,676 - lightrag - INFO -  == LLM cache == saving: default:extract:8862a47e622c5fd759ee0e115306167b
+2026-04-04 22:05:48,677 - lightrag - INFO - Chunk 131 of 6890 extracted 18 Ent + 9 Rel chunk-3864c6e1e72989d94e553932ec813286
+2026-04-04 22:06:00,612 - lightrag - INFO -  == LLM cache == saving: default:extract:3bae8b27e8df0e38df2b5c175ea3101e
+2026-04-04 22:06:00,613 - lightrag - WARNING - chunk-8d9ef2d4789e19a7e6d097f85274fd95: LLM output format error; found 4/5 fields on REALTION `Proxy Services`~`threat actors`
+2026-04-04 22:06:00,613 - lightrag - INFO - Chunk 132 of 6890 extracted 9 Ent + 4 Rel chunk-8d9ef2d4789e19a7e6d097f85274fd95
+2026-04-04 22:06:13,270 - lightrag - INFO -  == LLM cache == saving: default:extract:d32f5736f903ec7bcc6e2a2e955422cb
+2026-04-04 22:06:13,271 - lightrag - INFO - Chunk 147 of 64305 extracted 6 Ent + 3 Rel chunk-3682ded9cd74c414225d6f87fcd29aea
+2026-04-04 22:06:26,805 - lightrag - INFO -  == LLM cache == saving: default:extract:66e4f0889eadc61b6736315247968736
+2026-04-04 22:06:26,806 - lightrag - INFO - Chunk 148 of 64305 extracted 3 Ent + 2 Rel chunk-0feb0cb9293b6c768e8788f980b31958
+2026-04-04 22:06:45,296 - lightrag - INFO -  == LLM cache == saving: default:extract:a6573ff053e2f73672cc096cdfa2784a
+2026-04-04 22:07:02,094 - lightrag - INFO -  == LLM cache == saving: default:extract:e3177fdd36914b9ca98a0c6baca71451
+2026-04-04 22:07:22,161 - lightrag - INFO -  == LLM cache == saving: default:extract:df8deea863171b5307ecd80f11154667
+2026-04-04 22:07:41,500 - lightrag - INFO -  == LLM cache == saving: default:extract:88d360eeb1676939495db67421f39686
+2026-04-04 22:07:58,235 - lightrag - INFO -  == LLM cache == saving: default:extract:c300d5cee425bd28b39ebfedd0b45dcc
+2026-04-04 22:08:21,448 - lightrag - INFO -  == LLM cache == saving: default:extract:71f44c2f7ed4129abe2efc161ad14f4c
+2026-04-04 22:08:38,803 - lightrag - INFO -  == LLM cache == saving: default:extract:8d436ea1fa787e0cfc68eefc1e2c03cd
+2026-04-04 22:08:56,375 - lightrag - INFO -  == LLM cache == saving: default:extract:f3f01f06345e8caa63a6ae964d13eb2a
+2026-04-04 22:09:13,163 - lightrag - INFO -  == LLM cache == saving: default:extract:4cfbaa7b3b316400d1c861371bd0042b
+2026-04-04 22:09:13,164 - lightrag - INFO - Chunk 149 of 64305 extracted 11 Ent + 11 Rel chunk-39a3eb8e45ba97a01b9d6d2834d0675c
+2026-04-04 22:09:28,655 - lightrag - INFO -  == LLM cache == saving: default:extract:2d5a63102c17b40ac0b201a106a00992
+2026-04-04 22:09:28,656 - lightrag - INFO - Chunk 150 of 64305 extracted 11 Ent + 8 Rel chunk-51045a4db9e5ba73479a29b7b8fd6df2
+2026-04-04 22:09:46,514 - lightrag - INFO -  == LLM cache == saving: default:extract:8eb41f72529f815cdaf32e73ae232de4
+2026-04-04 22:09:46,516 - lightrag - INFO - Chunk 133 of 6890 extracted 11 Ent + 7 Rel chunk-311a5eefb36bbde04c412a01a268bd00
+2026-04-04 22:10:09,620 - lightrag - INFO -  == LLM cache == saving: default:extract:2f7b567980ba6dbac5ceb9dc1648273a
+2026-04-04 22:10:09,622 - lightrag - INFO - Chunk 134 of 6890 extracted 9 Ent + 5 Rel chunk-862069abb8521d82438305c055ca0810
+2026-04-04 22:10:29,829 - lightrag - INFO -  == LLM cache == saving: default:extract:1f790faaf8cb398ee4aca2f0f2f972ad
+2026-04-04 22:10:29,830 - lightrag - INFO - Chunk 135 of 6890 extracted 8 Ent + 5 Rel chunk-cf42960b88a0532792cd370689829487
+2026-04-04 22:10:56,261 - lightrag - INFO -  == LLM cache == saving: default:extract:c6fb154dab2e625d6e756146a3c7472d
+2026-04-04 22:10:56,264 - lightrag - INFO - Chunk 136 of 6890 extracted 13 Ent + 8 Rel chunk-75fe1b597d7e32c4df6b5b7913e3cc1a
+2026-04-04 22:11:11,564 - lightrag - INFO -  == LLM cache == saving: default:extract:9cf76f4a41318d19911ebf313ce7d669
+2026-04-04 22:11:11,566 - lightrag - INFO - Chunk 151 of 64305 extracted 10 Ent + 6 Rel chunk-1b46709cab913055ed00cbf96ad51c4d
+2026-04-04 22:11:31,861 - lightrag - INFO -  == LLM cache == saving: default:extract:343367c80ffc025d92fe186799dd76c8
+2026-04-04 22:11:31,862 - lightrag - INFO - Chunk 152 of 64305 extracted 7 Ent + 3 Rel chunk-f956ed90d5689c204433a99fb0d71459
+2026-04-04 22:11:48,622 - lightrag - INFO -  == LLM cache == saving: default:extract:a8a326fa5416fb4c84409e17e95df6bb
+2026-04-04 22:12:06,045 - lightrag - INFO -  == LLM cache == saving: default:extract:febfc1ecd30ab82f48008d31ea429e4c
+2026-04-04 22:12:24,445 - lightrag - INFO -  == LLM cache == saving: default:extract:4a77db278bd6eeaabe7bcc84aaba1aec
+2026-04-04 22:12:44,770 - lightrag - INFO -  == LLM cache == saving: default:extract:acd66958936d1740db2e2f379f3d58ec
+2026-04-04 22:12:44,770 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 22:12:44,771 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 22:13:11,793 - lightrag - INFO -  == LLM cache == saving: default:extract:80a614da787f3c56d996c14a25679534
+2026-04-04 22:13:32,966 - lightrag - INFO -  == LLM cache == saving: default:extract:216ef1bf7cf8176caff597a243814df4
+2026-04-04 22:13:50,416 - lightrag - INFO -  == LLM cache == saving: default:extract:f7e9c3aab6208227406a3f56e86cb9a4
+2026-04-04 22:13:50,416 - lightrag - WARNING - chunk-ea1457bc19a5ee56703326536e0dac61: LLM output format error; found 5/4 feilds on ENTITY `fa42a846-8d90-4e51-bc29-71d5b4802168` @ `malware`
+2026-04-04 22:13:50,417 - lightrag - WARNING - chunk-ea1457bc19a5ee56703326536e0dac61: LLM output format error; found 6/5 fields on REALTION `fa42a846-8d90-4e51-bc29-71d5b4802168`~`ff6840c9-4c87-4d07-bbb6-9f50aa33d498`
+2026-04-04 22:13:50,417 - lightrag - WARNING - chunk-ea1457bc19a5ee56703326536e0dac61: LLM output format error; found 6/5 fields on REALTION `ff6840c9-4c87-4d07-bbb6-9f50aa33d498`~`3b744087-9945-4a6f-91e8-9dbceda417a4`
+2026-04-04 22:14:07,125 - lightrag - INFO -  == LLM cache == saving: default:extract:994b8bdf2916aadb312e9981dc2cadfb
+2026-04-04 22:14:19,713 - lightrag - INFO -  == LLM cache == saving: default:extract:07e1105f77b3afd33e64a30c008d41f6
+2026-04-04 22:14:19,714 - lightrag - INFO - Chunk 153 of 64305 extracted 8 Ent + 6 Rel chunk-eea227aacba46f8084fe28365162f1ec
+2026-04-04 22:14:34,839 - lightrag - INFO -  == LLM cache == saving: default:extract:ce00c546380f4dc16c85b19946777f66
+2026-04-04 22:14:34,840 - lightrag - INFO - Chunk 154 of 64305 extracted 11 Ent + 5 Rel chunk-b121b05055ce18ae1dfbe061bd332924
+2026-04-04 22:14:54,749 - lightrag - INFO -  == LLM cache == saving: default:extract:19c4d8d720e60254d821084e36f1fd97
+2026-04-04 22:14:54,751 - lightrag - INFO - Chunk 137 of 6890 extracted 12 Ent + 5 Rel chunk-983e9c54fef7c4804ca052c604639437
+2026-04-04 22:15:12,930 - lightrag - INFO -  == LLM cache == saving: default:extract:ff4c37eaf811989cfdbb35f1bd9e6b33
+2026-04-04 22:15:12,932 - lightrag - INFO - Chunk 138 of 6890 extracted 13 Ent + 10 Rel chunk-44250209a3df5cfdd540dd1a35193c33
+2026-04-04 22:15:30,501 - lightrag - INFO -  == LLM cache == saving: default:extract:49ba8abde1e598df6f102825b82591f1
+2026-04-04 22:15:30,502 - lightrag - INFO - Chunk 139 of 6890 extracted 17 Ent + 10 Rel chunk-0aba727d74ca37e8a6f917a3ff8e5898
+2026-04-04 22:15:55,399 - lightrag - INFO -  == LLM cache == saving: default:extract:4537c2e38dc799f1fe9f054412bd5749
+2026-04-04 22:15:55,400 - lightrag - INFO - Chunk 140 of 6890 extracted 11 Ent + 8 Rel chunk-1a9debb90ce0043adb173f8fa128a79d
+2026-04-04 22:16:18,280 - lightrag - INFO -  == LLM cache == saving: default:extract:9201ac92b40110651b11a1cb7dcde179
+2026-04-04 22:16:18,281 - lightrag - WARNING - chunk-ea1457bc19a5ee56703326536e0dac61: LLM output format error; found 5/4 feilds on ENTITY `fa42a846-8d90-4e51-bc29-71d5b4802168` @ `malware`
+2026-04-04 22:16:18,281 - lightrag - WARNING - chunk-ea1457bc19a5ee56703326536e0dac61: LLM output format error; found 6/5 fields on REALTION `fa42a846-8d90-4e51-bc29-71d5b4802168`~`ff6840c9-4c87-4d07-bbb6-9f50aa33d498`
+2026-04-04 22:16:18,281 - lightrag - WARNING - chunk-ea1457bc19a5ee56703326536e0dac61: LLM output format error; found 6/5 fields on REALTION `ff6840c9-4c87-4d07-bbb6-9f50aa33d498`~`3b744087-9945-4a6f-91e8-9dbceda417a4`
+2026-04-04 22:16:18,282 - lightrag - INFO - Chunk 155 of 64305 extracted 4 Ent + 1 Rel chunk-ea1457bc19a5ee56703326536e0dac61
+2026-04-04 22:16:38,405 - lightrag - INFO -  == LLM cache == saving: default:extract:0428bb0aec8f3e2fbe21b4cfdf459d70
+2026-04-04 22:16:38,406 - lightrag - INFO - Chunk 156 of 64305 extracted 9 Ent + 4 Rel chunk-e5737b10611d993c92937baa1aba3c2f
+2026-04-04 22:16:54,238 - lightrag - INFO -  == LLM cache == saving: default:extract:70b18b94e8637df367e4fc7d0649a8ad
+2026-04-04 22:17:02,836 - lightrag - INFO -  == LLM cache == saving: default:extract:a685ea1a528f1d2fbd04730fca00b6ac
+2026-04-04 22:17:02,836 - lightrag - WARNING - chunk-54cc064ff6d19f75e6c86e2bd24c5ceb: Complete delimiter can not be found in extraction result
+2026-04-04 22:17:02,837 - lightrag - WARNING - chunk-54cc064ff6d19f75e6c86e2bd24c5ceb: LLM output format error; found 2/4 feilds on ENTITY `S` @ `N/A`
+2026-04-04 22:17:30,173 - lightrag - INFO -  == LLM cache == saving: default:extract:0cb51ed8d5d445f8bfb79e7529ca6799
+2026-04-04 22:17:30,174 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '1.4'
+2026-04-04 22:17:30,174 - lightrag - WARNING - Relationship extraction error: target entity became empty after cleaning. Original: '1.4'
+2026-04-04 22:17:57,469 - lightrag - INFO -  == LLM cache == saving: default:extract:dd4b2642bf59a4638af56cf2ff90acc8
+2026-04-04 22:18:20,035 - lightrag - INFO -  == LLM cache == saving: default:extract:11611ba8e8da38850a10dc16b0c65b0c
+2026-04-04 22:18:39,310 - lightrag - INFO -  == LLM cache == saving: default:extract:62be3453feec89014de9654bb0e22a3b
+2026-04-04 22:18:55,559 - lightrag - INFO -  == LLM cache == saving: default:extract:713922026c63233eb3bf582c3fb03ad5
+2026-04-04 22:19:14,298 - lightrag - INFO -  == LLM cache == saving: default:extract:5cc3e3aaeff657af3a604c17fe5655b0
+2026-04-04 22:19:29,348 - lightrag - INFO -  == LLM cache == saving: default:extract:40754af9167640f1daf580924082294e
+2026-04-04 22:19:29,349 - lightrag - INFO - Chunk 157 of 64305 extracted 9 Ent + 6 Rel chunk-8ebf223beef649716e579e59e84ec948
+2026-04-04 22:19:39,776 - lightrag - INFO -  == LLM cache == saving: default:extract:54d22f0e94caf42e57015a86fe4f4ce8
+2026-04-04 22:19:39,776 - lightrag - WARNING - chunk-54cc064ff6d19f75e6c86e2bd24c5ceb: Complete delimiter can not be found in extraction result
+2026-04-04 22:19:39,776 - lightrag - WARNING - chunk-54cc064ff6d19f75e6c86e2bd24c5ceb: LLM output format error; found 2/4 feilds on ENTITY `S` @ `N/A`
+2026-04-04 22:19:39,776 - lightrag - INFO - Chunk 158 of 64305 extracted 2 Ent + 1 Rel chunk-54cc064ff6d19f75e6c86e2bd24c5ceb
+2026-04-04 22:19:56,855 - lightrag - INFO -  == LLM cache == saving: default:extract:5ae42f7030f4cc74daab94328bb10437
+2026-04-04 22:19:56,856 - lightrag - INFO - Chunk 141 of 6890 extracted 13 Ent + 9 Rel chunk-ac72b4cbecba7a1164bf0d67b093a366
+2026-04-04 22:20:12,971 - lightrag - INFO -  == LLM cache == saving: default:extract:24aa60f9a25e8c798221ecac9a4aab5c
+2026-04-04 22:20:12,973 - lightrag - INFO - Chunk 142 of 6890 extracted 15 Ent + 10 Rel chunk-c887755b9d389ea3f98802e376b76c3b
+2026-04-04 22:20:31,278 - lightrag - INFO -  == LLM cache == saving: default:extract:ec003a06ce9fefb61e2a85aa49db0153
+2026-04-04 22:20:31,280 - lightrag - INFO - Chunk 143 of 6890 extracted 13 Ent + 6 Rel chunk-db5eb3005c7f3488e1386287b21f22fc
+2026-04-04 22:20:44,721 - lightrag - INFO -  == LLM cache == saving: default:extract:62c4164cb511d2fe75008d18ab7728f2
+2026-04-04 22:20:44,722 - lightrag - INFO - Chunk 144 of 6890 extracted 11 Ent + 5 Rel chunk-c300f3fe02aec2d2d2f828c17ea252fb
+2026-04-04 22:20:57,983 - lightrag - INFO -  == LLM cache == saving: default:extract:0d56a84f16e92c2954251b1c4a165e60
+2026-04-04 22:20:57,983 - lightrag - INFO - Chunk 159 of 64305 extracted 8 Ent + 5 Rel chunk-a4d9aac26a8848d580576ff76950cfdf
+2026-04-04 22:21:18,714 - lightrag - INFO -  == LLM cache == saving: default:extract:316676511a35695ec64930d155267192
+2026-04-04 22:21:18,716 - lightrag - INFO - Chunk 160 of 64305 extracted 7 Ent + 4 Rel chunk-f392fadae2f25a984998cd1c9bce0881
+2026-04-04 22:21:33,070 - lightrag - INFO -  == LLM cache == saving: default:extract:c9800818a8e48af93caf9f9c0db84b10
+2026-04-04 22:21:33,070 - lightrag - WARNING - chunk-4a0826aeeecdcadc6074e45b8685aeef: LLM output format error; find LLM use <|#|> as record seperators instead new-line
+2026-04-04 22:21:33,071 - lightrag - WARNING - chunk-4a0826aeeecdcadc6074e45b8685aeef: LLM output format error; found 3/5 fields on REALTION `category`~`This describes a relationship between a malware and an attack pattern.`
+2026-04-04 22:21:33,071 - lightrag - WARNING - chunk-4a0826aeeecdcadc6074e45b8685aeef: LLM output format error; found 4/5 fields on REALTION `uses`~`connection`
+2026-04-04 22:21:52,412 - lightrag - INFO -  == LLM cache == saving: default:extract:9681f85e190e7b5b65cc626fdcb67e97
+2026-04-04 22:21:52,412 - lightrag - WARNING - chunk-b5bbc3a37dedea819b2d5171d996da12: LLM output format error; find LLM use <|#|> as record seperators instead new-line
+2026-04-04 22:21:52,412 - lightrag - WARNING - chunk-b5bbc3a37dedea819b2d5171d996da12: LLM output format error; found 3/5 fields on REALTION `category`~`This is a description of a relationship between entities.`
+2026-04-04 22:22:15,123 - lightrag - INFO -  == LLM cache == saving: default:extract:cd2b24ad3c73e2b372802ca098749cd3
+2026-04-04 22:22:38,550 - lightrag - INFO -  == LLM cache == saving: default:extract:a8646c4631f22c2825cd25da5834f0c9
+2026-04-04 22:22:38,552 - lightrag - WARNING - chunk-99791bbc33d282181b171fa4d2024e1e: LLM output format error; found 4/5 fields on REALTION `Rundll32.exe defense evasion`~`techinque`
+2026-04-04 22:22:57,797 - lightrag - INFO -  == LLM cache == saving: default:extract:6febf7402e8e566225147aeb6b36b4e0
+2026-04-04 22:23:18,228 - lightrag - INFO -  == LLM cache == saving: default:extract:80aa9f1acdefdf0b674125ec8a8caf39
+2026-04-04 22:23:31,403 - lightrag - INFO -  == LLM cache == saving: default:extract:2c5b59e6f927bd004213f8b2339d9ea1
+2026-04-04 22:23:31,403 - lightrag - WARNING - chunk-4bb2a85fba72b26891ef7c96bd865e89: LLM output format error; find LLM use <|#|> as record seperators instead new-line
+2026-04-04 22:23:31,403 - lightrag - WARNING - chunk-4bb2a85fba72b26891ef7c96bd865e89: LLM output format error; found 3/5 fields on REALTION `category`~`This is a structured representation of a security relationship.`
+2026-04-04 22:23:31,404 - lightrag - WARNING - chunk-4bb2a85fba72b26891ef7c96bd865e89: LLM output format error; found 4/5 fields on REALTION `mitigates`~`action taken, vulnerability reduction`
+2026-04-04 22:23:52,458 - lightrag - INFO -  == LLM cache == saving: default:extract:40aee340f22af13a7e6fc0d10a2394bc
+2026-04-04 22:23:52,460 - lightrag - WARNING - chunk-e83eef0a9b62244c21d73f1cb79a0506: LLM output format error; found 3/4 feilds on ENTITY `type` @ `The type field represents the categorization of the attack pattern.`
+2026-04-04 22:23:52,460 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 22:24:04,759 - lightrag - INFO -  == LLM cache == saving: default:extract:b04f1ef4a0fcb4a5ea4cbc17448d559c
+2026-04-04 22:24:04,760 - lightrag - WARNING - chunk-4a0826aeeecdcadc6074e45b8685aeef: LLM output format error; find LLM use <|#|> as record seperators instead new-line
+2026-04-04 22:24:04,760 - lightrag - WARNING - chunk-4a0826aeeecdcadc6074e45b8685aeef: LLM output format error; found 3/5 fields on REALTION `category`~`This describes a relationship between a malware and an attack pattern.`
+2026-04-04 22:24:04,760 - lightrag - WARNING - chunk-4a0826aeeecdcadc6074e45b8685aeef: LLM output format error; found 4/5 fields on REALTION `uses`~`connection`
+2026-04-04 22:24:04,760 - lightrag - INFO - Chunk 161 of 64305 extracted 4 Ent + 2 Rel chunk-4a0826aeeecdcadc6074e45b8685aeef
+2026-04-04 22:24:21,119 - lightrag - INFO -  == LLM cache == saving: default:extract:8f1c270470b5865e0a9f87db34dcc562
+2026-04-04 22:24:21,121 - lightrag - INFO - Chunk 162 of 64305 extracted 10 Ent + 2 Rel chunk-b5bbc3a37dedea819b2d5171d996da12
+2026-04-04 22:24:37,682 - lightrag - INFO -  == LLM cache == saving: default:extract:245b1f11edbdb8a7826c4c707f2c5ad1
+2026-04-04 22:24:37,683 - lightrag - INFO - Chunk 145 of 6890 extracted 13 Ent + 8 Rel chunk-483048964283f63895845059b6f8ffe3
+2026-04-04 22:24:55,494 - lightrag - INFO -  == LLM cache == saving: default:extract:a1ff5b560f9d38f234425ac7ee625c98
+2026-04-04 22:24:55,495 - lightrag - INFO - Chunk 146 of 6890 extracted 15 Ent + 9 Rel chunk-99791bbc33d282181b171fa4d2024e1e
+2026-04-04 22:25:09,391 - lightrag - INFO -  == LLM cache == saving: default:extract:fc74a70ad804aa9f8f0db074bdf9f67a
+2026-04-04 22:25:09,392 - lightrag - INFO - Chunk 147 of 6890 extracted 8 Ent + 6 Rel chunk-44e6aedec70abf03d9a3558ec7441159
+2026-04-04 22:25:21,760 - lightrag - INFO -  == LLM cache == saving: default:extract:0f6d56e9bd5b2fb6b377cd58a4e4030d
+2026-04-04 22:25:21,762 - lightrag - INFO - Chunk 148 of 6890 extracted 13 Ent + 8 Rel chunk-12f8c562e1b88bba57e2d406f0b9ecfe
+2026-04-04 22:25:42,354 - lightrag - INFO -  == LLM cache == saving: default:extract:1f4d2fde69f91d57d64d9c8662279559
+2026-04-04 22:25:42,355 - lightrag - WARNING - chunk-4bb2a85fba72b26891ef7c96bd865e89: LLM output format error; find LLM use <|#|> as record seperators instead new-line
+2026-04-04 22:25:42,355 - lightrag - WARNING - chunk-4bb2a85fba72b26891ef7c96bd865e89: LLM output format error; found 4/5 fields on REALTION `mitigates`~`action taken, vulnerability reduction`
+2026-04-04 22:25:42,355 - lightrag - WARNING - chunk-4bb2a85fba72b26891ef7c96bd865e89: LLM output format error; found 4/5 fields on REALTION `mitigates`~`action taken, vulnerability reduction`
+2026-04-04 22:25:42,356 - lightrag - WARNING - chunk-4bb2a85fba72b26891ef7c96bd865e89: LLM output format error; found 5/4 feilds on ENTITY `attack-pattern--57a3d31a-d04f-4663-b2da-7df8ec3f8c9d` @ `category`
+2026-04-04 22:25:42,356 - lightrag - WARNING - chunk-4bb2a85fba72b26891ef7c96bd865e89: LLM output format error; found 5/4 feilds on ENTITY `course-of-action--93e7968a-9074-4eac-8ae9-9f5200ec3317` @ `category`
+2026-04-04 22:25:42,356 - lightrag - WARNING - chunk-4bb2a85fba72b26891ef7c96bd865e89: LLM output format error; found 5/4 feilds on ENTITY `identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40` @ `category`
+2026-04-04 22:25:42,356 - lightrag - INFO - Chunk 163 of 64305 extracted 3 Ent + 2 Rel chunk-4bb2a85fba72b26891ef7c96bd865e89
+2026-04-04 22:26:00,986 - lightrag - INFO -  == LLM cache == saving: default:extract:0c5f36ecb086fd94d3a7581e1b67fee3
+2026-04-04 22:26:00,988 - lightrag - INFO - Chunk 164 of 64305 extracted 10 Ent + 5 Rel chunk-e83eef0a9b62244c21d73f1cb79a0506
+2026-04-04 22:26:11,291 - lightrag - INFO -  == LLM cache == saving: default:extract:4658806a97998947eb16d497ea1c10ba
+2026-04-04 22:26:11,291 - lightrag - WARNING - chunk-123d52d975684f855a21475cc7021c62: LLM output format error; found 5/4 feilds on ENTITY `attack-pattern` @ `ec8fc7e2-b356-455c-8db5-2e37be158e7d`
+2026-04-04 22:26:11,291 - lightrag - WARNING - chunk-123d52d975684f855a21475cc7021c62: LLM output format error; found 5/4 feilds on ENTITY `data-component` @ `3d20385b-24ef-40e1-9f56-f39750379077`
+2026-04-04 22:26:26,723 - lightrag - INFO -  == LLM cache == saving: default:extract:ae4cd870f4f161c02c5fcf026f6b5719
+2026-04-04 22:26:47,151 - lightrag - INFO -  == LLM cache == saving: default:extract:31dcd8fafae80de0bd96a4896aefc6a7
+2026-04-04 22:27:11,148 - lightrag - INFO -  == LLM cache == saving: default:extract:b02559ca53f973292d06b7688b470957
+2026-04-04 22:27:27,752 - lightrag - INFO -  == LLM cache == saving: default:extract:6edb814be2eacbc42b9c73f04f032211
+2026-04-04 22:27:49,776 - lightrag - INFO -  == LLM cache == saving: default:extract:cc99cd44d1a0558d0a421a43eaaa776a
+2026-04-04 22:28:09,961 - lightrag - INFO -  == LLM cache == saving: default:extract:57c18514009e558a58dcecf0184d4fe6
+2026-04-04 22:28:28,181 - lightrag - INFO -  == LLM cache == saving: default:extract:a68b813307d4f950b7bab00ec02f78b1
+2026-04-04 22:28:28,182 - lightrag - WARNING - chunk-4fdeb68e5225c2031b9839672a119f4c: LLM output format error; found 5/4 feilds on ENTITY `intrusion-set` @ `intrusion-set--4ca1929c-7d64-4aab-b849-badbfc0c760d`
+2026-04-04 22:28:28,182 - lightrag - WARNING - chunk-4fdeb68e5225c2031b9839672a119f4c: LLM output format error; found 5/4 feilds on ENTITY `malware` @ `malware--5be33fef-39c0-4532-84ee-bea31e1b5324`
+2026-04-04 22:28:28,182 - lightrag - WARNING - chunk-4fdeb68e5225c2031b9839672a119f4c: LLM output format error; found 5/4 feilds on ENTITY `uses` @ `relationship`
+2026-04-04 22:28:28,182 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '2.1'
+2026-04-04 22:28:28,182 - lightrag - WARNING - Entity extraction error: entity name became empty after cleaning. Original: '3.2.0'
+2026-04-04 22:28:41,800 - lightrag - INFO -  == LLM cache == saving: default:extract:cd4358c92dabc0d728897f5964cf5561
+2026-04-04 22:28:41,801 - lightrag - WARNING - chunk-123d52d975684f855a21475cc7021c62: LLM output format error; found 5/4 feilds on ENTITY `attack-pattern` @ `ec8fc7e2-b356-455c-8db5-2e37be158e7d`
+2026-04-04 22:28:41,801 - lightrag - WARNING - chunk-123d52d975684f855a21475cc7021c62: LLM output format error; found 5/4 feilds on ENTITY `data-component` @ `3d20385b-24ef-40e1-9f56-f39750379077`
+2026-04-04 22:28:41,801 - lightrag - WARNING - chunk-123d52d975684f855a21475cc7021c62: LLM output format error; found 6/5 fields on REALTION `attack-pattern`~`ec8fc7e2-b356-455c-8db5-2e37be158e7d`
+2026-04-04 22:28:41,802 - lightrag - INFO - Chunk 165 of 64305 extracted 0 Ent + 0 Rel chunk-123d52d975684f855a21475cc7021c62
+2026-04-04 22:29:01,571 - lightrag - INFO -  == LLM cache == saving: default:extract:b5758b03870c9f486ffe8b815769bfbb
+2026-04-04 22:29:01,573 - lightrag - INFO - Chunk 166 of 64305 extracted 5 Ent + 4 Rel chunk-b1862c89a04d222efc497dda74f85a52
+2026-04-04 22:29:24,939 - lightrag - INFO -  == LLM cache == saving: default:extract:32c0bc11828d4c22dec172b4c6474a4d
+2026-04-04 22:29:24,940 - lightrag - INFO - Chunk 149 of 6890 extracted 13 Ent + 6 Rel chunk-1ce33298f1fd5671416d7189caf36618
+2026-04-04 22:29:43,284 - lightrag - INFO -  == LLM cache == saving: default:extract:6eb6a08ec578fa7b4d5ef20255d465f0
+2026-04-04 22:29:43,286 - lightrag - INFO - Chunk 150 of 6890 extracted 10 Ent + 9 Rel chunk-2f138211c6fd750a71e568ae660f74b9
+2026-04-04 22:30:01,383 - lightrag - INFO -  == LLM cache == saving: default:extract:cab53a48c7652d7984a3e2cba2f75e8a
+2026-04-04 22:30:01,384 - lightrag - INFO - Chunk 151 of 6890 extracted 6 Ent + 3 Rel chunk-655eb409579af1e93f1c9996b90fd59d
+2026-04-04 22:30:30,852 - lightrag - INFO -  == LLM cache == saving: default:extract:b1ee3b43f3b5e578c9f1a2fa0ee1bb49
+2026-04-04 22:30:30,853 - lightrag - WARNING - chunk-660f59cef2a4fa0dddf4becf5a0991a1: LLM output format error; found 5/4 feilds on ENTITY `Web Applications` @ `application`
+2026-04-04 22:30:30,853 - lightrag - WARNING - chunk-660f59cef2a4fa0dddf4becf5a0991a1: LLM output format error; found 5/4 feilds on ENTITY `Docker API` @ `method`
+2026-04-04 22:30:30,853 - lightrag - WARNING - chunk-660f59cef2a4fa0dddf4becf5a0991a1: LLM output format error; found 5/4 feilds on ENTITY `Kubernetes API` @ `method`
+2026-04-04 22:30:30,854 - lightrag - WARNING - chunk-660f59cef2a4fa0dddf4becf5a0991a1: LLM output format error; found 5/4 feilds on ENTITY `Kubernetes Dashboard` @ `application`
+2026-04-04 22:30:30,854 - lightrag - WARNING - chunk-660f59cef2a4fa0dddf4becf5a0991a1: LLM output format error; found 5/4 feilds on ENTITY `Containers` @ `object`
+2026-04-04 22:30:30,854 - lightrag - WARNING - chunk-660f59cef2a4fa0dddf4becf5a0991a1: LLM output format error; found 5/4 feilds on ENTITY `Images` @ `object`
+2026-04-04 22:30:30,854 - lightrag - WARNING - chunk-660f59cef2a4fa0dddf4becf5a0991a1: LLM output format error; found 5/4 feilds on ENTITY `Pods` @ `object`
+2026-04-04 22:30:30,854 - lightrag - WARNING - chunk-660f59cef2a4fa0dddf4becf5a0991a1: LLM output format error; found 5/4 feilds on ENTITY `Nodes` @ `object`
+2026-04-04 22:30:30,854 - lightrag - WARNING - chunk-660f59cef2a4fa0dddf4becf5a0991a1: LLM output format error; found 5/4 feilds on ENTITY `Clusters` @ `object`
+2026-04-04 22:30:30,854 - lightrag - WARNING - chunk-660f59cef2a4fa0dddf4becf5a0991a1: LLM output format error; found 6/5 fields on REALTION `Kubernetes API`~`Kubernetes Dashboard`
+2026-04-04 22:30:30,854 - lightrag - WARNING - chunk-660f59cef2a4fa0dddf4becf5a0991a1: LLM output format error; found 6/5 fields on REALTION `Docker API`~`Kubernetes API`
+2026-04-04 22:30:30,854 - lightrag - WARNING - chunk-660f59cef2a4fa0dddf4becf5a0991a1: LLM output format error; found 6/5 fields on REALTION `Containers`~`Images`
+2026-04-04 22:30:30,854 - lightrag - WARNING - chunk-660f59cef2a4fa0dddf4becf5a0991a1: LLM output format error; found 6/5 fields on REALTION `Pods`~`Containers`
+2026-04-04 22:30:30,854 - lightrag - WARNING - chunk-660f59cef2a4fa0dddf4becf5a0991a1: LLM output format error; found 6/5 fields on REALTION `Nodes`~`Pods`
+2026-04-04 22:30:30,854 - lightrag - WARNING - chunk-660f59cef2a4fa0dddf4becf5a0991a1: LLM output format error; found 6/5 fields on REALTION `Clusters`~`Nodes`
+2026-04-04 22:30:30,854 - lightrag - WARNING - chunk-660f59cef2a4fa0dddf4becf5a0991a1: LLM output format error; found 6/5 fields on REALTION `Kubernetes Dashboard`~`Clusters`
+2026-04-04 22:30:30,854 - lightrag - INFO - Chunk 152 of 6890 extracted 9 Ent + 7 Rel chunk-660f59cef2a4fa0dddf4becf5a0991a1
