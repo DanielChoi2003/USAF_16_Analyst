@@ -20,7 +20,7 @@ It is designed to do Connor's part of the ELK stack:
 
 ## What This Pipeline Does
 
-The sample files in `../data/samples/` contain alert packages with:
+The sample files in `../../data/samples/` contain alert packages with:
 
 - Package metadata
 - Scope metadata
@@ -60,7 +60,7 @@ It also promotes event-level details into searchable fields such as:
 From the repository root:
 
 ```bash
-cd logstash
+cd backend/logstash
 cp .env.example .env
 docker compose up
 ```
@@ -68,7 +68,7 @@ docker compose up
 By default, the pipeline writes normalized events to:
 
 ```bash
-logstash/output/normalized-events.ndjson
+backend/logstash/output/normalized-events.ndjson
 ```
 
 ## Elasticsearch Output

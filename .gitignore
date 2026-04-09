@@ -65,6 +65,7 @@ next-env.d.ts
 *.db-shm
 *.db-wal
 analyst_copilot.db
+rag/data/
 
 # ── Vector Stores ───────────────────────────────────────────────────────────
 chroma_db/
@@ -88,6 +89,7 @@ lerna-debug.log*
 *.swo
 *~
 .DS_Store
+.project-state/
 Thumbs.db
 
 # ── Build Artifacts ─────────────────────────────────────────────────────────

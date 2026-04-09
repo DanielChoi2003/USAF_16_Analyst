@@ -25,9 +25,9 @@ Do not build Elasticsearch mappings or Kibana dashboards from the raw package JS
 
 These are the files that define the Logstash contract:
 
-- [logstash/pipeline/16af_ingest.conf](/Users/connor/Downloads/USAF_16_Analyst/logstash/pipeline/16af_ingest.conf)
-- [logstash/docker-compose.yml](/Users/connor/Downloads/USAF_16_Analyst/logstash/docker-compose.yml)
-- [logstash/.env.example](/Users/connor/Downloads/USAF_16_Analyst/logstash/.env.example)
+- [backend/logstash/pipeline/16af_ingest.conf](/Users/connor/Downloads/USAF_16_Analyst/backend/logstash/pipeline/16af_ingest.conf)
+- [backend/logstash/docker-compose.yml](/Users/connor/Downloads/USAF_16_Analyst/backend/logstash/docker-compose.yml)
+- [backend/logstash/.env.example](/Users/connor/Downloads/USAF_16_Analyst/backend/logstash/.env.example)
 
 ## Runtime Inputs
 
@@ -46,7 +46,7 @@ Current example input files include:
 
 Normalized NDJSON file:
 
-- [logstash/output/normalized-events.ndjson](/Users/connor/Downloads/USAF_16_Analyst/logstash/output/normalized-events.ndjson)
+- [backend/logstash/output/normalized-events.ndjson](/Users/connor/Downloads/USAF_16_Analyst/backend/logstash/output/normalized-events.ndjson)
 
 Container stdout:
 
@@ -299,7 +299,7 @@ Accept Logstash normalized documents without changing field names.
 
 If Karthik changes the index name, he must update:
 
-- `LOGSTASH_INDEX` in `logstash/.env`
+- `LOGSTASH_INDEX` in `backend/logstash/.env`
 
 ### Required Mapping Types
 
@@ -464,7 +464,7 @@ Nethra or an AI agent should verify:
 
 If an AI agent is asked to connect Elasticsearch and Kibana to Connor's Logstash work, it should do exactly this:
 
-1. Read [logstash/pipeline/16af_ingest.conf](/Users/connor/Downloads/USAF_16_Analyst/logstash/pipeline/16af_ingest.conf).
+1. Read [backend/logstash/pipeline/16af_ingest.conf](/Users/connor/Downloads/USAF_16_Analyst/backend/logstash/pipeline/16af_ingest.conf).
 2. Treat the normalized output shape in this document as the schema contract.
 3. Create Elasticsearch mappings that preserve the field names exactly as listed here.
 4. Do not rename fields unless Logstash is updated first.

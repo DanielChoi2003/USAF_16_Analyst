@@ -1,15 +1,5 @@
-from dotenv import load_dotenv
-import os
 import requests
-import urllib3
-
-load_dotenv()
-# Disable SSL warning (since ES uses self-signed cert)
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-
-ELASTIC_URL = "https://localhost:9200"
-USERNAME = "elastic"
-PASSWORD = os.getenv("ELASTIC_PASSWORD")
+from config import ELASTIC_URL, PASSWORD, USERNAME
 
 def main():
     try:
