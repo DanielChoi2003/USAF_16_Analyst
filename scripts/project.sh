@@ -206,7 +206,6 @@ run_logstash_ingest() {
 
 open_project_urls() {
   open "http://localhost:3000/upload" >/dev/null 2>&1 || true
-  open "http://localhost:3001/" >/dev/null 2>&1 || true
 }
 
 stop_pid_file() {
