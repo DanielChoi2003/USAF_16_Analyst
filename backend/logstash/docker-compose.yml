@@ -1,7 +1,31 @@
+version: "3.8"
+
 services:
+  neo4j:
+    image: neo4j:latest
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      - NEO4J_AUTH=none
+    volumes:
+      - ./data:/data
+  
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.17.3
+    container_name: analyst-copilot-kibana
+    environment:
+      - ELASTICSEARCH_HOSTS=${KIBANA_ELASTICSEARCH_HOSTS:-https://host.docker.internal:9200}
+      - ELASTICSEARCH_SERVICEACCOUNTTOKEN=${KIBANA_ELASTICSEARCH_SERVICE_TOKEN:-}
+      - ELASTICSEARCH_SSL_VERIFICATIONMODE=none
+    ports:
+      - "5601:5601"
+
   logstash:
     image: docker.elastic.co/logstash/logstash:8.17.3
     container_name: analyst-copilot-logstash
+    env_file:
+      - ../../.env
     environment:
       LS_JAVA_OPTS: -Xms512m -Xmx512m
       LOGSTASH_INDEX: ${LOGSTASH_INDEX:-investigation-events}

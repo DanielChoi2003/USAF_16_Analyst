@@ -170,17 +170,19 @@ This automation does the following:
 - open Docker Desktop if it is not already running
 - start or create Elasticsearch
 - start Neo4j
-- start Logstash
+- start Kibana against the same Elasticsearch instance
+- start Logstash and ingest the sample JSON packages
 - start Ollama if needed
 - start the backend on port `3001`
 - start the frontend on port `3000`
-- open the app in your browser
+- open the app and Kibana in your browser
 
 ### URLs
 
 - Frontend upload page: [http://localhost:3000/upload](http://localhost:3000/upload)
 - Backend health route: [http://localhost:3001/api/test](http://localhost:3001/api/test)
 - Neo4j Browser: [http://localhost:7474](http://localhost:7474)
+- Kibana: [http://localhost:5601](http://localhost:5601)
 - Elasticsearch: [https://localhost:9200](https://localhost:9200)
 
 ### Check status
@@ -200,6 +202,7 @@ make down
 - frontend
 - backend
 - local `ollama serve`
+- Kibana
 - Logstash
 - Neo4j
 - Elasticsearch
@@ -325,7 +328,7 @@ For the current deadline path:
 2. Upload sample or new JSON files through the frontend.
 3. Let Elasticsearch power retrieval when matching normalized events exist.
 4. Rely on direct LLM fallback when retrieval is missing.
-5. Use Kibana separately for visualization on top of the same Elasticsearch index.
+5. Open Kibana at [http://localhost:5601](http://localhost:5601), create a data view for `investigation-events`, and use Discover for visualization on top of the same Elasticsearch index.
 
 ## Additional Notes
 

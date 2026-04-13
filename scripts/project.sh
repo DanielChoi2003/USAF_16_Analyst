@@ -13,12 +13,14 @@ FRONTEND_DIR="$ROOT_DIR/frontend"
 BACKEND_PID_FILE="$STATE_DIR/backend.pid"
 FRONTEND_PID_FILE="$STATE_DIR/frontend.pid"
 OLLAMA_PID_FILE="$STATE_DIR/ollama.pid"
+KIBANA_TOKEN_FILE="$STATE_DIR/kibana_service_token"
 
 BACKEND_LOG="$LOG_DIR/backend.log"
 FRONTEND_LOG="$LOG_DIR/frontend.log"
 OLLAMA_LOG="$LOG_DIR/ollama.log"
 LOGSTASH_LOG="$LOG_DIR/logstash.log"
 ELASTIC_CONTAINER_NAME="analyst-copilot-elasticsearch"
+KIBANA_CONTAINER_NAME="analyst-copilot-kibana"
 ELASTIC_IMAGE="docker.elastic.co/elasticsearch/elasticsearch:8.17.3"
 
 mkdir -p "$STATE_DIR" "$LOG_DIR"
@@ -149,6 +151,30 @@ ensure_neo4j() {
   )
 }
 
+refresh_kibana_service_token() {
+  echo "Refreshing Kibana service token..."
+
+  docker exec "$ELASTIC_CONTAINER_NAME" \
+    /usr/share/elasticsearch/bin/elasticsearch-service-tokens \
+    delete elastic/kibana analyst-copilot >/dev/null 2>&1 || true
+
+  local token_output
+  token_output="$(docker exec "$ELASTIC_CONTAINER_NAME" \
+    /usr/share/elasticsearch/bin/elasticsearch-service-tokens \
+    create elastic/kibana analyst-copilot)"
+
+  local token
+  token="$(printf '%s\n' "$token_output" | sed -n 's/^SERVICE_TOKEN [^=]* = //p')"
+
+  if [[ -z "$token" ]]; then
+    echo "Failed to generate Kibana service token" >&2
+    return 1
+  fi
+
+  printf '%s\n' "$token" >"$KIBANA_TOKEN_FILE"
+  export KIBANA_ELASTICSEARCH_SERVICE_TOKEN="$token"
+}
+
 start_ollama_if_needed() {
   if curl -s http://127.0.0.1:11434/api/tags >/dev/null 2>&1; then
     echo "Ollama is already running"
@@ -197,15 +223,17 @@ start_frontend_if_needed() {
 }
 
 run_logstash_ingest() {
-  echo "Running Logstash ingest..."
+  echo "Starting Kibana and running Logstash ingest..."
   (
     cd "$LOGSTASH_DIR"
-    docker compose up -d --force-recreate >"$LOGSTASH_LOG" 2>&1
+    export KIBANA_ELASTICSEARCH_SERVICE_TOKEN="${KIBANA_ELASTICSEARCH_SERVICE_TOKEN:-}"
+    docker compose up -d --force-recreate kibana logstash >"$LOGSTASH_LOG" 2>&1
   )
 }
 
 open_project_urls() {
   open "http://localhost:3000/upload" >/dev/null 2>&1 || true
+  open "http://localhost:5601" >/dev/null 2>&1 || true
 }
 
 stop_pid_file() {
@@ -246,6 +274,7 @@ stop_ollama_if_managed() {
 
 stop_containers() {
   docker stop analyst-copilot-logstash >/dev/null 2>&1 || true
+  docker stop "$KIBANA_CONTAINER_NAME" >/dev/null 2>&1 || true
   docker stop rag-neo4j-1 >/dev/null 2>&1 || true
   docker stop usa16-neo4j >/dev/null 2>&1 || true
   docker stop "$ELASTIC_CONTAINER_NAME" >/dev/null 2>&1 || true
@@ -255,6 +284,7 @@ status() {
   echo "Project status"
   echo "Backend port 3001: $(lsof -nP -iTCP:3001 -sTCP:LISTEN >/dev/null 2>&1 && echo up || echo down)"
   echo "Frontend port 3000: $(lsof -nP -iTCP:3000 -sTCP:LISTEN >/dev/null 2>&1 && echo up || echo down)"
+  echo "Kibana port 5601: $(lsof -nP -iTCP:5601 -sTCP:LISTEN >/dev/null 2>&1 && echo up || echo down)"
   echo "Ollama port 11434: $(curl -s http://127.0.0.1:11434/api/tags >/dev/null 2>&1 && echo up || echo down)"
   if docker_ready; then
     echo "Docker containers:"
@@ -270,9 +300,11 @@ up() {
   ensure_elasticsearch_container
   ensure_neo4j
   wait_for_elasticsearch 60 2
+  refresh_kibana_service_token
   wait_for_http "http://127.0.0.1:7474" "Neo4j" 60 2
   start_ollama_if_needed
   run_logstash_ingest
+  wait_for_http "http://127.0.0.1:5601" "Kibana" 60 2
   start_backend_if_needed
   start_frontend_if_needed
   open_project_urls
@@ -282,6 +314,7 @@ up() {
   echo "Frontend: http://localhost:3000/upload"
   echo "Backend:  http://localhost:3001/"
   echo "Neo4j:    http://localhost:7474"
+  echo "Kibana:   http://localhost:5601"
 }
 
 down() {
