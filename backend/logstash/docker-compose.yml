@@ -16,10 +16,13 @@ services:
     container_name: analyst-copilot-kibana
     environment:
       - ELASTICSEARCH_HOSTS=${KIBANA_ELASTICSEARCH_HOSTS:-https://host.docker.internal:9200}
-      - ELASTICSEARCH_SERVICEACCOUNTTOKEN=${KIBANA_ELASTICSEARCH_SERVICE_TOKEN:-}
-      - ELASTICSEARCH_SSL_VERIFICATIONMODE=none
+      - KIBANA_ELASTICSEARCH_SERVICE_TOKEN=${KIBANA_ELASTICSEARCH_SERVICE_TOKEN:-}
+      - KIBANA_ANONYMOUS_USERNAME=${KIBANA_ANONYMOUS_USERNAME:-analyst_kibana_guest}
+      - KIBANA_ANONYMOUS_PASSWORD=${KIBANA_ANONYMOUS_PASSWORD:-analyst-copilot-guest-password}
     ports:
       - "5601:5601"
+    volumes:
+      - ./config/kibana.yml:/usr/share/kibana/config/kibana.yml:ro
 
   logstash:
     image: docker.elastic.co/logstash/logstash:8.17.3

@@ -14,6 +14,8 @@ BACKEND_PID_FILE="$STATE_DIR/backend.pid"
 FRONTEND_PID_FILE="$STATE_DIR/frontend.pid"
 OLLAMA_PID_FILE="$STATE_DIR/ollama.pid"
 KIBANA_TOKEN_FILE="$STATE_DIR/kibana_service_token"
+KIBANA_ANONYMOUS_USERNAME="analyst_kibana_guest"
+KIBANA_ANONYMOUS_PASSWORD="analyst-copilot-guest-password"
 
 BACKEND_LOG="$LOG_DIR/backend.log"
 FRONTEND_LOG="$LOG_DIR/frontend.log"
@@ -175,6 +177,26 @@ refresh_kibana_service_token() {
   export KIBANA_ELASTICSEARCH_SERVICE_TOKEN="$token"
 }
 
+ensure_kibana_anonymous_user() {
+  echo "Ensuring Kibana anonymous user..."
+
+  curl -sk \
+    -u "${ELASTIC_USERNAME:-elastic}:${ELASTIC_PASSWORD:-}" \
+    -H "Content-Type: application/json" \
+    -X PUT \
+    "${ELASTIC_URL:-https://127.0.0.1:9200}/_security/user/${KIBANA_ANONYMOUS_USERNAME}" \
+    -d @- >/dev/null <<EOF
+{
+  "password": "${KIBANA_ANONYMOUS_PASSWORD}",
+  "roles": ["superuser"],
+  "full_name": "Analyst Copilot Kibana Guest"
+}
+EOF
+
+  export KIBANA_ANONYMOUS_USERNAME
+  export KIBANA_ANONYMOUS_PASSWORD
+}
+
 start_ollama_if_needed() {
   if curl -s http://127.0.0.1:11434/api/tags >/dev/null 2>&1; then
     echo "Ollama is already running"
@@ -233,7 +255,6 @@ run_logstash_ingest() {
 
 open_project_urls() {
   open "http://localhost:3000/upload" >/dev/null 2>&1 || true
-  open "http://localhost:5601" >/dev/null 2>&1 || true
 }
 
 stop_pid_file() {
@@ -301,6 +322,7 @@ up() {
   ensure_neo4j
   wait_for_elasticsearch 60 2
   refresh_kibana_service_token
+  ensure_kibana_anonymous_user
   wait_for_http "http://127.0.0.1:7474" "Neo4j" 60 2
   start_ollama_if_needed
   run_logstash_ingest
