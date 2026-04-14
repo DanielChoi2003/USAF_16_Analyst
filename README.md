@@ -165,6 +165,38 @@ Available automation commands:
 - `make down`
 - `make status`
 
+### Native Windows Without WSL
+
+There is now a Windows-native launcher alongside the Bash one:
+
+- [Makefile.windows](/Users/connor/Downloads/USAF_16_Analyst/Makefile.windows)
+- [scripts/project.ps1](/Users/connor/Downloads/USAF_16_Analyst/scripts/project.ps1)
+
+If you have GNU Make installed on Windows, run:
+
+```powershell
+make -f Makefile.windows up
+make -f Makefile.windows status
+make -f Makefile.windows down
+```
+
+If you do not want to install `make` on Windows, run the PowerShell entrypoint directly:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\project.ps1 up
+powershell -ExecutionPolicy Bypass -File .\scripts\project.ps1 status
+powershell -ExecutionPolicy Bypass -File .\scripts\project.ps1 down
+```
+
+The Windows launcher expects:
+
+- Docker Desktop for Windows
+- PowerShell
+- `curl.exe`
+- `npm`
+- `ollama`
+- a Windows Python virtual environment at `rag\venv\Scripts\python.exe`, or `PYTHON_PATH` set in your environment or `.env`
+
 This automation does the following:
 
 - open Docker Desktop if it is not already running
