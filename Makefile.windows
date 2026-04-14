@@ -1,0 +1,16 @@
+POWERSHELL := powershell.exe
+PS_FLAGS := -NoProfile -ExecutionPolicy Bypass -File
+PS_SCRIPT := scripts/project.ps1
+
+.PHONY: up down restart status
+
+up:
+	$(POWERSHELL) $(PS_FLAGS) "$(PS_SCRIPT)" up
+
+down:
+	$(POWERSHELL) $(PS_FLAGS) "$(PS_SCRIPT)" down
+
+restart: down up
+
+status:
+	$(POWERSHELL) $(PS_FLAGS) "$(PS_SCRIPT)" status
