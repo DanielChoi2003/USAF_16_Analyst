@@ -134,5 +134,7 @@ async function searchPackageEvents(originalInput) {
 
 module.exports = {
   ELASTIC_INDEX,
+  buildShouldClauses,
+  requestElasticsearch,
   searchPackageEvents,
 };

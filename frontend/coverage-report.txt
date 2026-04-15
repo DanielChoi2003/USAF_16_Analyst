@@ -1,0 +1,51 @@
+
+> coverage
+> vitest run --coverage
+
+
+[1m[46m RUN [49m[22m [36mv3.2.4 [39m[90mC:/Users/karth/TAMU/Spring 2026/CSCE 482/USAF_16_Analyst/frontend[39m
+      [2mCoverage enabled with [22m[33mv8[39m
+
+ [32m✓[39m src/lib/utils.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 29[2mms[22m[39m
+ [32m✓[39m src/components/events/EventRow.test.tsx [2m([22m[2m1 test[22m[2m)[22m[33m 558[2mms[22m[39m
+   [33m[2m✓[22m[39m EventRow[2m > [22mrenders summary fields and expands raw excerpt [33m 552[2mms[22m[39m
+[90mstdout[2m | src/components/report/ReportEditor.test.tsx[2m > [22m[2mReportEditor[2m > [22m[2msupports editing summary and accepting AI-generated changes
+[22m[39mLLM Action: expand [90mundefined[39m
+
+ [32m✓[39m src/components/report/ReportEditor.test.tsx [2m([22m[2m1 test[22m[2m)[22m[33m 1772[2mms[22m[39m
+   [33m[2m✓[22m[39m ReportEditor[2m > [22msupports editing summary and accepting AI-generated changes [33m 1764[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m3 passed[39m[22m[90m (3)[39m
+[2m      Tests [22m [1m[32m4 passed[39m[22m[90m (4)[39m
+[2m   Start at [22m 17:57:15
+[2m   Duration [22m 9.29s[2m (transform 539ms, setup 1.38s, collect 4.79s, tests 2.36s, environment 7.80s, prepare 1.74s)[22m
+
+[34m % [39m[2mCoverage report from [22m[33mv8[39m
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |   33.81 |     61.9 |   57.14 |   33.81 |                   
+ ...nts/enrichment |       0 |        0 |       0 |       0 |                   
+  MISPMatchRow.tsx |       0 |        0 |       0 |       0 | 1-144             
+  ...niqueCard.tsx |       0 |        0 |       0 |       0 | 1-145             
+ components/events |   27.75 |    66.66 |   66.66 |   27.75 |                   
+  EventList.tsx    |       0 |        0 |       0 |       0 | 1-177             
+  EventRow.tsx     |     100 |    72.72 |     100 |     100 | 42-43             
+ components/layout |       0 |        0 |       0 |       0 |                   
+  Header.tsx       |       0 |        0 |       0 |       0 | 1-58              
+  SideNav.tsx      |       0 |        0 |       0 |       0 | 1-157             
+  Sidebar.tsx      |       0 |        0 |       0 |       0 | 1-30              
+ components/report |    97.1 |       90 |      50 |    97.1 |                   
+  ReportEditor.tsx |    97.1 |       90 |      50 |    97.1 | 67-68,220-223     
+ components/ui     |   73.03 |    71.42 |      80 |   73.03 |                   
+  Badge.tsx        |     100 |      100 |     100 |     100 |                   
+  Button.tsx       |     100 |      100 |     100 |     100 |                   
+  Card.tsx         |     100 |      100 |     100 |     100 |                   
+  Chip.tsx         |      80 |    33.33 |       0 |      80 | 72-84             
+  Input.tsx        |       0 |        0 |       0 |       0 | 1-77              
+  Modal.tsx        |     100 |    66.66 |     100 |     100 | 58                
+  Tooltip.tsx      |     100 |      100 |     100 |     100 |                   
+ lib               |   14.54 |    54.54 |   66.66 |   14.54 |                   
+  types.ts         |       0 |        0 |       0 |       0 | 1-249             
+  utils.ts         |   55.68 |    57.14 |   72.72 |   55.68 | ...17-125,131-143 
+-------------------|---------|----------|---------|---------|-------------------

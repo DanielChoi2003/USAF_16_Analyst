@@ -1,0 +1,39 @@
+✔ buildShouldClauses creates package, alert, and event match clauses (6.6484ms)
+✔ searchPackageEvents returns normalized _source hits from Elasticsearch response (2.8727ms)
+✔ searchPackageEvents short-circuits when there are no searchable identifiers (0.3953ms)
+✔ utility helpers detect fallback content and escape shell strings (4.767ms)
+✔ basic routes respond and results endpoints work (235.3933ms)
+Failed to retrieve package events from Elasticsearch: Error: elastic unavailable
+    at searchPackageEventsImpl (C:\Users\karth\TAMU\Spring 2026\CSCE 482\USAF_16_Analyst\backend\tests\index.test.js:127:13)
+    at analyze (C:\Users\karth\TAMU\Spring 2026\CSCE 482\USAF_16_Analyst\backend\index.js:155:31)
+    at C:\Users\karth\TAMU\Spring 2026\CSCE 482\USAF_16_Analyst\backend\index.js:279:5
+    at Layer.handle [as handle_request] (C:\Users\karth\TAMU\Spring 2026\CSCE 482\USAF_16_Analyst\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\karth\TAMU\Spring 2026\CSCE 482\USAF_16_Analyst\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\karth\TAMU\Spring 2026\CSCE 482\USAF_16_Analyst\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\karth\TAMU\Spring 2026\CSCE 482\USAF_16_Analyst\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\karth\TAMU\Spring 2026\CSCE 482\USAF_16_Analyst\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\karth\TAMU\Spring 2026\CSCE 482\USAF_16_Analyst\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\karth\TAMU\Spring 2026\CSCE 482\USAF_16_Analyst\backend\node_modules\express\lib\router\index.js:280:10)
+✔ analyze surfaces elasticsearch warnings and still returns a report (34.0676ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 933.7449
+ℹ start of coverage report
+ℹ -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ℹ file                          | line % | branch % | funcs % | uncovered lines
+ℹ -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ℹ elasticsearch                 |        |          |         | 
+ℹ  client.js                    |  97.86 |    70.37 |  100.00 | 42-43 50
+ℹ index.js                      |  58.72 |    61.76 |   77.27 | 15-26 77-139 175-177 185-189 191-193 209-227 229-238 242-243 250-262 280-281 289-291 321-323 333-336
+ℹ tests                         |        |          |         | 
+ℹ  elasticsearch-client.test.js | 100.00 |   100.00 |  100.00 | 
+ℹ  index.test.js                |  98.03 |    93.75 |  100.00 | 31-33
+ℹ -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ℹ all files                     |  79.10 |    74.12 |   90.38 | 
+ℹ -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ℹ end of coverage report
