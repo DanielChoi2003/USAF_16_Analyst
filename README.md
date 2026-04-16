@@ -63,7 +63,7 @@ Recommended Ollama models:
 
 ## Environment Setup
 
-Create a root [`.env`](/Users/connor/Downloads/USAF_16_Analyst/.env) file if it does not already exist.
+Create a root [`.env`](USAF_16_Analyst/.env) file if it does not already exist.
 
 At minimum, make sure it contains the Elasticsearch values used by the project:
 
@@ -124,7 +124,7 @@ npm install
 cd ..
 ```
 
-The upload UI depends on `react-dropzone`, which is already listed in [frontend/package.json](/Users/connor/Downloads/USAF_16_Analyst/frontend/package.json). A normal `npm install` in `frontend/` should install it automatically.
+The upload UI depends on `react-dropzone`, which is already listed in [frontend/package.json](USAF_16_Analyst/frontend/package.json). A normal `npm install` in `frontend/` should install it automatically.
 
 ### 3. Pull required Ollama models
 
@@ -157,7 +157,7 @@ From the repository root:
 make up
 ```
 
-The project now includes a root automation entrypoint for startup, shutdown, and status checks through [Makefile](/Users/connor/Downloads/USAF_16_Analyst/Makefile) and [scripts/project.sh](/Users/connor/Downloads/USAF_16_Analyst/scripts/project.sh).
+The project now includes a root automation entrypoint for startup, shutdown, and status checks through [Makefile](USAF_16_Analyst/Makefile) and [scripts/project.sh](USAF_16_Analyst/scripts/project.sh).
 
 Available automation commands:
 
@@ -169,8 +169,8 @@ Available automation commands:
 
 There is now a Windows-native launcher alongside the Bash one:
 
-- [Makefile.windows](/Users/connor/Downloads/USAF_16_Analyst/Makefile.windows)
-- [scripts/project.ps1](/Users/connor/Downloads/USAF_16_Analyst/scripts/project.ps1)
+- [Makefile.windows](USAF_16_Analyst/Makefile.windows)
+- [scripts/project.ps1](USAF_16_Analyst/scripts/project.ps1)
 
 If you have GNU Make installed on Windows, run:
 
@@ -252,8 +252,8 @@ ollama serve
 ### Start backend
 
 ```bash
-cd /Users/connor/Downloads/USAF_16_Analyst/backend
-PYTHON_PATH=/Users/connor/Downloads/USAF_16_Analyst/rag/venv/bin/python node index.js
+cd USAF_16_Analyst/backend
+PYTHON_PATH=USAF_16_Analyst/rag/venv/bin/python node index.js
 ```
 
 Expected:
@@ -265,7 +265,7 @@ app listening at http://localhost:3001
 ### Start frontend
 
 ```bash
-cd /Users/connor/Downloads/USAF_16_Analyst/frontend
+cd USAF_16_Analyst/frontend
 npm run dev
 ```
 
@@ -278,11 +278,11 @@ Ready
 
 ## Logstash And Elasticsearch Flow
 
-The sample ingest pipeline lives in [backend/logstash/](/Users/connor/Downloads/USAF_16_Analyst/backend/logstash/).
+The sample ingest pipeline lives in [backend/logstash/](USAF_16_Analyst/backend/logstash/).
 
 It currently:
 
-- reads JSON packages from [data/samples/](/Users/connor/Downloads/USAF_16_Analyst/data/samples/)
+- reads JSON packages from [data/samples/](USAF_16_Analyst/data/samples/)
 - splits each package into event-level records
 - normalizes fields into a consistent schema
 - writes to the `investigation-events` index in Elasticsearch
@@ -307,7 +307,7 @@ This means the system should always produce an answer, even when the upload does
 If you want to test `query_rag.py` directly:
 
 ```bash
-cd /Users/connor/Downloads/USAF_16_Analyst/rag
+cd USAF_16_Analyst/rag
 source venv/bin/activate
 python query_rag.py -f ../data/samples/ex1-baseline.json
 ```
@@ -316,20 +316,26 @@ This is optional and not required for the main Elasticsearch plus direct-LLM pat
 
 ## Testing With Sample Files
 
-Good test files live in [data/samples/](/Users/connor/Downloads/USAF_16_Analyst/data/samples/).
+Good test files live in [data/samples/](USAF_16_Analyst/data/samples/).
 
 Examples:
 
-- [ex1-baseline.json](/Users/connor/Downloads/USAF_16_Analyst/data/samples/ex1-baseline.json)
-- [ex1-enriched.json](/Users/connor/Downloads/USAF_16_Analyst/data/samples/ex1-enriched.json)
-- [ex6-usb-staging.json](/Users/connor/Downloads/USAF_16_Analyst/data/samples/ex6-usb-staging.json)
+- [ex1-baseline.json](USAF_16_Analyst/data/samples/ex1-baseline.json)
+- [ex1-enriched.json](USAF_16_Analyst/data/samples/ex1-enriched.json)
+- [baseline.json](USAF_16_Analyst/data/samples/baseline.json)
+- [ex2-scheduled-task.json](USAF_16_Analyst/data/samples/ex2-scheduled-task.json)
+- [ex3-registry-persistence.json](USAF_16_Analyst/data/samples/ex3-registry-persistence.json)
+- [ex4-powershell-c2.json](USAF_16_Analyst/data/samples/ex4-powershell-c2.json)
+- [ex5-rdp-bruteforce.json](USAF_16_Analyst/data/samples/ex5-rdp-bruteforce.json)
+- [ex6-usb-staging.json](USAF_16_Analyst/data/samples/ex6-usb-staging.json)
+- [ex7-adcs-domain-compromise.json](USAF_16_Analyst/data/samples/ex7-adcs-domain-compromise.json)
 
 ## Logs And Runtime State
 
 The one-command launcher writes:
 
-- logs to [logs/project/](/Users/connor/Downloads/USAF_16_Analyst/logs/project/)
-- runtime PID state to [`.project-state/`](/Users/connor/Downloads/USAF_16_Analyst/.project-state/)
+- logs to [logs/project/](USAF_16_Analyst/logs/project/)
+- runtime PID state to [`.project-state/`](USAF_16_Analyst/.project-state/)
 
 These files are local runtime artifacts and should not be committed.
 
@@ -364,4 +370,4 @@ For the current deadline path:
 
 ## Additional Notes
 
-- [backend/logstash/README.md](/Users/connor/Downloads/USAF_16_Analyst/backend/logstash/README.md) covers the Logstash module in more detail.
+- [backend/logstash/README.md](USAF_16_Analyst/backend/logstash/README.md) covers the Logstash module in more detail.
