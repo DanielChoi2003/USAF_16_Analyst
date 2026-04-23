@@ -329,6 +329,7 @@ Examples:
 - [ex5-rdp-bruteforce.json](USAF_16_Analyst/data/samples/ex5-rdp-bruteforce.json)
 - [ex6-usb-staging.json](USAF_16_Analyst/data/samples/ex6-usb-staging.json)
 - [ex7-adcs-domain-compromise.json](USAF_16_Analyst/data/samples/ex7-adcs-domain-compromise.json)
+- [ex8-dns-tunneling.json](USAF_16_Analyst/data/samples/ex8-dns-tunneling.json)
 
 ## Logs And Runtime State
 
