@@ -6,7 +6,7 @@ It is written so a teammate or an AI agent can use it directly without needing t
 
 ## Purpose
 
-Connor's part is the ingestion and normalization layer.
+This document covers the ingestion and normalization layer.
 
 The Logstash pipeline:
 
@@ -25,20 +25,20 @@ Do not build Elasticsearch mappings or Kibana dashboards from the raw package JS
 
 These are the files that define the Logstash contract:
 
-- [backend/logstash/pipeline/16af_ingest.conf](/Users/connor/Downloads/USAF_16_Analyst/backend/logstash/pipeline/16af_ingest.conf)
-- [backend/logstash/docker-compose.yml](/Users/connor/Downloads/USAF_16_Analyst/backend/logstash/docker-compose.yml)
-- [backend/logstash/.env.example](/Users/connor/Downloads/USAF_16_Analyst/backend/logstash/.env.example)
+- `backend/logstash/pipeline/16af_ingest.conf`
+- `backend/logstash/docker-compose.yml`
+- `backend/logstash/.env.example`
 
 ## Runtime Inputs
 
 Logstash reads all JSON files from:
 
-- `/Users/connor/Downloads/USAF_16_Analyst/data/samples`
+- `data/samples/`
 
 Current example input files include:
 
-- [data/samples/ex1-baseline.json](/Users/connor/Downloads/USAF_16_Analyst/data/samples/ex1-baseline.json)
-- [data/samples/ex1-enriched.json](/Users/connor/Downloads/USAF_16_Analyst/data/samples/ex1-enriched.json)
+- `data/samples/ex1-baseline.json`
+- `data/samples/ex1-enriched.json`
 
 ## Runtime Outputs
 
@@ -46,7 +46,7 @@ Current example input files include:
 
 Normalized NDJSON file:
 
-- [backend/logstash/output/normalized-events.ndjson](/Users/connor/Downloads/USAF_16_Analyst/backend/logstash/output/normalized-events.ndjson)
+- `backend/logstash/output/normalized-events.ndjson`
 
 Container stdout:
 
@@ -56,7 +56,7 @@ Container stdout:
 
 If `LOGSTASH_ENABLE_ES_OUTPUT=true`, Logstash writes to Elasticsearch index:
 
-- `16af-events-dev` by default
+- `investigation-events` by default
 
 Elasticsearch target is controlled by:
 
@@ -70,19 +70,21 @@ The Logstash module uses these environment variables:
 - `LOGSTASH_API_PORT`
   Default: `9600`
 - `LOGSTASH_INDEX`
-  Default: `16af-events-dev`
+  Default: `investigation-events`
 - `LOGSTASH_ENABLE_ES_OUTPUT`
-  Default: `false`
+  Default: `true`
 - `ELASTICSEARCH_HOSTS`
-  Default: `http://host.docker.internal:9200`
+  Default: `https://host.docker.internal:9200`
 
 Recommended `.env` for full ELK integration:
 
 ```bash
 LOGSTASH_API_PORT=9600
-LOGSTASH_INDEX=16af-events-dev
+LOGSTASH_INDEX=investigation-events
 LOGSTASH_ENABLE_ES_OUTPUT=true
-ELASTICSEARCH_HOSTS=http://host.docker.internal:9200
+ELASTICSEARCH_HOSTS=https://host.docker.internal:9200
+ELASTICSEARCH_USERNAME=elastic
+ELASTIC_PASSWORD=replace-me
 ```
 
 ## Exact Normalized Output Contract
@@ -284,7 +286,7 @@ This is the shape downstream systems should expect:
 }
 ```
 
-## Elasticsearch Instructions For Karthik
+## Elasticsearch Instructions
 
 ### Goal
 
@@ -293,13 +295,15 @@ Accept Logstash normalized documents without changing field names.
 ### Required Elasticsearch Connection Assumptions
 
 - Elasticsearch is reachable from the Logstash container at:
-  `http://host.docker.internal:9200`
+  `https://host.docker.internal:9200`
 - Logstash writes to:
-  `16af-events-dev`
+  `investigation-events`
 
-If Karthik changes the index name, he must update:
+If the team changes the index name, update:
 
-- `LOGSTASH_INDEX` in `backend/logstash/.env`
+- `LOGSTASH_INDEX` in `.env`
+- `ELASTIC_INDEX_NAME` in `.env`
+- `ELASTICSEARCH_INDEX` in `.env`
 
 ### Required Mapping Types
 
@@ -348,20 +352,16 @@ Use these mappings or equivalent:
 - `meta.schema_version`: `keyword`
 - `meta.exported_from`: `keyword`
 
-### Recommended Index Pattern
-
-- `16af-events-*`
-
 ### Recommended Initial Index
 
-- `16af-events-dev`
+- `investigation-events`
 
 ### Elasticsearch Validation Checklist
 
-Karthik or an AI agent should verify:
+The team or an AI agent should verify:
 
 1. Logstash can connect to Elasticsearch.
-2. Documents are created in `16af-events-dev`.
+2. Documents are created in `investigation-events`.
 3. `@timestamp` is indexed as a date.
 4. `host.ip` and `entities.ips` are indexed as IP fields.
 5. `process.cmdline` is searchable as text.
@@ -383,7 +383,7 @@ Elasticsearch should support these exact use cases:
 - free-text search on `raw_excerpt`
 - filter by time using `@timestamp`
 
-## Kibana Instructions For Nethra
+## Kibana Instructions
 
 ### Goal
 
@@ -393,11 +393,7 @@ Create Kibana visualizations against the Elasticsearch index receiving Logstash-
 
 Create a Kibana data view using:
 
-- `16af-events-dev`
-
-or:
-
-- `16af-events-*`
+- `investigation-events`
 
 Time field:
 
@@ -450,7 +446,7 @@ Do not build visualizations from package-level counts unless intentionally aggre
 
 ### Kibana Validation Checklist
 
-Nethra or an AI agent should verify:
+The team or an AI agent should verify:
 
 1. Kibana data view resolves the index.
 2. `@timestamp` is accepted as the time field.
@@ -462,14 +458,14 @@ Nethra or an AI agent should verify:
 
 ## AI-Agent Instructions
 
-If an AI agent is asked to connect Elasticsearch and Kibana to Connor's Logstash work, it should do exactly this:
+If an AI agent is asked to connect Elasticsearch and Kibana to the Logstash work, it should do exactly this:
 
-1. Read [backend/logstash/pipeline/16af_ingest.conf](/Users/connor/Downloads/USAF_16_Analyst/backend/logstash/pipeline/16af_ingest.conf).
+1. Read `backend/logstash/pipeline/16af_ingest.conf`.
 2. Treat the normalized output shape in this document as the schema contract.
 3. Create Elasticsearch mappings that preserve the field names exactly as listed here.
 4. Do not rename fields unless Logstash is updated first.
-5. Point Elasticsearch ingestion to index `16af-events-dev` or update `LOGSTASH_INDEX` to match.
-6. Create a Kibana data view for `16af-events-dev` or `16af-events-*`.
+5. Point Elasticsearch ingestion to index `investigation-events` or update all index environment variables to match.
+6. Create a Kibana data view for `investigation-events`.
 7. Use `@timestamp` as the Kibana time field.
 8. Build dashboards around event-level documents, not raw package files.
 

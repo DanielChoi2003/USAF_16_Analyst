@@ -1,101 +1,80 @@
 # Logstash Module
 
-This folder contains the Logstash portion of the 16th Air Force analyst workflow prototype.
+This folder contains the Logstash and Kibana support for the current local ELK workflow.
 
-It is designed to do Connor's part of the ELK stack:
+Logstash reads SIEM-style package JSON from `data/samples/`, splits each package into one event document per item in `events[]`, normalizes the fields, writes NDJSON output for inspection, and sends the same normalized events to Elasticsearch.
 
-- Read SIEM-style package JSON from the repository sample data
-- Split each package into one event per output record
-- Normalize the event fields into a consistent document shape
-- Write normalized records to NDJSON for validation
-- Optionally forward those records to Elasticsearch
+## Files
 
-## Folder Layout
+- `docker-compose.yml`: starts Kibana and Logstash.
+- `config/logstash.yml`: Logstash runtime settings.
+- `config/pipelines.yml`: pipeline registration.
+- `config/kibana.yml`: local Kibana configuration.
+- `pipeline/16af_ingest.conf`: ingest and normalization pipeline.
+- `output/normalized-events.ndjson`: generated local output.
+- `TEAM_HANDOFF.md`: normalized event schema contract.
 
-- `docker-compose.yml` - starts Logstash locally
-- `config/logstash.yml` - Logstash runtime settings
-- `config/pipelines.yml` - pipeline registration
-- `pipeline/16af_ingest.conf` - main Logstash ingest pipeline
-- `output/` - normalized NDJSON written by the pipeline
+## Current Defaults
 
-## What This Pipeline Does
+- Input directory in container: `/usr/share/logstash/ingest`
+- Mounted input on host: `data/samples/`
+- NDJSON output: `backend/logstash/output/normalized-events.ndjson`
+- Elasticsearch index: `investigation-events`
+- Elasticsearch URL from container: `https://host.docker.internal:9200`
+- Logstash API port: `9600`
+- Kibana URL: `http://localhost:5601`
 
-The sample files in `../../data/samples/` contain alert packages with:
+## Run Through Root Launcher
 
-- Package metadata
-- Scope metadata
-- Entity lists
-- An `events` array
+Preferred:
 
-Logstash reads each package, splits the `events` array, and outputs one normalized event document at a time.
+```bash
+make up
+```
 
-Each normalized record keeps package-level context such as:
+The root launcher starts Elasticsearch first, creates a Kibana service token, then starts Kibana and Logstash with the expected environment.
 
-- `package_id`
-- `alert_id`
-- `title`
-- `severity`
-- `scope`
-- `entities`
+## Manual Run
 
-It also promotes event-level details into searchable fields such as:
-
-- `@timestamp`
-- `event.id`
-- `event.category`
-- `event.action`
-- `event.subtype`
-- `host`
-- `user`
-- `process`
-- `raw_excerpt`
-- `ioc_matches`
-
-## Prerequisites
-
-- Docker
-
-## Quick Start
-
-From the repository root:
+From the repo root, make sure `.env` contains Elasticsearch settings, then:
 
 ```bash
 cd backend/logstash
-cp .env.example .env
-docker compose up
+docker compose up -d kibana logstash
 ```
 
-By default, the pipeline writes normalized events to:
+To watch logs:
 
 ```bash
-backend/logstash/output/normalized-events.ndjson
+docker logs -f analyst-copilot-logstash
 ```
 
-## Elasticsearch Output
+## Environment
 
-Elasticsearch output is disabled by default so this module can still be demonstrated on its own.
+The compose file reads root `.env`.
 
-To enable shipping to Elasticsearch, set this in `.env`:
+Relevant variables:
 
-```bash
+```env
+LOGSTASH_API_PORT=9600
+LOGSTASH_INDEX=investigation-events
 LOGSTASH_ENABLE_ES_OUTPUT=true
-ELASTICSEARCH_HOSTS=http://host.docker.internal:9200
-LOGSTASH_INDEX=16af-events-dev
+ELASTICSEARCH_HOSTS=https://host.docker.internal:9200
+ELASTICSEARCH_USERNAME=elastic
+ELASTIC_PASSWORD=replace-me
 ```
 
-Then rerun:
+## Kibana Data View
 
-```bash
-docker compose up
-```
+Create a data view:
 
-## Why This Is Useful For The Project
+- Index pattern: `investigation-events`
+- Time field: `@timestamp`
 
-This gives the team a concrete Logstash ingest layer that already:
+One document equals one normalized event.
 
-- Parses the project's sample JSON format
-- Preserves analyst context from the alert package
-- Splits package-level exports into event-level records
-- Produces a stable document shape for Elasticsearch and Kibana
+## Contract Rule
 
-That means the Elasticsearch and Kibana work can be built on top of a known input format instead of everyone inventing a different schema.
+Downstream Elasticsearch mappings, backend retrieval, and Kibana dashboards should use the normalized field names from `TEAM_HANDOFF.md`.
+
+If a field name needs to change, update the Logstash pipeline and the handoff document together.

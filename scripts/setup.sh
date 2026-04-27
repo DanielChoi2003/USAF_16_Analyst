@@ -1,131 +1,86 @@
 #!/bin/bash
-# ============================================================================
-# Analyst Copilot — Initial Setup Script
-# ============================================================================
-# This script sets up the development environment for both frontend and backend
-# Note AI was used to help generate the sh files
-# Run: bash scripts/setup.sh
-# ============================================================================
+# Analyst Copilot initial setup.
+# Run from the repository root with: bash scripts/setup.sh
 
-set -e  # Exit on error
+set -euo pipefail
 
-echo "🚀 Analyst Copilot — Initial Setup"
-echo "===================================="
-echo ""
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-# ── Check Prerequisites ─────────────────────────────────────────────────────
+echo "Analyst Copilot initial setup"
+echo
 
-echo "📋 Checking prerequisites..."
-
-# Check Python
-if ! command -v python3.11 &> /dev/null; then
-    echo "❌ Python 3.11+ not found. Please install Python 3.11 or higher."
+require_command() {
+  local name="$1"
+  if ! command -v "$name" >/dev/null 2>&1; then
+    echo "Required command not found: $name" >&2
     exit 1
-fi
-echo "✅ Python $(python3.11 --version) found"
+  fi
+}
 
-# Check Node.js
-if ! command -v node &> /dev/null; then
-    echo "❌ Node.js not found. Please install Node.js 18.17 or higher."
-    exit 1
-fi
-NODE_VERSION=$(node --version)
-echo "✅ Node.js $NODE_VERSION found"
-
-# Check npm
-if ! command -v npm &> /dev/null; then
-    echo "❌ npm not found. Please install npm."
-    exit 1
-fi
-echo "✅ npm $(npm --version) found"
-
-echo ""
-
-# ── Backend Setup ───────────────────────────────────────────────────────────
-
-echo "🐍 Setting up backend..."
-cd backend
-
-# Create virtual environment if it doesn't exist
-if [ ! -d "venv" ]; then
-    echo "  Creating Python virtual environment..."
-    python3.11 -m venv venv
-fi
-
-# Activate virtual environment
-source venv/bin/activate
-
-# Upgrade pip
-echo "  Upgrading pip..."
-pip install --upgrade pip > /dev/null
-
-# Install dependencies
-echo "  Installing Python dependencies..."
-pip install -r requirements.txt > /dev/null
-pip install -r requirements-dev.txt > /dev/null
-echo "✅ Backend dependencies installed"
-
-# Create .env file if it doesn't exist
-if [ ! -f ".env" ]; then
-    echo "  Creating .env file from template..."
-    cp .env.example .env
-    echo "⚠️  IMPORTANT: Edit backend/.env and add your OPENAI_API_KEY"
+python_bin=""
+if command -v python3.11 >/dev/null 2>&1; then
+  python_bin="python3.11"
+elif command -v python3 >/dev/null 2>&1; then
+  python_bin="python3"
 else
-    echo "✅ .env file already exists"
+  echo "Required command not found: python3 or python3.11" >&2
+  exit 1
 fi
 
-cd ..
-echo ""
+require_command node
+require_command npm
+require_command docker
+require_command ollama
 
-# ── Frontend Setup ──────────────────────────────────────────────────────────
+echo "Using Python: $($python_bin --version)"
+echo "Using Node: $(node --version)"
+echo "Using npm: $(npm --version)"
+echo
 
-echo "⚛️  Setting up frontend..."
-cd frontend
+cd "$ROOT_DIR"
 
-# Install dependencies
-if [ ! -d "node_modules" ]; then
-    echo "  Installing Node.js dependencies..."
-    npm install > /dev/null
-    echo "✅ Frontend dependencies installed"
+if [[ ! -f .env ]]; then
+  cp .env.example .env
+  echo "Created .env from .env.example"
+  echo "Edit .env and set ELASTIC_PASSWORD before running make up."
 else
-    echo "✅ node_modules already exists (run 'npm install' to update)"
+  echo ".env already exists"
 fi
 
-# Create .env.local file if it doesn't exist
-if [ ! -f ".env.local" ]; then
-    echo "  Creating .env.local file from template..."
-    cp .env.local.example .env.local
-    echo "✅ .env.local created (edit if needed)"
-else
-    echo "✅ .env.local file already exists"
-fi
+echo
+echo "Installing backend dependencies..."
+(
+  cd backend
+  npm install
+)
 
-cd ..
-echo ""
+echo
+echo "Installing frontend dependencies..."
+(
+  cd frontend
+  npm install
+)
 
-# ── Create Missing Directories ─────────────────────────────────────────────
+echo
+echo "Creating rag/venv and installing Python dependencies..."
+(
+  cd rag
+  if [[ ! -d venv ]]; then
+    "$python_bin" -m venv venv
+  fi
+  ./venv/bin/python -m pip install --upgrade pip
+  ./venv/bin/python -m pip install -e .
+  ./venv/bin/python -m pip install neo4j python-dotenv ollama pymisp
+)
 
-echo "📁 Creating missing directories..."
-mkdir -p backend/logs
-mkdir -p backend/tests
-mkdir -p data/mitre/json_exports
-mkdir -p docs/architecture
-mkdir -p docs/dev-guides
-mkdir -p docs/user-guides
-echo "✅ Directories created"
-echo ""
+mkdir -p analysis_results inputs logs/project .project-state
 
-# ── Final Instructions ──────────────────────────────────────────────────────
-
-echo "🎉 Setup complete!"
-echo ""
+echo
+echo "Setup complete."
+echo
 echo "Next steps:"
-echo "  1. Edit backend/.env and add your OPENAI_API_KEY"
-echo "  2. Run 'make dev' to start both frontend and backend"
-echo "  3. Visit http://localhost:3000 (frontend) and http://localhost:8000/api/docs (backend)"
-echo ""
-echo "Optional:"
-echo "  - Run 'make sync-mitre' to fetch MITRE ATT&CK data"
-echo "  - Run 'make seed' to load sample packages"
-echo ""
-echo "📚 See README.md for more information"
+echo "  1. Run: ollama pull gemma3:latest"
+echo "  2. Run: ollama pull mxbai-embed-large:latest"
+echo "  3. Check .env, especially ELASTIC_PASSWORD"
+echo "  4. Run: make up"
+echo "  5. Open: http://localhost:3000/upload"

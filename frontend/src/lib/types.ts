@@ -5,7 +5,6 @@
  * They ensure type safety across the entire application.
  * 
  * Generated from: /data/samples/baseline.json
- * Author: Ethan Curb
  * Last Updated: 2025-10-11
  */
 

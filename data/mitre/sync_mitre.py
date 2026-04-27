@@ -9,7 +9,7 @@ Usage:
     python sync_mitre.py --load      # Load cached data from pickle files
     python sync_mitre.py --to-json   # Export cached data to JSON format
 
-Author: Ethan Curb (refactored from original mitre.py)
+Refactored from original mitre.py
 Last Updated: 2025-10-11
 """
 

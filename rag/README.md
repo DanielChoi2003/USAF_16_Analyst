@@ -1,96 +1,109 @@
-# analyst-copilot
-Fall 2025 Capstone (Kumar) partnership with 16th USAF
+# RAG And Report Generation
 
-# Project Setup and Usage
+The `rag/` folder contains two related paths:
 
-This guide provides the necessary steps to set up the project environment, configure the required services, and run the RAG instantiation script.
+1. The current direct Ollama report path used by the main app.
+2. Optional LightRAG/Neo4j experiments that can still be run manually.
 
-## Prerequisites
+The main demo does not require full LightRAG initialization.
 
-Before you begin, ensure you have the following installed on your system:
+## Current Main Path
 
-  * **Python** (version 3.10 or higher)
-  * **Docker**
-  * **Ollama**
+The Express backend calls:
 
------
+- `rag/fallback_report.py`
 
-## Setup Instructions
+This script receives a temporary JSON context file containing:
 
-Follow these steps to get your environment ready.
+- original uploaded package
+- matching Elasticsearch events, when found
+- MISP output or warning, when available
+- workflow metadata
 
-### 1\. Set Up the Python Environment
+It then uses the configured Ollama model to produce the analyst report.
 
-First, create and activate a Python virtual environment. This isolates the project's dependencies.
+Root `.env` controls the model:
+
+```env
+LLM_MODEL="gemma3:latest"
+EMBEDDING_MODEL="mxbai-embed-large:latest"
+USE_RAG_PRIMARY="false"
+```
+
+## Setup
+
+From the repo root:
 
 ```bash
-# Create a virtual environment named 'venv'
+cd rag
 python3 -m venv venv
-
-# Activate the virtual environment
-# On macOS and Linux:
-source venv/bin/activate
-
-# On Windows:
-# venv\Scripts\activate
+./venv/bin/python -m pip install --upgrade pip
+./venv/bin/python -m pip install -e .
+./venv/bin/python -m pip install neo4j python-dotenv ollama pymisp
 ```
 
-Next, install the project dependencies in editable mode.
+Pull the local models:
 
 ```bash
-# Install dependencies from setup.py
-pip install -e .
-```
-
------
-
-### 2\. Configure Ollama
-
-You'll need to pull the required LLM and embedding models using Ollama.
-
-```bash
-# Pull the Gemma3 language model
 ollama pull gemma3:latest
-
-# Pull the Mxbai embedding model
-ollama pull mxbai-embed-large:latest 
+ollama pull mxbai-embed-large:latest
 ```
 
------
+## Neo4j
 
-### 3\. Set Up and Run Neo4j
+The root launcher starts Neo4j from `rag/docker-compose.yml`.
 
-This project uses a Neo4j database running in a Docker container.
-
-First, export the environment variable for the Neo4j connection URI.
+Manual start:
 
 ```bash
-# Set the Neo4j URI
-export NEO4J_URI="neo4j://localhost:7687"
+cd rag
+docker compose up -d
 ```
 
-**Note:** You may want to add this line to your shell configuration file (e.g., `.bashrc`, `.zshrc`) to make it permanent.
+Use:
 
-Next, run the Neo4j Docker container. This command maps the necessary ports, mounts a volume for data persistence, and disables authentication.
+```env
+NEO4J_URI="bolt://localhost:7687"
+NEO4J_USERNAME="neo4j"
+NEO4J_PASSWORD="password"
+```
+
+Neo4j Browser is available at [http://localhost:7474](http://localhost:7474).
+
+## Optional Neo4j Population
+
+For the lightweight graph population path:
 
 ```bash
-# Run the Neo4j container
-docker run \
-    --publish=7474:7474 --publish=7687:7687 \
-    --volume=$HOME/neo4j/data:/data \
-    --env NEO4J_AUTH=none \
-    neo4j
+cd rag
+./venv/bin/python populate_neo4j.py
 ```
 
-You can access the Neo4j Browser UI at `http://localhost:7474`.
+Expected historical result:
 
------
+- `22` nodes upserted
+- `17` edges upserted
 
-## Running the RAG Instantiation
+## Optional Direct RAG Query
 
-Once all the services are running and the environment is set up, you can run the script to train the RAG model on the MITRE data.
+Only use this when intentionally testing the older RAG path:
 
 ```bash
-# Execute the script
-python instantiate_rag.py
+cd rag
+source venv/bin/activate
+python query_rag.py -f ../data/samples/ex1-baseline.json
 ```
+
+To make the backend try this before direct fallback:
+
+```env
+USE_RAG_PRIMARY="true"
+```
+
+Keep `USE_RAG_PRIMARY="false"` for the reliable current demo flow.
+
+## Notes
+
+- `instantiate_rag.py` can be slow and is not needed for the main app.
+- `fallback_report.py` is the highest-impact place to improve report quality.
+- Keep report headings stable if the frontend parser depends on them.
